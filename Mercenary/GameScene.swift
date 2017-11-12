@@ -8,7 +8,6 @@
 
 import SpriteKit
 class GameScene: SKScene {
-    
     let ship = SKSpriteNode(imageNamed: "model_N.png")
     var lastUpdateTime: TimeInterval = 0
     var dt: TimeInterval = 0
@@ -33,7 +32,7 @@ class GameScene: SKScene {
     
     
     override init(size: CGSize) {
-        
+
         let maxAspectRatio:CGFloat = 16.0/9.0 // 1
         let playableHeight = size.width / maxAspectRatio // 2
         let playableMargin = (size.height-playableHeight)/2.0 // 3
@@ -54,6 +53,15 @@ class GameScene: SKScene {
     
     
     override func didMove(to view: SKView) {
+        
+        physicsWorld.gravity = CGVector(dx:0, dy: 0);
+        let gravField = SKFieldNode.radialGravityField(); // Create grav field
+        gravField.position.x = size.width/2; // Center on X axis
+        gravField.position.y = size.height/2; // Center on Y axis (Now at center of screen)
+        gravField.strength = 5
+        addChild(gravField); // Add to world
+        
+        ship.physicsBody = SKPhysicsBody(circleOfRadius: max(ship.size.width / 2, ship.size.height / 2))
         backgroundColor = SKColor.black
         for i in 0...1 {
             let background = backgroundNode()
@@ -150,16 +158,16 @@ class GameScene: SKScene {
     }
     
     func backgroundNode() -> SKSpriteNode {
-        // 1
+
         let backgroundNode = SKSpriteNode()
         backgroundNode.anchorPoint = CGPoint.zero
         backgroundNode.name = "background"
-        // 2
+        
         let background1 = SKSpriteNode(imageNamed: "space")
         background1.anchorPoint = CGPoint.zero
         background1.position = CGPoint(x: 0, y: 0)
         backgroundNode.addChild(background1)
-        // 3
+        
         let background2 = SKSpriteNode(imageNamed: "space")
         background2.anchorPoint = CGPoint.zero
         background2.position = CGPoint(x: background1.size.width, y: 0)
