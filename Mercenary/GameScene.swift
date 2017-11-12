@@ -39,10 +39,11 @@ class GameScene: SKScene {
         playableRect = CGRect(x: 0, y: playableMargin,
                               width: size.width,
                               height: playableHeight) // 4
-        textures.append(SKTexture(imageNamed: "model_N.png"));
-        textures.append(SKTexture(imageNamed: "model_E.png"));
+        
         textures.append(SKTexture(imageNamed: "model_S.png"));
-        textures.append(SKTexture(imageNamed: "model_W.png"))
+        textures.append(SKTexture(imageNamed: "model_E.png"));
+        textures.append(SKTexture(imageNamed: "model_N.png"));
+        textures.append(SKTexture(imageNamed: "model_W.png"));
         
         super.init(size: size)
     }
@@ -62,6 +63,7 @@ class GameScene: SKScene {
         addChild(gravField); // Add to world
         
         ship.physicsBody = SKPhysicsBody(circleOfRadius: max(ship.size.width / 2, ship.size.height / 2))
+        ship.physicsBody?.mass = 5
         backgroundColor = SKColor.black
         for i in 0...1 {
             let background = backgroundNode()
@@ -81,7 +83,6 @@ class GameScene: SKScene {
             background.zPosition = -1
             addChild(background)
         }
-        
         for i in 0...1 {
             let background = backgroundNode()
             background.anchorPoint = CGPoint.zero
@@ -107,25 +108,36 @@ class GameScene: SKScene {
         } else {
             dt = 0 }
         lastUpdateTime = currentTime
-        move(sprite: ship, velocity: velocity)
         rotate(sprite: ship, direction: velocity, rotateRadiansPerSec: shipRotateRadiansPerSec)
-        let animationIndex = Int(abs(floor((ship.zRotation.truncatingRemainder(dividingBy:2*π))/(π/2))).truncatingRemainder(dividingBy:4))
+        
+        var animationIndex = Int(2.25 + 2*ship.zRotation/π)
+        if animationIndex == 4 {
+            animationIndex = 0
+        }
         ship.texture = textures[animationIndex]
         moveCamera()
 
-    }
-    
-    func move(sprite: SKSpriteNode, velocity: CGPoint) {
-        let amountToMove = velocity * CGFloat(dt)
-        sprite.position += amountToMove
     }
     
     func moveShipToward(location: CGPoint) {
         let offset = CGPoint(x: location.x - ship.position.x, y: location.y - ship.position.y)
         let length = sqrt(Double(offset.x * offset.x + offset.y * offset.y))
         let direction = CGPoint(x: offset.x / CGFloat(length), y: offset.y / CGFloat(length))
-
         velocity = CGPoint(x: direction.x * shipMovePointsPerSec, y: direction.y * shipMovePointsPerSec)
+        
+        // grab the spaceship rotation and add M_PI_2
+        let spaceShipRotation : CGFloat = ship.zRotation
+        let calcRotation : Float = Float(spaceShipRotation) + Float(Double.pi);
+        
+        // cosf and sinf use a Float and return a Float
+        // however CGVector need CGFloat
+        let intensity : CGFloat = 10000.0 // put your value
+        let xv = intensity * CGFloat(cosf(calcRotation))
+        let yv = intensity * CGFloat(sinf(calcRotation))
+        let vector = CGVector(dx: -xv, dy: -yv)
+        
+        // apply force to spaceship
+        ship.physicsBody?.applyForce(vector)
     }
     
     func sceneTouched(touchLocation:CGPoint) {
