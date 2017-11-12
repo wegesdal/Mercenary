@@ -73,6 +73,16 @@ class GameScene: SKScene {
             background.zPosition = -1
             addChild(background)
         }
+        
+        for i in 0...1 {
+            let background = backgroundNode()
+            background.anchorPoint = CGPoint.zero
+            background.position =
+                CGPoint(x: CGFloat(i)*background.size.width, y: CGFloat(i)*background.size.height)
+            background.name = "background"
+            background.zPosition = -1
+            addChild(background)
+        }
 
         ship.position = (CGPoint(x:400, y:400))
         addChild(ship)
@@ -188,6 +198,7 @@ class GameScene: SKScene {
             if background.position.y - background.size.height > self.cameraRect.origin.y {
                 background.position = CGPoint(x: background.position.x, y: background.position.y - background.size.height*2)
             }
+
         }
     }
 }
