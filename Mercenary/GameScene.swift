@@ -64,6 +64,15 @@ class GameScene: SKScene {
             background.zPosition = -1
             addChild(background)
         }
+        for i in 0...1 {
+            let background = backgroundNode()
+            background.anchorPoint = CGPoint.zero
+            background.position =
+                CGPoint(x: 0, y: CGFloat(i)*background.size.height)
+            background.name = "background"
+            background.zPosition = -1
+            addChild(background)
+        }
 
         ship.position = (CGPoint(x:400, y:400))
         addChild(ship)
@@ -145,10 +154,21 @@ class GameScene: SKScene {
         background2.anchorPoint = CGPoint.zero
         background2.position = CGPoint(x: background1.size.width, y: 0)
         backgroundNode.addChild(background2)
+        
+        let background3 = SKSpriteNode(imageNamed: "space")
+        background3.anchorPoint = CGPoint.zero
+        background3.position = CGPoint(x: 0, y: background1.size.height)
+        backgroundNode.addChild(background3)
+        
+        let background4 = SKSpriteNode(imageNamed: "space")
+        background4.anchorPoint = CGPoint.zero
+        background4.position = CGPoint(x: background1.size.width, y: background1.size.height)
+        backgroundNode.addChild(background4)
+        
         // 4
         backgroundNode.size = CGSize(
-            width: background1.size.width + background2.size.width,
-            height: background1.size.height)
+            width: background1.size.width*2,
+            height: background1.size.height*2)
         return backgroundNode
 }
     
@@ -161,6 +181,12 @@ class GameScene: SKScene {
             }
             if background.position.x - background.size.width > self.cameraRect.origin.x {
                 background.position = CGPoint(x: background.position.x - background.size.width*2, y: background.position.y)
+            }
+            if background.position.y + background.size.height < self.cameraRect.origin.y {
+                background.position = CGPoint(x: background.position.x, y: background.position.y + background.size.height*2)
+            }
+            if background.position.y - background.size.height > self.cameraRect.origin.y {
+                background.position = CGPoint(x: background.position.x, y: background.position.y - background.size.height*2)
             }
         }
     }
