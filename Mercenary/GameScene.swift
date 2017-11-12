@@ -16,10 +16,30 @@ class GameScene: SKScene {
     var velocity = CGPoint.zero
     let shipRotateRadiansPerSec: CGFloat = 4.0 * π
     var textures:[SKTexture] = []
+    let playableRect: CGRect
     let cameraNode = SKCameraNode()
+    let cameraMovePointsPerSec: CGFloat = 200.0
+    var cameraRect : CGRect {
+        let x = cameraNode.position.x - size.width/2
+            + (size.width - playableRect.width)/2
+        let y = cameraNode.position.y - size.height/2
+            + (size.height - playableRect.height)/2
+        return CGRect(
+            x: x,
+            y: y,
+            width: playableRect.width,
+            height: playableRect.height)
+    }
     
     
     override init(size: CGSize) {
+        
+        let maxAspectRatio:CGFloat = 16.0/9.0 // 1
+        let playableHeight = size.width / maxAspectRatio // 2
+        let playableMargin = (size.height-playableHeight)/2.0 // 3
+        playableRect = CGRect(x: 0, y: playableMargin,
+                              width: size.width,
+                              height: playableHeight) // 4
         textures.append(SKTexture(imageNamed: "model_N.png"));
         textures.append(SKTexture(imageNamed: "model_E.png"));
         textures.append(SKTexture(imageNamed: "model_S.png"));
@@ -35,10 +55,15 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         backgroundColor = SKColor.black
-        let background = SKSpriteNode(imageNamed: "space.png")
-        addChild(background)
-        background.position = CGPoint(x: size.width/2, y: size.height/2)
-        background.zPosition -= 1
+        for i in 0...1 {
+            let background = backgroundNode()
+            background.anchorPoint = CGPoint.zero
+            background.position =
+                CGPoint(x: CGFloat(i)*background.size.width, y: 0)
+            background.name = "background"
+            background.zPosition = -1
+            addChild(background)
+        }
 
         ship.position = (CGPoint(x:400, y:400))
         addChild(ship)
@@ -57,10 +82,9 @@ class GameScene: SKScene {
         lastUpdateTime = currentTime
         move(sprite: ship, velocity: velocity)
         rotate(sprite: ship, direction: velocity, rotateRadiansPerSec: shipRotateRadiansPerSec)
-        let animationIndex = Int(abs(floor((ship.zRotation.truncatingRemainder(dividingBy: 2*π))/(π/2))).truncatingRemainder(dividingBy: 4))
+        let animationIndex = Int(abs(floor((ship.zRotation.truncatingRemainder(dividingBy:2*π))/(π/2))).truncatingRemainder(dividingBy:4))
         ship.texture = textures[animationIndex]
-        print(Int(abs(floor((ship.zRotation.truncatingRemainder(dividingBy: 2*π))/(π/2))).truncatingRemainder(dividingBy: 4)))
-        cameraNode.position = ship.position
+        moveCamera()
 
     }
     
@@ -104,6 +128,41 @@ class GameScene: SKScene {
         let shortest = shortestAngleBetween(angle1: sprite.zRotation, angle2: velocity.angle)
         let amountToRotate = min(rotateRadiansPerSec * CGFloat(dt), abs(shortest))
         sprite.zRotation += shortest.sign() * amountToRotate
+    }
+    
+    func backgroundNode() -> SKSpriteNode {
+        // 1
+        let backgroundNode = SKSpriteNode()
+        backgroundNode.anchorPoint = CGPoint.zero
+        backgroundNode.name = "background"
+        // 2
+        let background1 = SKSpriteNode(imageNamed: "space")
+        background1.anchorPoint = CGPoint.zero
+        background1.position = CGPoint(x: 0, y: 0)
+        backgroundNode.addChild(background1)
+        // 3
+        let background2 = SKSpriteNode(imageNamed: "space")
+        background2.anchorPoint = CGPoint.zero
+        background2.position = CGPoint(x: background1.size.width, y: 0)
+        backgroundNode.addChild(background2)
+        // 4
+        backgroundNode.size = CGSize(
+            width: background1.size.width + background2.size.width,
+            height: background1.size.height)
+        return backgroundNode
+}
+    
+    func moveCamera() {
+        cameraNode.position = ship.position
+        enumerateChildNodes(withName: "background") { node, _ in
+            let background = node as! SKSpriteNode
+            if background.position.x + background.size.width < self.cameraRect.origin.x {
+                background.position = CGPoint(x: background.position.x + background.size.width*2, y: background.position.y)
+            }
+            if background.position.x - background.size.width > self.cameraRect.origin.x {
+                background.position = CGPoint(x: background.position.x - background.size.width*2, y: background.position.y)
+            }
+        }
     }
 }
 
