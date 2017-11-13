@@ -133,7 +133,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         lastUpdateTime = currentTime
         rotate(sprite: ship, direction: velocity, rotateRadiansPerSec: shipRotateRadiansPerSec)
         
-        var shipAnimationIndex = Int(2.25 + 2*ship.zRotation/π)
+        var shipAnimationIndex = Int(2.5 + 2*ship.zRotation/π)
         if shipAnimationIndex >= 4 {
             shipAnimationIndex = 0
         }
@@ -315,12 +315,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
      func triggerShield(contactPoint:CGPoint, contactNormal:CGVector) {
         shield.position = ship.position
+        shield.zPosition = 100
+        shield.alpha = 0.8
         shield.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: shield.size.width, height: shield.size.height))
         addChild(shield)
         shield.physicsBody?.mass = 30.0
         shield.physicsBody?.applyImpulse(contactNormal)
-        let appear = SKAction.scale(to: 1.8, duration: 0.2)
-        let wait = SKAction.wait(forDuration: 0.03)
+        let appear = SKAction.scale(to: 1.8, duration: 0.1)
+        let wait = SKAction.wait(forDuration: 0.04)
         let disappear = SKAction.scale(to: 0, duration: 0.06)
         let removeFromParent = SKAction.removeFromParent()
         let actions = [appear, wait, disappear, removeFromParent]
