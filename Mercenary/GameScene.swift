@@ -9,15 +9,12 @@
 import SpriteKit
 class GameScene: SKScene {
     let planet = SKSpriteNode(imageNamed: "planet.png")
-    
     let ship = SKSpriteNode(imageNamed: "model_N.png")
-    var asteroid = SKSpriteNode(imageNamed: "asteroid.model_N.png")
     var lastUpdateTime: TimeInterval = 0
     var dt: TimeInterval = 0
     let shipMovePointsPerSec: CGFloat = 480.0
     var velocity = CGPoint.zero
     let shipRotateRadiansPerSec: CGFloat = 4.0 * π
-    var asteroidTextures:[SKTexture] = []
     var shipTextures:[SKTexture] = []
     let playableRect: CGRect
     
@@ -49,13 +46,6 @@ class GameScene: SKScene {
         shipTextures.append(SKTexture(imageNamed: "model_E.png"));
         shipTextures.append(SKTexture(imageNamed: "model_N.png"));
         shipTextures.append(SKTexture(imageNamed: "model_W.png"));
-        
-        asteroidTextures.append(SKTexture(imageNamed: "asteroid.model_S.png"));
-        asteroidTextures.append(SKTexture(imageNamed: "asteroid.model_E.png"));
-        asteroidTextures.append(SKTexture(imageNamed: "asteroid.model_N.png"));
-        asteroidTextures.append(SKTexture(imageNamed: "asteroid.model_W.png"));
-        
-        
         
         super.init(size: size)
     }
@@ -131,12 +121,6 @@ class GameScene: SKScene {
             shipAnimationIndex = 0
         }
         ship.texture = shipTextures[shipAnimationIndex]
-        
-        var asteroidAnimationIndex = Int(2.25 + 2*ship.zRotation/π)
-        if asteroidAnimationIndex == 4 {
-            asteroidAnimationIndex = 0
-        }
-        asteroid.texture = asteroidTextures[asteroidAnimationIndex]
         moveCamera()
 
     }
@@ -246,7 +230,7 @@ class GameScene: SKScene {
     
     func spawnAsteroid() {
         // 1
-        let asteroid = SKSpriteNode(imageNamed: "asteroid.model_N")
+        let asteroid = SKSpriteNode(imageNamed:"asteroid.model_S.png")
         asteroid.position = CGPoint(
             x: CGFloat.random(min: playableRect.minX,
                               max: playableRect.maxX),
@@ -256,10 +240,11 @@ class GameScene: SKScene {
         addChild(asteroid)
         asteroid.physicsBody = SKPhysicsBody(circleOfRadius: max(ship.size.width / 2, ship.size.height / 2))
         asteroid.physicsBody?.mass = 10
+        asteroid.physicsBody?.applyAngularImpulse(0.5)
         
-        // 2
         let appear = SKAction.scale(to: 1.0, duration: 0.5)
         let wait = SKAction.wait(forDuration: 10.0)
+
         let disappear = SKAction.scale(to: 0, duration: 0.5)
         let removeFromParent = SKAction.removeFromParent()
         let actions = [appear, wait, disappear, removeFromParent]
