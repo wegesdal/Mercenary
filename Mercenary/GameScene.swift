@@ -18,6 +18,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let shipRotateRadiansPerSec: CGFloat = 4.0 * π
     var shipTextures:[SKTexture] = []
     let playableRect: CGRect
+    let livesLabel = SKLabelNode(fontNamed: "Chalkduster")
     
     let cameraNode = SKCameraNode()
     let cameraMovePointsPerSec: CGFloat = 200.0
@@ -108,6 +109,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         cameraNode.position = CGPoint(x: size.width/2, y: size.height/2)
         
         run(SKAction.repeatForever(SKAction.sequence([SKAction.run() { [weak self] in self?.spawnAsteroid()}, SKAction.wait(forDuration: 3.0)])))
+        
+        livesLabel.text = "Shields: X"
+        livesLabel.fontColor = SKColor.white
+        livesLabel.fontSize = 100
+        livesLabel.zPosition = 150
+        livesLabel.horizontalAlignmentMode = .left
+        livesLabel.verticalAlignmentMode = .bottom
+        livesLabel.position = CGPoint(
+            x: -playableRect.size.width/2 + CGFloat(20),
+            y: -playableRect.size.height/2 + CGFloat(20))
+        cameraNode.addChild(livesLabel)
     }
     
     override func update(_ currentTime: TimeInterval) {
