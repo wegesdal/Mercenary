@@ -9,6 +9,7 @@
 import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
+    let shield = SKSpriteNode(imageNamed:"shield.png")
     let planet = SKSpriteNode(imageNamed: "planet.png")
     let ship = SKSpriteNode(imageNamed: "model_N.png")
     var lastUpdateTime: TimeInterval = 0
@@ -299,8 +300,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let wait = SKAction.wait(forDuration: 10.0)
             let disappear = SKAction.scale(to: 0, duration: 0.5)
             let removeFromParent = SKAction.removeFromParent()
-            let youLose = SKAction.run{self.deathFunction()}
-            let actions = [appear, wait, disappear, youLose, removeFromParent]
+            let death = SKAction.run{self.deathFunction()}
+            let actions = [appear, wait, disappear, death, removeFromParent]
             scrap.run(SKAction.sequence(actions))
         }
     }
@@ -313,14 +314,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
      func triggerShield(contactPoint:CGPoint, contactNormal:CGVector) {
-        let shield = SKSpriteNode(imageNamed:"shield.png")
         shield.position = ship.position
         shield.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: shield.size.width, height: shield.size.height))
         addChild(shield)
         shield.physicsBody?.mass = 30.0
         shield.physicsBody?.applyImpulse(contactNormal)
-        let appear = SKAction.scale(to: 1.4, duration: 0.2)
-        let wait = SKAction.wait(forDuration: 0.08)
+        let appear = SKAction.scale(to: 1.8, duration: 0.2)
+        let wait = SKAction.wait(forDuration: 0.03)
         let disappear = SKAction.scale(to: 0, duration: 0.06)
         let removeFromParent = SKAction.removeFromParent()
         let actions = [appear, wait, disappear, removeFromParent]
