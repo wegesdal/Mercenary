@@ -10,7 +10,6 @@ import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     let shield = SKSpriteNode(imageNamed:"shield.png")
-    let planet = SKSpriteNode(imageNamed: "planet.png")
     let ship = SKSpriteNode(imageNamed: "model_N.png")
     var lastUpdateTime: TimeInterval = 0
     var dt: TimeInterval = 0
@@ -61,6 +60,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     override func didMove(to view: SKView) {
+        let planet = SKSpriteNode(imageNamed: "planet.png")
         planet.position = (CGPoint(x:0, y:0))
         planet.zPosition -= 1
         addChild(planet)
