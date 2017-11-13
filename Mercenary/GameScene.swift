@@ -11,12 +11,14 @@ class GameScene: SKScene {
     let planet = SKSpriteNode(imageNamed: "planet.png")
     
     let ship = SKSpriteNode(imageNamed: "model_N.png")
+    var asteroid = SKSpriteNode(imageNamed: "asteroid.model_N.png")
     var lastUpdateTime: TimeInterval = 0
     var dt: TimeInterval = 0
     let shipMovePointsPerSec: CGFloat = 480.0
     var velocity = CGPoint.zero
     let shipRotateRadiansPerSec: CGFloat = 4.0 * π
-    var textures:[SKTexture] = []
+    var asteroidTextures:[SKTexture] = []
+    var shipTextures:[SKTexture] = []
     let playableRect: CGRect
     
     let cameraNode = SKCameraNode()
@@ -43,10 +45,17 @@ class GameScene: SKScene {
                               width: size.width,
                               height: playableHeight) // 4
         
-        textures.append(SKTexture(imageNamed: "model_S.png"));
-        textures.append(SKTexture(imageNamed: "model_E.png"));
-        textures.append(SKTexture(imageNamed: "model_N.png"));
-        textures.append(SKTexture(imageNamed: "model_W.png"));
+        shipTextures.append(SKTexture(imageNamed: "model_S.png"));
+        shipTextures.append(SKTexture(imageNamed: "model_E.png"));
+        shipTextures.append(SKTexture(imageNamed: "model_N.png"));
+        shipTextures.append(SKTexture(imageNamed: "model_W.png"));
+        
+        asteroidTextures.append(SKTexture(imageNamed: "asteroid.model_S.png"));
+        asteroidTextures.append(SKTexture(imageNamed: "asteroid.model_E.png"));
+        asteroidTextures.append(SKTexture(imageNamed: "asteroid.model_N.png"));
+        asteroidTextures.append(SKTexture(imageNamed: "asteroid.model_W.png"));
+        
+        
         
         super.init(size: size)
     }
@@ -64,8 +73,8 @@ class GameScene: SKScene {
         physicsWorld.gravity = CGVector(dx:0, dy: 0);
         let gravField = SKFieldNode.radialGravityField(); // Create grav field
         gravField.position = planet.position
-        gravField.falloff = 0.1
-        gravField.strength = 3
+        gravField.falloff = 1
+        gravField.strength = 2
         addChild(gravField); // Add to world
         
         ship.physicsBody = SKPhysicsBody(circleOfRadius: max(ship.size.width / 2, ship.size.height / 2))
@@ -106,6 +115,7 @@ class GameScene: SKScene {
         camera = cameraNode
         cameraNode.position = CGPoint(x: size.width/2, y: size.height/2)
         
+        run(SKAction.repeatForever(SKAction.sequence([SKAction.run() { [weak self] in self?.spawnAsteroid()}, SKAction.wait(forDuration: 3.0)])))
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -116,11 +126,17 @@ class GameScene: SKScene {
         lastUpdateTime = currentTime
         rotate(sprite: ship, direction: velocity, rotateRadiansPerSec: shipRotateRadiansPerSec)
         
-        var animationIndex = Int(2.25 + 2*ship.zRotation/π)
-        if animationIndex == 4 {
-            animationIndex = 0
+        var shipAnimationIndex = Int(2.25 + 2*ship.zRotation/π)
+        if shipAnimationIndex == 4 {
+            shipAnimationIndex = 0
         }
-        ship.texture = textures[animationIndex]
+        ship.texture = shipTextures[shipAnimationIndex]
+        
+        var asteroidAnimationIndex = Int(2.25 + 2*ship.zRotation/π)
+        if asteroidAnimationIndex == 4 {
+            asteroidAnimationIndex = 0
+        }
+        asteroid.texture = asteroidTextures[asteroidAnimationIndex]
         moveCamera()
 
     }
@@ -226,6 +242,28 @@ class GameScene: SKScene {
             }
 
         }
+    }
+    
+    func spawnAsteroid() {
+        // 1
+        let asteroid = SKSpriteNode(imageNamed: "asteroid.model_N")
+        asteroid.position = CGPoint(
+            x: CGFloat.random(min: playableRect.minX,
+                              max: playableRect.maxX),
+            y: CGFloat.random(min: playableRect.minY,
+                              max: playableRect.maxY))
+        asteroid.setScale(0)
+        addChild(asteroid)
+        asteroid.physicsBody = SKPhysicsBody(circleOfRadius: max(ship.size.width / 2, ship.size.height / 2))
+        asteroid.physicsBody?.mass = 10
+        
+        // 2
+        let appear = SKAction.scale(to: 1.0, duration: 0.5)
+        let wait = SKAction.wait(forDuration: 10.0)
+        let disappear = SKAction.scale(to: 0, duration: 0.5)
+        let removeFromParent = SKAction.removeFromParent()
+        let actions = [appear, wait, disappear, removeFromParent]
+        asteroid.run(SKAction.sequence(actions))
     }
 }
 

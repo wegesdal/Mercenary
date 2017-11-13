@@ -20,6 +20,15 @@
 		F328C2A71FB8143700A8830F /* space.png in Resources */ = {isa = PBXBuildFile; fileRef = F328C2A61FB8143700A8830F /* space.png */; };
 		F328C2A91FB81A7A00A8830F /* MyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328C2A81FB81A7A00A8830F /* MyUtils.swift */; };
 		F346954B1FB91F890002FA3D /* planet.png in Resources */ = {isa = PBXBuildFile; fileRef = F346954A1FB91F890002FA3D /* planet.png */; };
+		F346958A1FB932D50002FA3D /* asteroid.model_SE.png in Resources */ = {isa = PBXBuildFile; fileRef = F34695811FB932D50002FA3D /* asteroid.model_SE.png */; };
+		F346958B1FB932D50002FA3D /* asteroid.model_W.png in Resources */ = {isa = PBXBuildFile; fileRef = F34695821FB932D50002FA3D /* asteroid.model_W.png */; };
+		F346958C1FB932D50002FA3D /* asteroid.model in Resources */ = {isa = PBXBuildFile; fileRef = F34695831FB932D50002FA3D /* asteroid.model */; };
+		F346958D1FB932D50002FA3D /* asteroid.model_S.png in Resources */ = {isa = PBXBuildFile; fileRef = F34695841FB932D50002FA3D /* asteroid.model_S.png */; };
+		F346958E1FB932D50002FA3D /* asteroid.model_SW.png in Resources */ = {isa = PBXBuildFile; fileRef = F34695851FB932D50002FA3D /* asteroid.model_SW.png */; };
+		F346958F1FB932D50002FA3D /* asteroid.model_E.png in Resources */ = {isa = PBXBuildFile; fileRef = F34695861FB932D50002FA3D /* asteroid.model_E.png */; };
+		F34695901FB932D50002FA3D /* asteroid.model_N.png in Resources */ = {isa = PBXBuildFile; fileRef = F34695871FB932D50002FA3D /* asteroid.model_N.png */; };
+		F34695911FB932D50002FA3D /* asteroid.model_NE.png in Resources */ = {isa = PBXBuildFile; fileRef = F34695881FB932D50002FA3D /* asteroid.model_NE.png */; };
+		F34695921FB932D50002FA3D /* asteroid.model_NW.png in Resources */ = {isa = PBXBuildFile; fileRef = F34695891FB932D50002FA3D /* asteroid.model_NW.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +47,15 @@
 		F328C2A61FB8143700A8830F /* space.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = space.png; sourceTree = "<group>"; };
 		F328C2A81FB81A7A00A8830F /* MyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUtils.swift; sourceTree = "<group>"; };
 		F346954A1FB91F890002FA3D /* planet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = planet.png; sourceTree = "<group>"; };
+		F34695811FB932D50002FA3D /* asteroid.model_SE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asteroid.model_SE.png; sourceTree = "<group>"; };
+		F34695821FB932D50002FA3D /* asteroid.model_W.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asteroid.model_W.png; sourceTree = "<group>"; };
+		F34695831FB932D50002FA3D /* asteroid.model */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = asteroid.model; sourceTree = "<group>"; };
+		F34695841FB932D50002FA3D /* asteroid.model_S.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asteroid.model_S.png; sourceTree = "<group>"; };
+		F34695851FB932D50002FA3D /* asteroid.model_SW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asteroid.model_SW.png; sourceTree = "<group>"; };
+		F34695861FB932D50002FA3D /* asteroid.model_E.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asteroid.model_E.png; sourceTree = "<group>"; };
+		F34695871FB932D50002FA3D /* asteroid.model_N.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asteroid.model_N.png; sourceTree = "<group>"; };
+		F34695881FB932D50002FA3D /* asteroid.model_NE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asteroid.model_NE.png; sourceTree = "<group>"; };
+		F34695891FB932D50002FA3D /* asteroid.model_NW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asteroid.model_NW.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +94,7 @@
 				F328C2851FB803DF00A8830F /* GameViewController.swift */,
 				F328C2871FB803DF00A8830F /* Main.storyboard */,
 				F346954A1FB91F890002FA3D /* planet.png */,
+				F34695801FB932D50002FA3D /* Asteroid-8 */,
 				F328C2951FB8053800A8830F /* shuttle-b45 */,
 				F328C28A1FB803DF00A8830F /* Assets.xcassets */,
 				F328C28C1FB803DF00A8830F /* LaunchScreen.storyboard */,
@@ -94,6 +113,23 @@
 				F328C2A61FB8143700A8830F /* space.png */,
 			);
 			path = "shuttle-b45";
+			sourceTree = "<group>";
+		};
+		F34695801FB932D50002FA3D /* Asteroid-8 */ = {
+			isa = PBXGroup;
+			children = (
+				F34695811FB932D50002FA3D /* asteroid.model_SE.png */,
+				F34695821FB932D50002FA3D /* asteroid.model_W.png */,
+				F34695831FB932D50002FA3D /* asteroid.model */,
+				F34695841FB932D50002FA3D /* asteroid.model_S.png */,
+				F34695851FB932D50002FA3D /* asteroid.model_SW.png */,
+				F34695861FB932D50002FA3D /* asteroid.model_E.png */,
+				F34695871FB932D50002FA3D /* asteroid.model_N.png */,
+				F34695881FB932D50002FA3D /* asteroid.model_NE.png */,
+				F34695891FB932D50002FA3D /* asteroid.model_NW.png */,
+			);
+			name = "Asteroid-8";
+			path = "../../../Pictures/Asteroid-8";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,11 +195,20 @@
 				F328C28B1FB803DF00A8830F /* Assets.xcassets in Resources */,
 				F346954B1FB91F890002FA3D /* planet.png in Resources */,
 				F328C2A71FB8143700A8830F /* space.png in Resources */,
+				F346958C1FB932D50002FA3D /* asteroid.model in Resources */,
+				F346958F1FB932D50002FA3D /* asteroid.model_E.png in Resources */,
+				F346958E1FB932D50002FA3D /* asteroid.model_SW.png in Resources */,
 				F328C28E1FB803DF00A8830F /* LaunchScreen.storyboard in Resources */,
+				F346958A1FB932D50002FA3D /* asteroid.model_SE.png in Resources */,
+				F34695911FB932D50002FA3D /* asteroid.model_NE.png in Resources */,
 				F328C2A51FB8053900A8830F /* model_W.png in Resources */,
+				F346958B1FB932D50002FA3D /* asteroid.model_W.png in Resources */,
 				F328C29E1FB8053900A8830F /* model_N.png in Resources */,
 				F328C2A21FB8053900A8830F /* model_S.png in Resources */,
 				F328C2A11FB8053900A8830F /* model_E.png in Resources */,
+				F34695901FB932D50002FA3D /* asteroid.model_N.png in Resources */,
+				F34695921FB932D50002FA3D /* asteroid.model_NW.png in Resources */,
+				F346958D1FB932D50002FA3D /* asteroid.model_S.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
