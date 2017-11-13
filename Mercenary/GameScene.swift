@@ -330,7 +330,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
         if contact.bodyA.node?.name == "ship" {
-            for _ in 0...3 {
+            for _ in 0...2 {
                 spawnChips(contactPoint: contact.contactPoint, contactNormal: contact.contactNormal)
                 contact.bodyB.node?.removeFromParent()
             }
