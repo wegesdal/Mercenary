@@ -261,8 +261,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(chip)
         chip.physicsBody = SKPhysicsBody(circleOfRadius: max(chip.size.width / 2, chip.size.height / 2))
         chip.physicsBody?.mass = 2
-        chip.physicsBody?.applyAngularImpulse(0.2)
         chip.physicsBody?.applyImpulse(contactNormal)
+        chip.physicsBody?.applyAngularImpulse(0.1)
         let appear = SKAction.scale(to: 1.0, duration: 0.5)
         let wait = SKAction.wait(forDuration: 10.0)
         let disappear = SKAction.scale(to: 0, duration: 0.5)
@@ -279,8 +279,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             addChild(scrap)
             scrap.physicsBody = SKPhysicsBody(circleOfRadius: max(scrap.size.width / 2, scrap.size.height / 2))
             scrap.physicsBody?.mass = 0.5
-            scrap.physicsBody?.applyAngularImpulse(0.09)
             scrap.physicsBody?.applyImpulse(contactNormal)
+            scrap.physicsBody?.applyAngularImpulse(0.09)
+            
             let appear = SKAction.scale(to: 1.0, duration: 0.5)
             let wait = SKAction.wait(forDuration: 10.0)
             let disappear = SKAction.scale(to: 0, duration: 0.5)
