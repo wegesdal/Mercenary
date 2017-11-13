@@ -8,6 +8,8 @@
 
 import SpriteKit
 class GameScene: SKScene {
+    let planet = SKSpriteNode(imageNamed: "planet.png")
+    
     let ship = SKSpriteNode(imageNamed: "model_N.png")
     var lastUpdateTime: TimeInterval = 0
     var dt: TimeInterval = 0
@@ -16,6 +18,7 @@ class GameScene: SKScene {
     let shipRotateRadiansPerSec: CGFloat = 4.0 * π
     var textures:[SKTexture] = []
     let playableRect: CGRect
+    
     let cameraNode = SKCameraNode()
     let cameraMovePointsPerSec: CGFloat = 200.0
     var cameraRect : CGRect {
@@ -54,12 +57,15 @@ class GameScene: SKScene {
     
     
     override func didMove(to view: SKView) {
+        planet.position = (CGPoint(x:0, y:0))
+        planet.zPosition -= 1
+        addChild(planet)
         
         physicsWorld.gravity = CGVector(dx:0, dy: 0);
         let gravField = SKFieldNode.radialGravityField(); // Create grav field
-        gravField.position.x = size.width/2; // Center on X axis
-        gravField.position.y = size.height/2; // Center on Y axis (Now at center of screen)
-        gravField.strength = 5
+        gravField.position = planet.position
+        gravField.falloff = 0.1
+        gravField.strength = 3
         addChild(gravField); // Add to world
         
         ship.physicsBody = SKPhysicsBody(circleOfRadius: max(ship.size.width / 2, ship.size.height / 2))
@@ -92,7 +98,7 @@ class GameScene: SKScene {
             background.zPosition = -1
             addChild(background)
         }
-
+        
         ship.position = (CGPoint(x:400, y:400))
         addChild(ship)
         

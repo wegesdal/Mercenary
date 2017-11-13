@@ -19,6 +19,7 @@
 		F328C2A51FB8053900A8830F /* model_W.png in Resources */ = {isa = PBXBuildFile; fileRef = F328C29D1FB8053800A8830F /* model_W.png */; };
 		F328C2A71FB8143700A8830F /* space.png in Resources */ = {isa = PBXBuildFile; fileRef = F328C2A61FB8143700A8830F /* space.png */; };
 		F328C2A91FB81A7A00A8830F /* MyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328C2A81FB81A7A00A8830F /* MyUtils.swift */; };
+		F346954B1FB91F890002FA3D /* planet.png in Resources */ = {isa = PBXBuildFile; fileRef = F346954A1FB91F890002FA3D /* planet.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		F328C29D1FB8053800A8830F /* model_W.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = model_W.png; sourceTree = "<group>"; };
 		F328C2A61FB8143700A8830F /* space.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = space.png; sourceTree = "<group>"; };
 		F328C2A81FB81A7A00A8830F /* MyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUtils.swift; sourceTree = "<group>"; };
+		F346954A1FB91F890002FA3D /* planet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = planet.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				F328C2A81FB81A7A00A8830F /* MyUtils.swift */,
 				F328C2851FB803DF00A8830F /* GameViewController.swift */,
 				F328C2871FB803DF00A8830F /* Main.storyboard */,
+				F346954A1FB91F890002FA3D /* planet.png */,
 				F328C2951FB8053800A8830F /* shuttle-b45 */,
 				F328C28A1FB803DF00A8830F /* Assets.xcassets */,
 				F328C28C1FB803DF00A8830F /* LaunchScreen.storyboard */,
@@ -154,6 +157,7 @@
 			files = (
 				F328C2891FB803DF00A8830F /* Main.storyboard in Resources */,
 				F328C28B1FB803DF00A8830F /* Assets.xcassets in Resources */,
+				F346954B1FB91F890002FA3D /* planet.png in Resources */,
 				F328C2A71FB8143700A8830F /* space.png in Resources */,
 				F328C28E1FB803DF00A8830F /* LaunchScreen.storyboard in Resources */,
 				F328C2A51FB8053900A8830F /* model_W.png in Resources */,
