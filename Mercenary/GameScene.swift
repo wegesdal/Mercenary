@@ -18,7 +18,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let shipRotateRadiansPerSec: CGFloat = 4.0 * π
     var shipTextures:[SKTexture] = []
     let playableRect: CGRect
-    let livesLabel = SKLabelNode(fontNamed: "Chalkduster")
+    let livesLabel = SKLabelNode(fontNamed: "zapfino")
+    var shields = 3
     
     let cameraNode = SKCameraNode()
     let cameraMovePointsPerSec: CGFloat = 200.0
@@ -110,9 +111,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         run(SKAction.repeatForever(SKAction.sequence([SKAction.run() { [weak self] in self?.spawnAsteroid()}, SKAction.wait(forDuration: 3.0)])))
         
-        livesLabel.text = "Shields: X"
-        livesLabel.fontColor = SKColor.white
-        livesLabel.fontSize = 100
+        livesLabel.text = "Shields: \(shields)"
+        livesLabel.fontColor = SKColor.green
+        
+        livesLabel.fontSize = 50
         livesLabel.zPosition = 150
         livesLabel.horizontalAlignmentMode = .left
         livesLabel.verticalAlignmentMode = .bottom
@@ -290,7 +292,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             scrap.name = "scrap"
             addChild(scrap)
             scrap.physicsBody = SKPhysicsBody(circleOfRadius: max(scrap.size.width / 2, scrap.size.height / 2))
-            scrap.physicsBody?.mass = 0.5
+            scrap.physicsBody?.mass = 1.6
             scrap.physicsBody?.applyImpulse(contactNormal)
             scrap.physicsBody?.applyAngularImpulse(0.09)
             
@@ -303,6 +305,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+     func triggerShield(contactPoint:CGPoint, contactNormal:CGVector) {
+        let shield = SKSpriteNode(imageNamed:"shield.png")
+        shield.position = ship.position
+        shield.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: shield.size.width, height: shield.size.height))
+        addChild(shield)
+        shield.physicsBody?.mass = 30.0
+        shield.physicsBody?.applyImpulse(contactNormal)
+        let appear = SKAction.scale(to: 1.4, duration: 0.2)
+        let wait = SKAction.wait(forDuration: 0.1)
+        let disappear = SKAction.scale(to: 0, duration: 0.1)
+        let removeFromParent = SKAction.removeFromParent()
+        let actions = [appear, wait, disappear, removeFromParent]
+        shield.run(SKAction.sequence(actions))
+    }
+    
     
     func didBegin(_ contact: SKPhysicsContact) {
         if contact.bodyA.node?.name == "ship" {
@@ -310,8 +327,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 spawnChips(contactPoint: contact.contactPoint, contactNormal: contact.contactNormal)
                 contact.bodyB.node?.removeFromParent()
             }
-            spawnScrap(contactPoint: contact.contactPoint, contactNormal: contact.contactNormal)
-            contact.bodyA.node?.removeFromParent()
+            if shields < 1 {
+                spawnScrap(contactPoint: contact.contactPoint, contactNormal: contact.contactNormal)
+                contact.bodyA.node?.removeFromParent()
+            } else {
+                triggerShield(contactPoint: contact.contactPoint, contactNormal: contact.contactNormal)
+                shields -= 1
+                livesLabel.text = "Shields: \(shields)"
+            }
         } else if contact.bodyB.node?.name == "asteroid" {
         }
     }

@@ -33,6 +33,7 @@
 		F383A9831FB96BF300547838 /* shuttlechassis.model.png in Resources */ = {isa = PBXBuildFile; fileRef = F383A9821FB96BF300547838 /* shuttlechassis.model.png */; };
 		F383A9851FB96BFB00547838 /* shuttlewindshield.model.png in Resources */ = {isa = PBXBuildFile; fileRef = F383A9841FB96BFB00547838 /* shuttlewindshield.model.png */; };
 		F383A9871FB974A700547838 /* planet.png in Resources */ = {isa = PBXBuildFile; fileRef = F383A9861FB974A700547838 /* planet.png */; };
+		F383A9891FB981A900547838 /* shield.png in Resources */ = {isa = PBXBuildFile; fileRef = F383A9881FB981A900547838 /* shield.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		F383A9821FB96BF300547838 /* shuttlechassis.model.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shuttlechassis.model.png; sourceTree = "<group>"; };
 		F383A9841FB96BFB00547838 /* shuttlewindshield.model.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shuttlewindshield.model.png; sourceTree = "<group>"; };
 		F383A9861FB974A700547838 /* planet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planet.png; path = ../../../Pictures/planet.png; sourceTree = "<group>"; };
+		F383A9881FB981A900547838 /* shield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shield.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				F328C2851FB803DF00A8830F /* GameViewController.swift */,
 				F328C2871FB803DF00A8830F /* Main.storyboard */,
 				F383A9861FB974A700547838 /* planet.png */,
+				F383A9881FB981A900547838 /* shield.png */,
 				F34695801FB932D50002FA3D /* Asteroid-8 */,
 				F328C2951FB8053800A8830F /* shuttle-b45 */,
 				F328C28A1FB803DF00A8830F /* Assets.xcassets */,
@@ -225,6 +228,7 @@
 				F383A9871FB974A700547838 /* planet.png in Resources */,
 				F34695941FB942670002FA3D /* chip.png in Resources */,
 				F383A9831FB96BF300547838 /* shuttlechassis.model.png in Resources */,
+				F383A9891FB981A900547838 /* shield.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
