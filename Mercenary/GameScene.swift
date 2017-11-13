@@ -122,6 +122,7 @@ class GameScene: SKScene {
         }
         ship.texture = shipTextures[shipAnimationIndex]
         moveCamera()
+        checkCollisions()
 
     }
     
@@ -238,8 +239,9 @@ class GameScene: SKScene {
                               max: playableRect.maxY))
         asteroid.setScale(0)
         addChild(asteroid)
+        asteroid.name = "asteroid"
         asteroid.physicsBody = SKPhysicsBody(circleOfRadius: max(ship.size.width / 2, ship.size.height / 2))
-        asteroid.physicsBody?.mass = 10
+        asteroid.physicsBody?.mass = 8
         asteroid.physicsBody?.applyAngularImpulse(0.5)
         
         let appear = SKAction.scale(to: 1.0, duration: 0.5)
@@ -249,6 +251,45 @@ class GameScene: SKScene {
         let removeFromParent = SKAction.removeFromParent()
         let actions = [appear, wait, disappear, removeFromParent]
         asteroid.run(SKAction.sequence(actions))
+    }
+    
+    func spawnChips(coords:CGPoint) {
+        let chip = SKSpriteNode(imageNamed:"chip.png")
+        chip.position = coords
+        addChild(chip)
+        chip.name = "chip"
+        chip.physicsBody = SKPhysicsBody(circleOfRadius: max(chip.size.width / 2, chip.size.height / 2))
+        chip.physicsBody?.mass = 2
+        chip.physicsBody?.applyAngularImpulse(0.3)
+        
+        let appear = SKAction.scale(to: 1.0, duration: 0.5)
+        let wait = SKAction.wait(forDuration: 10.0)
+        
+        let disappear = SKAction.scale(to: 0, duration: 0.5)
+        let removeFromParent = SKAction.removeFromParent()
+        let actions = [appear, wait, disappear, removeFromParent]
+        chip.run(SKAction.sequence(actions))
+    }
+    
+    func shipHit(asteroid: SKSpriteNode) {
+        for _ in 0...3 {
+            spawnChips(coords:asteroid.position)
+        }
+        asteroid.removeFromParent()
+    }
+
+    func checkCollisions() {
+        var hitAsteroids: [SKSpriteNode] = []
+        enumerateChildNodes(withName: "asteroid") { node, _ in
+            let asteroid = node as! SKSpriteNode
+            if asteroid.frame.intersects(self.ship.frame) {
+                hitAsteroids.append(asteroid)
+            }
+        }
+        for asteroid in hitAsteroids {
+            shipHit(asteroid: asteroid)
+        }
+
     }
 }
 

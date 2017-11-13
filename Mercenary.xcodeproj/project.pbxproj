@@ -29,6 +29,7 @@
 		F34695901FB932D50002FA3D /* asteroid.model_N.png in Resources */ = {isa = PBXBuildFile; fileRef = F34695871FB932D50002FA3D /* asteroid.model_N.png */; };
 		F34695911FB932D50002FA3D /* asteroid.model_NE.png in Resources */ = {isa = PBXBuildFile; fileRef = F34695881FB932D50002FA3D /* asteroid.model_NE.png */; };
 		F34695921FB932D50002FA3D /* asteroid.model_NW.png in Resources */ = {isa = PBXBuildFile; fileRef = F34695891FB932D50002FA3D /* asteroid.model_NW.png */; };
+		F34695941FB942670002FA3D /* chip.png in Resources */ = {isa = PBXBuildFile; fileRef = F34695931FB942670002FA3D /* chip.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		F34695871FB932D50002FA3D /* asteroid.model_N.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asteroid.model_N.png; sourceTree = "<group>"; };
 		F34695881FB932D50002FA3D /* asteroid.model_NE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asteroid.model_NE.png; sourceTree = "<group>"; };
 		F34695891FB932D50002FA3D /* asteroid.model_NW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asteroid.model_NW.png; sourceTree = "<group>"; };
+		F34695931FB942670002FA3D /* chip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chip.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				F34695841FB932D50002FA3D /* asteroid.model_S.png */,
 				F34695851FB932D50002FA3D /* asteroid.model_SW.png */,
 				F34695861FB932D50002FA3D /* asteroid.model_E.png */,
+				F34695931FB942670002FA3D /* chip.png */,
 				F34695871FB932D50002FA3D /* asteroid.model_N.png */,
 				F34695881FB932D50002FA3D /* asteroid.model_NE.png */,
 				F34695891FB932D50002FA3D /* asteroid.model_NW.png */,
@@ -209,6 +212,7 @@
 				F34695901FB932D50002FA3D /* asteroid.model_N.png in Resources */,
 				F34695921FB932D50002FA3D /* asteroid.model_NW.png in Resources */,
 				F346958D1FB932D50002FA3D /* asteroid.model_S.png in Resources */,
+				F34695941FB942670002FA3D /* chip.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
