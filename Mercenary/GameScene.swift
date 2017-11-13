@@ -133,7 +133,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         rotate(sprite: ship, direction: velocity, rotateRadiansPerSec: shipRotateRadiansPerSec)
         
         var shipAnimationIndex = Int(2.25 + 2*ship.zRotation/π)
-        if shipAnimationIndex == 4 {
+        if shipAnimationIndex >= 4 {
             shipAnimationIndex = 0
         }
         ship.texture = shipTextures[shipAnimationIndex]
@@ -244,7 +244,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func spawnAsteroid() {
-        // 1
         let asteroid = SKSpriteNode(imageNamed:"asteroid.model_S.png")
         asteroid.position = CGPoint(
             x: CGFloat.random(min: playableRect.minX,
@@ -255,7 +254,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         asteroid.name = "asteroid"
         addChild(asteroid)
         asteroid.physicsBody = SKPhysicsBody(circleOfRadius: max(ship.size.width / 2, ship.size.height / 2))
-        asteroid.physicsBody?.mass = 8
+        asteroid.physicsBody?.mass = 12
         asteroid.physicsBody?.applyAngularImpulse(0.5)
         asteroid.physicsBody!.contactTestBitMask = asteroid.physicsBody!.collisionBitMask
         
@@ -274,7 +273,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         chip.name = "chip"
         addChild(chip)
         chip.physicsBody = SKPhysicsBody(circleOfRadius: max(chip.size.width / 2, chip.size.height / 2))
-        chip.physicsBody?.mass = 2
+        chip.physicsBody?.mass = 3
         chip.physicsBody?.applyImpulse(contactNormal)
         chip.physicsBody?.applyAngularImpulse(0.1)
         let appear = SKAction.scale(to: 1.0, duration: 0.5)
@@ -300,9 +299,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let wait = SKAction.wait(forDuration: 10.0)
             let disappear = SKAction.scale(to: 0, duration: 0.5)
             let removeFromParent = SKAction.removeFromParent()
-            let actions = [appear, wait, disappear, removeFromParent]
+            let youLose = SKAction.run{self.deathFunction()}
+            let actions = [appear, wait, disappear, youLose, removeFromParent]
             scrap.run(SKAction.sequence(actions))
         }
+    }
+    
+    func deathFunction(){
+        let gameOverScene = GameOverScene(size: size, won: false)
+        gameOverScene.scaleMode = scaleMode
+        let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
+        view?.presentScene(gameOverScene, transition: reveal)
     }
     
      func triggerShield(contactPoint:CGPoint, contactNormal:CGVector) {
@@ -313,8 +320,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         shield.physicsBody?.mass = 30.0
         shield.physicsBody?.applyImpulse(contactNormal)
         let appear = SKAction.scale(to: 1.4, duration: 0.2)
-        let wait = SKAction.wait(forDuration: 0.1)
-        let disappear = SKAction.scale(to: 0, duration: 0.1)
+        let wait = SKAction.wait(forDuration: 0.08)
+        let disappear = SKAction.scale(to: 0, duration: 0.06)
         let removeFromParent = SKAction.removeFromParent()
         let actions = [appear, wait, disappear, removeFromParent]
         shield.run(SKAction.sequence(actions))
@@ -329,9 +336,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
             if shields < 1 {
                 spawnScrap(contactPoint: contact.contactPoint, contactNormal: contact.contactNormal)
+                run(SKAction.playSoundFileNamed("sfx_exp_odd4.wav", waitForCompletion: false))
                 contact.bodyA.node?.removeFromParent()
+
             } else {
                 triggerShield(contactPoint: contact.contactPoint, contactNormal: contact.contactNormal)
+                run(SKAction.playSoundFileNamed("sfx_exp_odd6.wav", waitForCompletion: false))
                 shields -= 1
                 livesLabel.text = "Shields: \(shields)"
             }
