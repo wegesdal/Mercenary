@@ -261,12 +261,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(chip)
         chip.physicsBody = SKPhysicsBody(circleOfRadius: max(chip.size.width / 2, chip.size.height / 2))
         chip.physicsBody?.mass = 2
-        chip.physicsBody?.applyImpulse(contactNormal, at: contactPoint)
-        chip.physicsBody?.applyAngularImpulse(0.3)
-        
+        chip.physicsBody?.applyAngularImpulse(0.2)
+        chip.physicsBody?.applyImpulse(contactNormal)
         let appear = SKAction.scale(to: 1.0, duration: 0.5)
         let wait = SKAction.wait(forDuration: 10.0)
-        
         let disappear = SKAction.scale(to: 0, duration: 0.5)
         let removeFromParent = SKAction.removeFromParent()
         let actions = [appear, wait, disappear, removeFromParent]
@@ -280,10 +278,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             scrap.name = "scrap"
             addChild(scrap)
             scrap.physicsBody = SKPhysicsBody(circleOfRadius: max(scrap.size.width / 2, scrap.size.height / 2))
-            scrap.physicsBody?.mass = 2
-            scrap.physicsBody?.applyImpulse(contactNormal, at: contactPoint)
-            scrap.physicsBody?.applyAngularImpulse(0.3)
-            
+            scrap.physicsBody?.mass = 0.5
+            scrap.physicsBody?.applyAngularImpulse(0.09)
+            scrap.physicsBody?.applyImpulse(contactNormal)
             let appear = SKAction.scale(to: 1.0, duration: 0.5)
             let wait = SKAction.wait(forDuration: 10.0)
             let disappear = SKAction.scale(to: 0, duration: 0.5)
@@ -305,16 +302,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         } else if contact.bodyB.node?.name == "asteroid" {
         }
     }
-    
-        //var hitAsteroids: [SKSpriteNode] = []
-        //enumerateChildNodes(withName: "asteroid") { node, _ in
-        //    let asteroid = node as! SKSpriteNode
-        //    if contact.bodyA.node?.name == "asteroid" || contact.bodyB.node?.name == "asteroid" {
-        //    hitAsteroids.append(asteroid)
-        //    }
-        
-        //    for asteroid in hitAsteroids {
-        //        shipHit(asteroid: asteroid)
 }
 
 
