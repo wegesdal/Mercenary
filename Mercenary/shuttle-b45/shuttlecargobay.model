@@ -1,0 +1,14 @@
+# Made using Asset Forge (1.2.1)
+
+:models
+Bricks/brick_4by4[(0, -4.47E-08, 0);(0.0, 0.0, 0.0);(1.0, 1.0, 1.0);(0.0, 0.0, 0.0);_defaultMat]
+
+:materials
+_defaultMat[RGBA(0.770, 0.770, 0.770, 1.000);]
+customMaterial1[RGBA(0.022, 0.675, 1.000, 1.000);scratched]
+customMaterial2[RGBA(1.000, 0.008, 0.008, 1.000);]
+customMaterial3[RGBA(0.042, 0.988, 0.218, 1.000);]
+
+:textures
+
+:extra

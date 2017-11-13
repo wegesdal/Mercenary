@@ -7,7 +7,8 @@
 //
 
 import SpriteKit
-class GameScene: SKScene {
+
+class GameScene: SKScene, SKPhysicsContactDelegate {
     let planet = SKSpriteNode(imageNamed: "planet.png")
     let ship = SKSpriteNode(imageNamed: "model_N.png")
     var lastUpdateTime: TimeInterval = 0
@@ -42,6 +43,7 @@ class GameScene: SKScene {
                               width: size.width,
                               height: playableHeight) // 4
         
+        ship.name = "ship"
         shipTextures.append(SKTexture(imageNamed: "model_S.png"));
         shipTextures.append(SKTexture(imageNamed: "model_E.png"));
         shipTextures.append(SKTexture(imageNamed: "model_N.png"));
@@ -59,7 +61,7 @@ class GameScene: SKScene {
         planet.position = (CGPoint(x:0, y:0))
         planet.zPosition -= 1
         addChild(planet)
-        
+        physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVector(dx:0, dy: 0);
         let gravField = SKFieldNode.radialGravityField(); // Create grav field
         gravField.position = planet.position
@@ -122,8 +124,6 @@ class GameScene: SKScene {
         }
         ship.texture = shipTextures[shipAnimationIndex]
         moveCamera()
-        checkCollisions()
-
     }
     
     func moveShipToward(location: CGPoint) {
@@ -238,11 +238,12 @@ class GameScene: SKScene {
             y: CGFloat.random(min: playableRect.minY,
                               max: playableRect.maxY))
         asteroid.setScale(0)
-        addChild(asteroid)
         asteroid.name = "asteroid"
+        addChild(asteroid)
         asteroid.physicsBody = SKPhysicsBody(circleOfRadius: max(ship.size.width / 2, ship.size.height / 2))
         asteroid.physicsBody?.mass = 8
         asteroid.physicsBody?.applyAngularImpulse(0.5)
+        asteroid.physicsBody!.contactTestBitMask = asteroid.physicsBody!.collisionBitMask
         
         let appear = SKAction.scale(to: 1.0, duration: 0.5)
         let wait = SKAction.wait(forDuration: 10.0)
@@ -253,13 +254,14 @@ class GameScene: SKScene {
         asteroid.run(SKAction.sequence(actions))
     }
     
-    func spawnChips(coords:CGPoint) {
+    func spawnChips(contactPoint:CGPoint, contactNormal:CGVector) {
         let chip = SKSpriteNode(imageNamed:"chip.png")
-        chip.position = coords
-        addChild(chip)
+        chip.position = contactPoint
         chip.name = "chip"
+        addChild(chip)
         chip.physicsBody = SKPhysicsBody(circleOfRadius: max(chip.size.width / 2, chip.size.height / 2))
         chip.physicsBody?.mass = 2
+        chip.physicsBody?.applyImpulse(contactNormal, at: contactPoint)
         chip.physicsBody?.applyAngularImpulse(0.3)
         
         let appear = SKAction.scale(to: 1.0, duration: 0.5)
@@ -271,25 +273,50 @@ class GameScene: SKScene {
         chip.run(SKAction.sequence(actions))
     }
     
-    func shipHit(asteroid: SKSpriteNode) {
-        for _ in 0...3 {
-            spawnChips(coords:asteroid.position)
+    func spawnScrap(contactPoint:CGPoint, contactNormal:CGVector) {
+        let scraps = [SKSpriteNode(imageNamed:"shuttlechassis.model.png"), SKSpriteNode(imageNamed:"shuttlewindshield.model.png"), SKSpriteNode(imageNamed:"shuttlecargobay.model.png")]
+        for scrap in scraps {
+            scrap.position = contactPoint
+            scrap.name = "scrap"
+            addChild(scrap)
+            scrap.physicsBody = SKPhysicsBody(circleOfRadius: max(scrap.size.width / 2, scrap.size.height / 2))
+            scrap.physicsBody?.mass = 2
+            scrap.physicsBody?.applyImpulse(contactNormal, at: contactPoint)
+            scrap.physicsBody?.applyAngularImpulse(0.3)
+            
+            let appear = SKAction.scale(to: 1.0, duration: 0.5)
+            let wait = SKAction.wait(forDuration: 10.0)
+            let disappear = SKAction.scale(to: 0, duration: 0.5)
+            let removeFromParent = SKAction.removeFromParent()
+            let actions = [appear, wait, disappear, removeFromParent]
+            scrap.run(SKAction.sequence(actions))
         }
-        asteroid.removeFromParent()
     }
-
-    func checkCollisions() {
-        var hitAsteroids: [SKSpriteNode] = []
-        enumerateChildNodes(withName: "asteroid") { node, _ in
-            let asteroid = node as! SKSpriteNode
-            if asteroid.frame.intersects(self.ship.frame) {
-                hitAsteroids.append(asteroid)
+    
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        if contact.bodyA.node?.name == "ship" {
+            for _ in 0...3 {
+                spawnChips(contactPoint: contact.contactPoint, contactNormal: contact.contactNormal)
+                contact.bodyB.node?.removeFromParent()
             }
+            spawnScrap(contactPoint: contact.contactPoint, contactNormal: contact.contactNormal)
+            contact.bodyA.node?.removeFromParent()
+        } else if contact.bodyB.node?.name == "asteroid" {
         }
-        for asteroid in hitAsteroids {
-            shipHit(asteroid: asteroid)
-        }
-
     }
+    
+        //var hitAsteroids: [SKSpriteNode] = []
+        //enumerateChildNodes(withName: "asteroid") { node, _ in
+        //    let asteroid = node as! SKSpriteNode
+        //    if contact.bodyA.node?.name == "asteroid" || contact.bodyB.node?.name == "asteroid" {
+        //    hitAsteroids.append(asteroid)
+        //    }
+        
+        //    for asteroid in hitAsteroids {
+        //        shipHit(asteroid: asteroid)
 }
+
+
+
 
