@@ -9,8 +9,9 @@
 import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
+    let atlas = SKTextureAtlas(named: "atlas")
     let shield = SKSpriteNode(imageNamed:"shield.png")
-    let ship = SKSpriteNode(imageNamed: "model_N.png")
+    let ship = SKSpriteNode(imageNamed:"model_N.png")
     var lastUpdateTime: TimeInterval = 0
     var dt: TimeInterval = 0
     let shipMovePointsPerSec: CGFloat = 480.0
@@ -20,6 +21,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let playableRect: CGRect
     let livesLabel = SKLabelNode(fontNamed: "zapfino")
     var shields = 3
+    var invincible = false
     
     let cameraNode = SKCameraNode()
     let cameraMovePointsPerSec: CGFloat = 200.0
@@ -46,10 +48,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                               height: playableHeight) // 4
         
         ship.name = "ship"
-        shipTextures.append(SKTexture(imageNamed: "model_S.png"));
-        shipTextures.append(SKTexture(imageNamed: "model_E.png"));
-        shipTextures.append(SKTexture(imageNamed: "model_N.png"));
-        shipTextures.append(SKTexture(imageNamed: "model_W.png"));
+        shipTextures.append(atlas.textureNamed("model_S.png"));
+        shipTextures.append(atlas.textureNamed("model_E.png"));
+        shipTextures.append(atlas.textureNamed("model_N.png"));
+        shipTextures.append(atlas.textureNamed("model_W.png"))
         
         super.init(size: size)
     }
@@ -60,9 +62,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     override func didMove(to view: SKView) {
-        let planet = SKSpriteNode(imageNamed: "planet.png")
+        
+        //Add Planet
+        let planet = SKSpriteNode(texture: atlas.textureNamed("planet.png"))
         planet.position = (CGPoint(x:0, y:0))
-        planet.zPosition -= 1
+        planet.zPosition = -1
         addChild(planet)
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVector(dx:0, dy: 0);
@@ -70,18 +74,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gravField.position = planet.position
         gravField.falloff = 1
         gravField.strength = 2
-        addChild(gravField); // Add to world
+        addChild(gravField);
         
-        ship.physicsBody = SKPhysicsBody(circleOfRadius: max(ship.size.width / 2, ship.size.height / 2))
-        ship.physicsBody?.mass = 5
+        
+        //Scrolling Background
         backgroundColor = SKColor.black
+
         for i in 0...1 {
             let background = backgroundNode()
             background.anchorPoint = CGPoint.zero
             background.position =
                 CGPoint(x: CGFloat(i)*background.size.width, y: 0)
             background.name = "background"
-            background.zPosition = -1
+            background.zPosition = -2
             addChild(background)
         }
         for i in 0...1 {
@@ -90,7 +95,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             background.position =
                 CGPoint(x: 0, y: CGFloat(i)*background.size.height)
             background.name = "background"
-            background.zPosition = -1
+            background.zPosition = -2
             addChild(background)
         }
         for i in 0...1 {
@@ -99,23 +104,29 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             background.position =
                 CGPoint(x: CGFloat(i)*background.size.width, y: CGFloat(i)*background.size.height)
             background.name = "background"
-            background.zPosition = -1
+            background.zPosition = -2
             addChild(background)
         }
         
+        //Add Ship
+        ship.physicsBody = SKPhysicsBody(circleOfRadius: max(ship.size.width / 2, ship.size.height / 2))
+        ship.physicsBody?.mass = 5
         ship.position = (CGPoint(x:400, y:400))
         addChild(ship)
         
+        //Add Camera
         addChild(cameraNode)
         camera = cameraNode
         cameraNode.position = CGPoint(x: size.width/2, y: size.height/2)
         
+        //Add Asteroids
         run(SKAction.repeatForever(SKAction.sequence([SKAction.run() { [weak self] in self?.spawnAsteroid()}, SKAction.wait(forDuration: 3.0)])))
         
+        //Add UIElements
+
         livesLabel.text = "Shields: \(shields)"
         livesLabel.fontColor = SKColor.green
-        
-        livesLabel.fontSize = 50
+        livesLabel.fontSize = 24
         livesLabel.zPosition = 150
         livesLabel.horizontalAlignmentMode = .left
         livesLabel.verticalAlignmentMode = .bottom
@@ -197,22 +208,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         backgroundNode.anchorPoint = CGPoint.zero
         backgroundNode.name = "background"
         
-        let background1 = SKSpriteNode(imageNamed: "space")
+        let background1 = SKSpriteNode(texture: atlas.textureNamed("space.png"))
         background1.anchorPoint = CGPoint.zero
         background1.position = CGPoint(x: 0, y: 0)
         backgroundNode.addChild(background1)
         
-        let background2 = SKSpriteNode(imageNamed: "space")
+        let background2 = SKSpriteNode(texture: atlas.textureNamed("space.png"))
         background2.anchorPoint = CGPoint.zero
         background2.position = CGPoint(x: background1.size.width, y: 0)
         backgroundNode.addChild(background2)
         
-        let background3 = SKSpriteNode(imageNamed: "space")
+        let background3 = SKSpriteNode(texture: atlas.textureNamed("space.png"))
         background3.anchorPoint = CGPoint.zero
         background3.position = CGPoint(x: 0, y: background1.size.height)
         backgroundNode.addChild(background3)
         
-        let background4 = SKSpriteNode(imageNamed: "space")
+        let background4 = SKSpriteNode(texture: atlas.textureNamed("space.png"))
         background4.anchorPoint = CGPoint.zero
         background4.position = CGPoint(x: background1.size.width, y: background1.size.height)
         backgroundNode.addChild(background4)
@@ -245,7 +256,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func spawnAsteroid() {
-        let asteroid = SKSpriteNode(imageNamed:"asteroid.model_S.png")
+        let asteroid = SKSpriteNode(texture: atlas.textureNamed("asteroid.png"))
         asteroid.position = CGPoint(
             x: CGFloat.random(min: playableRect.minX,
                               max: playableRect.maxX),
@@ -269,7 +280,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func spawnChips(contactPoint:CGPoint, contactNormal:CGVector) {
-        let chip = SKSpriteNode(imageNamed:"chip.png")
+        let chip = SKSpriteNode(texture: atlas.textureNamed("chip.png"))
         chip.position = contactPoint
         chip.name = "chip"
         addChild(chip)
@@ -286,7 +297,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func spawnScrap(contactPoint:CGPoint, contactNormal:CGVector) {
-        let scraps = [SKSpriteNode(imageNamed:"shuttlechassis.model.png"), SKSpriteNode(imageNamed:"shuttlewindshield.model.png"), SKSpriteNode(imageNamed:"shuttlecargobay.model.png")]
+        let scraps = [SKSpriteNode(texture: atlas.textureNamed("shuttlechassis.model")), SKSpriteNode(texture: atlas.textureNamed("shuttlewindshield.model")), SKSpriteNode(texture: atlas.textureNamed("shuttlecargobay.model"))]
         for scrap in scraps {
             scrap.position = contactPoint
             scrap.name = "scrap"
@@ -314,6 +325,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
      func triggerShield(contactPoint:CGPoint, contactNormal:CGVector) {
+        
+        invincible = true
         shield.position = ship.position
         shield.zPosition = 100
         shield.alpha = 0.8
@@ -325,7 +338,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let wait = SKAction.wait(forDuration: 0.04)
         let disappear = SKAction.scale(to: 0, duration: 0.06)
         let removeFromParent = SKAction.removeFromParent()
-        let actions = [appear, wait, disappear, removeFromParent]
+        let shieldsDown = SKAction.run {self.invincible = false}
+        let actions = [appear, wait, disappear, removeFromParent, shieldsDown]
         shield.run(SKAction.sequence(actions))
     }
     
@@ -342,10 +356,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 contact.bodyA.node?.removeFromParent()
 
             } else {
-                triggerShield(contactPoint: contact.contactPoint, contactNormal: contact.contactNormal)
-                run(SKAction.playSoundFileNamed("sfx_exp_odd6.wav", waitForCompletion: false))
-                shields -= 1
-                livesLabel.text = "Shields: \(shields)"
+                if invincible == false {
+                    triggerShield(contactPoint: contact.contactPoint, contactNormal: contact.contactNormal)
+                    invincible = true
+                    run(SKAction.playSoundFileNamed("sfx_exp_odd6.wav", waitForCompletion: false))
+                    shields -= 1
+                    livesLabel.text = "Shields: \(shields)"
+                }
             }
         } else if contact.bodyB.node?.name == "asteroid" {
         }

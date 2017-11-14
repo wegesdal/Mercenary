@@ -13,27 +13,7 @@
 		F328C2891FB803DF00A8830F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F328C2871FB803DF00A8830F /* Main.storyboard */; };
 		F328C28B1FB803DF00A8830F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F328C28A1FB803DF00A8830F /* Assets.xcassets */; };
 		F328C28E1FB803DF00A8830F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F328C28C1FB803DF00A8830F /* LaunchScreen.storyboard */; };
-		F328C29E1FB8053900A8830F /* model_N.png in Resources */ = {isa = PBXBuildFile; fileRef = F328C2961FB8053800A8830F /* model_N.png */; };
-		F328C2A11FB8053900A8830F /* model_E.png in Resources */ = {isa = PBXBuildFile; fileRef = F328C2991FB8053800A8830F /* model_E.png */; };
-		F328C2A21FB8053900A8830F /* model_S.png in Resources */ = {isa = PBXBuildFile; fileRef = F328C29A1FB8053800A8830F /* model_S.png */; };
-		F328C2A51FB8053900A8830F /* model_W.png in Resources */ = {isa = PBXBuildFile; fileRef = F328C29D1FB8053800A8830F /* model_W.png */; };
-		F328C2A71FB8143700A8830F /* space.png in Resources */ = {isa = PBXBuildFile; fileRef = F328C2A61FB8143700A8830F /* space.png */; };
 		F328C2A91FB81A7A00A8830F /* MyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328C2A81FB81A7A00A8830F /* MyUtils.swift */; };
-		F346958A1FB932D50002FA3D /* asteroid.model_SE.png in Resources */ = {isa = PBXBuildFile; fileRef = F34695811FB932D50002FA3D /* asteroid.model_SE.png */; };
-		F346958B1FB932D50002FA3D /* asteroid.model_W.png in Resources */ = {isa = PBXBuildFile; fileRef = F34695821FB932D50002FA3D /* asteroid.model_W.png */; };
-		F346958C1FB932D50002FA3D /* asteroid.model in Resources */ = {isa = PBXBuildFile; fileRef = F34695831FB932D50002FA3D /* asteroid.model */; };
-		F346958D1FB932D50002FA3D /* asteroid.model_S.png in Resources */ = {isa = PBXBuildFile; fileRef = F34695841FB932D50002FA3D /* asteroid.model_S.png */; };
-		F346958E1FB932D50002FA3D /* asteroid.model_SW.png in Resources */ = {isa = PBXBuildFile; fileRef = F34695851FB932D50002FA3D /* asteroid.model_SW.png */; };
-		F346958F1FB932D50002FA3D /* asteroid.model_E.png in Resources */ = {isa = PBXBuildFile; fileRef = F34695861FB932D50002FA3D /* asteroid.model_E.png */; };
-		F34695901FB932D50002FA3D /* asteroid.model_N.png in Resources */ = {isa = PBXBuildFile; fileRef = F34695871FB932D50002FA3D /* asteroid.model_N.png */; };
-		F34695911FB932D50002FA3D /* asteroid.model_NE.png in Resources */ = {isa = PBXBuildFile; fileRef = F34695881FB932D50002FA3D /* asteroid.model_NE.png */; };
-		F34695921FB932D50002FA3D /* asteroid.model_NW.png in Resources */ = {isa = PBXBuildFile; fileRef = F34695891FB932D50002FA3D /* asteroid.model_NW.png */; };
-		F34695941FB942670002FA3D /* chip.png in Resources */ = {isa = PBXBuildFile; fileRef = F34695931FB942670002FA3D /* chip.png */; };
-		F383A9811FB96BED00547838 /* shuttlecargobay.model.png in Resources */ = {isa = PBXBuildFile; fileRef = F383A9801FB96BED00547838 /* shuttlecargobay.model.png */; };
-		F383A9831FB96BF300547838 /* shuttlechassis.model.png in Resources */ = {isa = PBXBuildFile; fileRef = F383A9821FB96BF300547838 /* shuttlechassis.model.png */; };
-		F383A9851FB96BFB00547838 /* shuttlewindshield.model.png in Resources */ = {isa = PBXBuildFile; fileRef = F383A9841FB96BFB00547838 /* shuttlewindshield.model.png */; };
-		F383A9871FB974A700547838 /* planet.png in Resources */ = {isa = PBXBuildFile; fileRef = F383A9861FB974A700547838 /* planet.png */; };
-		F383A9891FB981A900547838 /* shield.png in Resources */ = {isa = PBXBuildFile; fileRef = F383A9881FB981A900547838 /* shield.png */; };
 		F383A98B1FB98F8300547838 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F383A98A1FB98F8300547838 /* GameOverScene.swift */; };
 		F383A98D1FB9920200547838 /* sfx_wpn_laser11.wav in Resources */ = {isa = PBXBuildFile; fileRef = F383A98C1FB9920200547838 /* sfx_wpn_laser11.wav */; };
 		F383A98F1FB9922500547838 /* sfx_exp_odd4.wav in Resources */ = {isa = PBXBuildFile; fileRef = F383A98E1FB9922500547838 /* sfx_exp_odd4.wav */; };
@@ -52,27 +32,7 @@
 		F328C28A1FB803DF00A8830F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F328C28D1FB803DF00A8830F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F328C28F1FB803DF00A8830F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F328C2961FB8053800A8830F /* model_N.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = model_N.png; sourceTree = "<group>"; };
-		F328C2991FB8053800A8830F /* model_E.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = model_E.png; sourceTree = "<group>"; };
-		F328C29A1FB8053800A8830F /* model_S.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = model_S.png; sourceTree = "<group>"; };
-		F328C29D1FB8053800A8830F /* model_W.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = model_W.png; sourceTree = "<group>"; };
-		F328C2A61FB8143700A8830F /* space.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = space.png; sourceTree = "<group>"; };
 		F328C2A81FB81A7A00A8830F /* MyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUtils.swift; sourceTree = "<group>"; };
-		F34695811FB932D50002FA3D /* asteroid.model_SE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asteroid.model_SE.png; sourceTree = "<group>"; };
-		F34695821FB932D50002FA3D /* asteroid.model_W.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asteroid.model_W.png; sourceTree = "<group>"; };
-		F34695831FB932D50002FA3D /* asteroid.model */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = asteroid.model; sourceTree = "<group>"; };
-		F34695841FB932D50002FA3D /* asteroid.model_S.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asteroid.model_S.png; sourceTree = "<group>"; };
-		F34695851FB932D50002FA3D /* asteroid.model_SW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asteroid.model_SW.png; sourceTree = "<group>"; };
-		F34695861FB932D50002FA3D /* asteroid.model_E.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asteroid.model_E.png; sourceTree = "<group>"; };
-		F34695871FB932D50002FA3D /* asteroid.model_N.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asteroid.model_N.png; sourceTree = "<group>"; };
-		F34695881FB932D50002FA3D /* asteroid.model_NE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asteroid.model_NE.png; sourceTree = "<group>"; };
-		F34695891FB932D50002FA3D /* asteroid.model_NW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asteroid.model_NW.png; sourceTree = "<group>"; };
-		F34695931FB942670002FA3D /* chip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chip.png; sourceTree = "<group>"; };
-		F383A9801FB96BED00547838 /* shuttlecargobay.model.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shuttlecargobay.model.png; sourceTree = "<group>"; };
-		F383A9821FB96BF300547838 /* shuttlechassis.model.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shuttlechassis.model.png; sourceTree = "<group>"; };
-		F383A9841FB96BFB00547838 /* shuttlewindshield.model.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shuttlewindshield.model.png; sourceTree = "<group>"; };
-		F383A9861FB974A700547838 /* planet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planet.png; path = ../../../Pictures/planet.png; sourceTree = "<group>"; };
-		F383A9881FB981A900547838 /* shield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shield.png; sourceTree = "<group>"; };
 		F383A98A1FB98F8300547838 /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		F383A98C1FB9920200547838 /* sfx_wpn_laser11.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_wpn_laser11.wav; sourceTree = "<group>"; };
 		F383A98E1FB9922500547838 /* sfx_exp_odd4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_exp_odd4.wav; sourceTree = "<group>"; };
@@ -123,49 +83,12 @@
 				F383A9941FB9929A00547838 /* sfx_deathscream_human3.wav */,
 				F383A98E1FB9922500547838 /* sfx_exp_odd4.wav */,
 				F383A9961FB9976700547838 /* YouDie.png */,
-				F383A9861FB974A700547838 /* planet.png */,
 				F383A98C1FB9920200547838 /* sfx_wpn_laser11.wav */,
-				F383A9881FB981A900547838 /* shield.png */,
-				F34695801FB932D50002FA3D /* Asteroid-8 */,
-				F328C2951FB8053800A8830F /* shuttle-b45 */,
 				F328C28A1FB803DF00A8830F /* Assets.xcassets */,
 				F328C28C1FB803DF00A8830F /* LaunchScreen.storyboard */,
 				F328C28F1FB803DF00A8830F /* Info.plist */,
 			);
 			path = Mercenary;
-			sourceTree = "<group>";
-		};
-		F328C2951FB8053800A8830F /* shuttle-b45 */ = {
-			isa = PBXGroup;
-			children = (
-				F383A9801FB96BED00547838 /* shuttlecargobay.model.png */,
-				F383A9821FB96BF300547838 /* shuttlechassis.model.png */,
-				F383A9841FB96BFB00547838 /* shuttlewindshield.model.png */,
-				F328C2961FB8053800A8830F /* model_N.png */,
-				F328C2991FB8053800A8830F /* model_E.png */,
-				F328C29A1FB8053800A8830F /* model_S.png */,
-				F328C29D1FB8053800A8830F /* model_W.png */,
-				F328C2A61FB8143700A8830F /* space.png */,
-			);
-			path = "shuttle-b45";
-			sourceTree = "<group>";
-		};
-		F34695801FB932D50002FA3D /* Asteroid-8 */ = {
-			isa = PBXGroup;
-			children = (
-				F34695811FB932D50002FA3D /* asteroid.model_SE.png */,
-				F34695821FB932D50002FA3D /* asteroid.model_W.png */,
-				F34695831FB932D50002FA3D /* asteroid.model */,
-				F34695841FB932D50002FA3D /* asteroid.model_S.png */,
-				F34695851FB932D50002FA3D /* asteroid.model_SW.png */,
-				F34695861FB932D50002FA3D /* asteroid.model_E.png */,
-				F34695931FB942670002FA3D /* chip.png */,
-				F34695871FB932D50002FA3D /* asteroid.model_N.png */,
-				F34695881FB932D50002FA3D /* asteroid.model_NE.png */,
-				F34695891FB932D50002FA3D /* asteroid.model_NW.png */,
-			);
-			name = "Asteroid-8";
-			path = "../../../Pictures/Asteroid-8";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,31 +154,11 @@
 				F383A9911FB9923500547838 /* sfx_exp_odd6.wav in Resources */,
 				F328C28B1FB803DF00A8830F /* Assets.xcassets in Resources */,
 				F383A9971FB9976700547838 /* YouDie.png in Resources */,
-				F328C2A71FB8143700A8830F /* space.png in Resources */,
-				F346958C1FB932D50002FA3D /* asteroid.model in Resources */,
-				F346958F1FB932D50002FA3D /* asteroid.model_E.png in Resources */,
-				F346958E1FB932D50002FA3D /* asteroid.model_SW.png in Resources */,
 				F328C28E1FB803DF00A8830F /* LaunchScreen.storyboard in Resources */,
-				F383A9811FB96BED00547838 /* shuttlecargobay.model.png in Resources */,
-				F346958A1FB932D50002FA3D /* asteroid.model_SE.png in Resources */,
 				F383A9951FB9929B00547838 /* sfx_deathscream_human3.wav in Resources */,
-				F34695911FB932D50002FA3D /* asteroid.model_NE.png in Resources */,
-				F328C2A51FB8053900A8830F /* model_W.png in Resources */,
-				F346958B1FB932D50002FA3D /* asteroid.model_W.png in Resources */,
 				F383A98F1FB9922500547838 /* sfx_exp_odd4.wav in Resources */,
-				F328C29E1FB8053900A8830F /* model_N.png in Resources */,
-				F328C2A21FB8053900A8830F /* model_S.png in Resources */,
-				F328C2A11FB8053900A8830F /* model_E.png in Resources */,
-				F34695901FB932D50002FA3D /* asteroid.model_N.png in Resources */,
-				F383A9851FB96BFB00547838 /* shuttlewindshield.model.png in Resources */,
-				F34695921FB932D50002FA3D /* asteroid.model_NW.png in Resources */,
-				F346958D1FB932D50002FA3D /* asteroid.model_S.png in Resources */,
 				F383A9931FB9924100547838 /* sfx_exp_shortest_hard5.wav in Resources */,
-				F383A9871FB974A700547838 /* planet.png in Resources */,
 				F383A98D1FB9920200547838 /* sfx_wpn_laser11.wav in Resources */,
-				F34695941FB942670002FA3D /* chip.png in Resources */,
-				F383A9831FB96BF300547838 /* shuttlechassis.model.png in Resources */,
-				F383A9891FB981A900547838 /* shield.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
