@@ -10,18 +10,16 @@ import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     let atlas = SKTextureAtlas(named: "atlas")
-    let shield = SKSpriteNode(imageNamed:"shield.png")
     let ship = SKSpriteNode(imageNamed:"model_N.png")
     var lastUpdateTime: TimeInterval = 0
     var dt: TimeInterval = 0
     let shipMovePointsPerSec: CGFloat = 480.0
     var velocity = CGPoint.zero
-    let shipRotateRadiansPerSec: CGFloat = 4.0 * π
+    let shipRotateRadiansPerSec: CGFloat = 4.0*π
     var shipTextures:[SKTexture] = []
     let playableRect: CGRect
     let livesLabel = SKLabelNode(fontNamed: "zapfino")
     var shields = 3
-    var invincible = false
     
     let cameraNode = SKCameraNode()
     let cameraMovePointsPerSec: CGFloat = 200.0
@@ -158,7 +156,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let direction = CGPoint(x: offset.x / CGFloat(length), y: offset.y / CGFloat(length))
         velocity = CGPoint(x: direction.x * shipMovePointsPerSec, y: direction.y * shipMovePointsPerSec)
         
-        // grab the spaceship rotation and add M_PI_2
+        // grab the spaceship rotation and add 2π
         let spaceShipRotation : CGFloat = ship.zRotation
         let calcRotation : Float = Float(spaceShipRotation) + Float(Double.pi);
         
@@ -325,22 +323,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
      func triggerShield(contactPoint:CGPoint, contactNormal:CGVector) {
-        
-        invincible = true
-        shield.position = ship.position
-        shield.zPosition = 100
-        shield.alpha = 0.8
-        shield.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: shield.size.width, height: shield.size.height))
-        shield.physicsBody?.mass = 30.0
-        shield.physicsBody?.applyImpulse(contactNormal)
-        addChild(shield)
-        let appear = SKAction.scale(to: 1.8, duration: 0.1)
-        let wait = SKAction.wait(forDuration: 0.04)
-        let disappear = SKAction.scale(to: 0, duration: 0.06)
-        let removeFromParent = SKAction.removeFromParent()
-        let shieldsDown = SKAction.run {self.invincible = false}
-        let actions = [appear, wait, disappear, removeFromParent, shieldsDown]
-        shield.run(SKAction.sequence(actions))
+        ship.physicsBody?.applyImpulse(contactNormal)
+        let shieldBlast = shieldSplosion(intensity: 0.2)
+        shieldBlast.position = contactPoint
+        addChild(shieldBlast)
     }
     
     
@@ -354,21 +340,68 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 spawnScrap(contactPoint: contact.contactPoint, contactNormal: contact.contactNormal)
                 run(SKAction.playSoundFileNamed("sfx_exp_odd4.wav", waitForCompletion: false))
                 contact.bodyA.node?.removeFromParent()
+                let bombBlast = explosion(intensity: 0.6)
+                bombBlast.position = contact.contactPoint
+                addChild(bombBlast)
 
             } else {
-                if invincible == false {
-                    triggerShield(contactPoint: contact.contactPoint, contactNormal: contact.contactNormal)
-                    invincible = true
-                    run(SKAction.playSoundFileNamed("sfx_exp_odd6.wav", waitForCompletion: false))
-                    shields -= 1
-                    livesLabel.text = "Shields: \(shields)"
-                }
+                triggerShield(contactPoint: contact.contactPoint, contactNormal: contact.contactNormal)
+                run(SKAction.playSoundFileNamed("sfx_exp_odd6.wav", waitForCompletion: false))
+                shields -= 1
+                livesLabel.text = "Shields: \(shields)"
             }
         } else if contact.bodyB.node?.name == "asteroid" {
         }
     }
+    
+    // MARK: - Particles
+    func explosion(intensity: CGFloat) -> SKEmitterNode {
+        let emitter = SKEmitterNode()
+        let particleTexture = SKTexture(imageNamed: "spark")
+        emitter.zPosition = 2
+        emitter.particleTexture = particleTexture
+        emitter.particleBirthRate = 4000 * intensity
+        emitter.numParticlesToEmit = Int(400 * intensity)
+        emitter.particleLifetime = 2.0
+        emitter.emissionAngle = CGFloat(π/2)
+        emitter.emissionAngleRange = CGFloat(2*π)
+        emitter.particleSpeed = 600 * intensity
+        emitter.particleSpeedRange = 1000 * intensity
+        emitter.particleAlpha = 1.0
+        emitter.particleAlphaRange = 0.25
+        emitter.particleScale = 1.2
+        emitter.particleScaleRange = 2.0
+        emitter.particleScaleSpeed = -1.5
+        emitter.particleColor = SKColor.orange
+        emitter.particleColorBlendFactor = 1
+        emitter.particleBlendMode = SKBlendMode.add
+        emitter.run(SKAction.removeFromParentAfterDelay(2.0))
+        return emitter
+    }
+    func shieldSplosion(intensity: CGFloat) -> SKEmitterNode {
+        let emitter = SKEmitterNode()
+        let particleTexture = SKTexture(imageNamed: "shield")
+        emitter.zPosition = 2
+        emitter.particleTexture = particleTexture
+        emitter.particleBirthRate = 4000 * intensity
+        emitter.numParticlesToEmit = Int(10 * intensity)
+        emitter.particleLifetime = 2.0
+        emitter.emissionAngle = CGFloat(π/2)
+        emitter.emissionAngleRange = CGFloat(2*π)
+        emitter.particleSpeed = 600 * intensity
+        emitter.particleSpeedRange = 1000 * intensity
+        emitter.particleAlpha = 1.0
+        emitter.particleAlphaRange = 0.25
+        emitter.particleScale = 1.2
+        emitter.particleScaleRange = 2.0
+        emitter.particleScaleSpeed = -1.5
+        emitter.particleColor = SKColor.green
+        emitter.particleColorBlendFactor = 1
+        emitter.particleBlendMode = SKBlendMode.add
+        emitter.run(SKAction.removeFromParentAfterDelay(2.0))
+        return emitter
+    }
 }
-
 
 
 
