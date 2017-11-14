@@ -11,6 +11,7 @@ import SpriteKit
 class GameScene: SKScene, SKPhysicsContactDelegate {
     let atlas = SKTextureAtlas(named: "atlas")
     let ship = SKSpriteNode(imageNamed:"model_N.png")
+    let planet = SKSpriteNode(imageNamed:"planet.png")
     var lastUpdateTime: TimeInterval = 0
     var dt: TimeInterval = 0
     let shipMovePointsPerSec: CGFloat = 480.0
@@ -62,7 +63,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func didMove(to view: SKView) {
         
         //Add Planet
-        let planet = SKSpriteNode(texture: atlas.textureNamed("planet.png"))
+
+        planet.name = "planet"
         planet.position = (CGPoint(x:0, y:0))
         planet.zPosition = -1
         addChild(planet)
@@ -175,6 +177,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func sceneTouched(touchLocation:CGPoint) {
         moveShipToward(location: touchLocation)
+        if planet.contains(touchLocation) && planet.contains(ship.position) {
+            print("land")
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>,
@@ -194,6 +199,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let touchLocation = touch.location(in: self)
         sceneTouched(touchLocation: touchLocation)
+
     }
     
     func rotate(sprite: SKSpriteNode, direction: CGPoint, rotateRadiansPerSec: CGFloat) {
@@ -228,7 +234,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         background4.position = CGPoint(x: background1.size.width, y: background1.size.height)
         backgroundNode.addChild(background4)
         
-        // 4
         backgroundNode.size = CGSize(
             width: background1.size.width*2,
             height: background1.size.height*2)
@@ -386,7 +391,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         emitter.zPosition = 2
         emitter.particleTexture = particleTexture
         emitter.particleBirthRate = 4000 * intensity
-        emitter.numParticlesToEmit = Int(10 * intensity)
+        emitter.numParticlesToEmit = Int(24 * intensity)
         emitter.particleLifetime = 2.0
         emitter.emissionAngle = CGFloat(π/2)
         emitter.emissionAngleRange = CGFloat(2*π)
