@@ -10,8 +10,8 @@ import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     let atlas = SKTextureAtlas(named: "atlas")
+    let planet = SKSpriteNode(imageNamed:"DemeterP.gif")
     let ship = SKSpriteNode(imageNamed:"model_N.png")
-    let planet = SKSpriteNode(imageNamed:"planet.png")
     var lastUpdateTime: TimeInterval = 0
     var dt: TimeInterval = 0
     let shipMovePointsPerSec: CGFloat = 480.0
@@ -63,8 +63,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func didMove(to view: SKView) {
         
         //Add Planet
-
         planet.name = "planet"
+        planet.setScale(6.0)
         planet.position = (CGPoint(x:0, y:0))
         planet.zPosition = -1
         addChild(planet)
@@ -178,7 +178,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func sceneTouched(touchLocation:CGPoint) {
         moveShipToward(location: touchLocation)
         if planet.contains(touchLocation) && planet.contains(ship.position) {
-            print("land")
+            if let speed = ship.physicsBody {
+                if speed.velocity.dx > 100 {
+                    print("you are moving too fast to land")
+                } else {
+                    print("land that shit")
+                    landShip()
+                    
+                }
+            }
         }
     }
     
@@ -327,6 +335,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gameOverScene.scaleMode = scaleMode
         let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
         view?.presentScene(gameOverScene, transition: reveal)
+    }
+    
+    func landShip(){
+        let planetSide = PlanetSideScene(size:size)
+        planetSide.scaleMode = scaleMode
+        let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
+        view?.presentScene(planetSide, transition: reveal)
     }
     
      func triggerShield(contactPoint:CGPoint, contactNormal:CGVector) {
