@@ -126,7 +126,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
         livesLabel.text = "Shields: \(shields)"
         livesLabel.fontColor = SKColor.green
-        livesLabel.fontSize = 24
+        livesLabel.fontSize = 48
         livesLabel.zPosition = 150
         livesLabel.horizontalAlignmentMode = .left
         livesLabel.verticalAlignmentMode = .bottom
@@ -331,9 +331,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         shield.zPosition = 100
         shield.alpha = 0.8
         shield.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: shield.size.width, height: shield.size.height))
-        addChild(shield)
         shield.physicsBody?.mass = 30.0
         shield.physicsBody?.applyImpulse(contactNormal)
+        addChild(shield)
         let appear = SKAction.scale(to: 1.8, duration: 0.1)
         let wait = SKAction.wait(forDuration: 0.04)
         let disappear = SKAction.scale(to: 0, duration: 0.06)
