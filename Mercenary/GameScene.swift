@@ -146,7 +146,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if shipAnimationIndex >= 4 {
             shipAnimationIndex = 0
         }
-        ship.texture = shipTextures[shipAnimationIndex]
+        if shipAnimationIndex > -1 {
+            ship.texture = shipTextures[shipAnimationIndex]
+        }
         moveCamera()
     }
     
