@@ -25,6 +25,7 @@
 		F383A9951FB9929B00547838 /* sfx_deathscream_human3.wav in Resources */ = {isa = PBXBuildFile; fileRef = F383A9941FB9929A00547838 /* sfx_deathscream_human3.wav */; };
 		F383A9971FB9976700547838 /* YouDie.png in Resources */ = {isa = PBXBuildFile; fileRef = F383A9961FB9976700547838 /* YouDie.png */; };
 		F38CA25B1FBB07FC0028A738 /* DemeterP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F38CA25A1FBB07FC0028A738 /* DemeterP.gif */; };
+		F3F340381FBB80CE003B9940 /* Silom.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3F340371FBB801C003B9940 /* Silom.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		F383A9941FB9929A00547838 /* sfx_deathscream_human3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_deathscream_human3.wav; sourceTree = "<group>"; };
 		F383A9961FB9976700547838 /* YouDie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YouDie.png; sourceTree = "<group>"; };
 		F38CA25A1FBB07FC0028A738 /* DemeterP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = DemeterP.gif; sourceTree = "<group>"; };
+		F3F340371FBB801C003B9940 /* Silom.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Silom.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				F383A98A1FB98F8300547838 /* GameOverScene.swift */,
 				F363BF4B1FBADDF10073054B /* PlanetSide.swift */,
 				F328C2A81FB81A7A00A8830F /* MyUtils.swift */,
+				F3F340371FBB801C003B9940 /* Silom.ttf */,
 				F328C2851FB803DF00A8830F /* GameViewController.swift */,
 				F383A9921FB9924000547838 /* sfx_exp_shortest_hard5.wav */,
 				F383A9901FB9923400547838 /* sfx_exp_odd6.wav */,
@@ -167,6 +170,7 @@
 				F328C28B1FB803DF00A8830F /* Assets.xcassets in Resources */,
 				F383A9971FB9976700547838 /* YouDie.png in Resources */,
 				F328C28E1FB803DF00A8830F /* LaunchScreen.storyboard in Resources */,
+				F3F340381FBB80CE003B9940 /* Silom.ttf in Resources */,
 				F383A9951FB9929B00547838 /* sfx_deathscream_human3.wav in Resources */,
 				F38CA25B1FBB07FC0028A738 /* DemeterP.gif in Resources */,
 				F383A98F1FB9922500547838 /* sfx_exp_odd4.wav in Resources */,

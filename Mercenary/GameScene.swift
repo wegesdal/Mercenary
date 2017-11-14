@@ -19,7 +19,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let shipRotateRadiansPerSec: CGFloat = 4.0*π
     var shipTextures:[SKTexture] = []
     let playableRect: CGRect
-    let livesLabel = SKLabelNode(fontNamed: "zapfino")
+    let livesLabel = SKLabelNode(fontNamed: "silom")
     var shields = 3
     
     let cameraNode = SKCameraNode()
