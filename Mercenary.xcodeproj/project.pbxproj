@@ -24,8 +24,10 @@
 		F383A9931FB9924100547838 /* sfx_exp_shortest_hard5.wav in Resources */ = {isa = PBXBuildFile; fileRef = F383A9921FB9924000547838 /* sfx_exp_shortest_hard5.wav */; };
 		F383A9951FB9929B00547838 /* sfx_deathscream_human3.wav in Resources */ = {isa = PBXBuildFile; fileRef = F383A9941FB9929A00547838 /* sfx_deathscream_human3.wav */; };
 		F383A9971FB9976700547838 /* YouDie.png in Resources */ = {isa = PBXBuildFile; fileRef = F383A9961FB9976700547838 /* YouDie.png */; };
-		F38CA25B1FBB07FC0028A738 /* DemeterP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F38CA25A1FBB07FC0028A738 /* DemeterP.gif */; };
 		F3F340381FBB80CE003B9940 /* Silom.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3F340371FBB801C003B9940 /* Silom.ttf */; };
+		F3F3404E1FBBEED8003B9940 /* shipyard.png in Resources */ = {isa = PBXBuildFile; fileRef = F3F3404D1FBBEED8003B9940 /* shipyard.png */; };
+		F3F340501FBBF6A3003B9940 /* sfx_sounds_falling8.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3F3404F1FBBF6A2003B9940 /* sfx_sounds_falling8.wav */; };
+		F3F340521FBBF6BF003B9940 /* sfx_movement_portal4.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3F340511FBBF6BF003B9940 /* sfx_movement_portal4.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,8 +50,10 @@
 		F383A9921FB9924000547838 /* sfx_exp_shortest_hard5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_exp_shortest_hard5.wav; sourceTree = "<group>"; };
 		F383A9941FB9929A00547838 /* sfx_deathscream_human3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_deathscream_human3.wav; sourceTree = "<group>"; };
 		F383A9961FB9976700547838 /* YouDie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YouDie.png; sourceTree = "<group>"; };
-		F38CA25A1FBB07FC0028A738 /* DemeterP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = DemeterP.gif; sourceTree = "<group>"; };
 		F3F340371FBB801C003B9940 /* Silom.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Silom.ttf; sourceTree = "<group>"; };
+		F3F3404D1FBBEED8003B9940 /* shipyard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shipyard.png; path = ../../Buttons/shipyard.png; sourceTree = "<group>"; };
+		F3F3404F1FBBF6A2003B9940 /* sfx_sounds_falling8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_sounds_falling8.wav; sourceTree = "<group>"; };
+		F3F340511FBBF6BF003B9940 /* sfx_movement_portal4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_movement_portal4.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +88,6 @@
 			children = (
 				F328C27D1FB803DF00A8830F /* AppDelegate.swift */,
 				F328C2831FB803DF00A8830F /* GameScene.swift */,
-				F38CA25A1FBB07FC0028A738 /* DemeterP.gif */,
 				F383A98A1FB98F8300547838 /* GameOverScene.swift */,
 				F363BF4B1FBADDF10073054B /* PlanetSide.swift */,
 				F328C2A81FB81A7A00A8830F /* MyUtils.swift */,
@@ -92,7 +95,10 @@
 				F328C2851FB803DF00A8830F /* GameViewController.swift */,
 				F383A9921FB9924000547838 /* sfx_exp_shortest_hard5.wav */,
 				F383A9901FB9923400547838 /* sfx_exp_odd6.wav */,
+				F3F340511FBBF6BF003B9940 /* sfx_movement_portal4.wav */,
+				F3F3404F1FBBF6A2003B9940 /* sfx_sounds_falling8.wav */,
 				F328C2871FB803DF00A8830F /* Main.storyboard */,
+				F3F3404D1FBBEED8003B9940 /* shipyard.png */,
 				F383A9941FB9929A00547838 /* sfx_deathscream_human3.wav */,
 				F363C0421FBAF6100073054B /* sfx_sound_mechanicalnoise6.wav */,
 				F383A98E1FB9922500547838 /* sfx_exp_odd4.wav */,
@@ -168,14 +174,16 @@
 				F328C2891FB803DF00A8830F /* Main.storyboard in Resources */,
 				F383A9911FB9923500547838 /* sfx_exp_odd6.wav in Resources */,
 				F328C28B1FB803DF00A8830F /* Assets.xcassets in Resources */,
+				F3F340501FBBF6A3003B9940 /* sfx_sounds_falling8.wav in Resources */,
 				F383A9971FB9976700547838 /* YouDie.png in Resources */,
 				F328C28E1FB803DF00A8830F /* LaunchScreen.storyboard in Resources */,
 				F3F340381FBB80CE003B9940 /* Silom.ttf in Resources */,
 				F383A9951FB9929B00547838 /* sfx_deathscream_human3.wav in Resources */,
-				F38CA25B1FBB07FC0028A738 /* DemeterP.gif in Resources */,
+				F3F340521FBBF6BF003B9940 /* sfx_movement_portal4.wav in Resources */,
 				F383A98F1FB9922500547838 /* sfx_exp_odd4.wav in Resources */,
 				F363C0431FBAF6110073054B /* sfx_sound_mechanicalnoise6.wav in Resources */,
 				F383A9931FB9924100547838 /* sfx_exp_shortest_hard5.wav in Resources */,
+				F3F3404E1FBBEED8003B9940 /* shipyard.png in Resources */,
 				F383A98D1FB9920200547838 /* sfx_wpn_laser11.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

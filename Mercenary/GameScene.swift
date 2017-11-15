@@ -10,7 +10,7 @@ import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     let atlas = SKTextureAtlas(named: "atlas")
-    let planet = SKSpriteNode(imageNamed:"DemeterP.gif")
+    let planet = SKSpriteNode(imageNamed:"planet")
     let ship = SKSpriteNode(imageNamed:"model_N.png")
     var lastUpdateTime: TimeInterval = 0
     var dt: TimeInterval = 0
@@ -19,8 +19,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let shipRotateRadiansPerSec: CGFloat = 4.0*π
     var shipTextures:[SKTexture] = []
     let playableRect: CGRect
-    let livesLabel = SKLabelNode(fontNamed: "silom")
+    let shieldsLabel = SKLabelNode(fontNamed: "silom")
     var shields = 3
+    let creditsLabel = SKLabelNode(fontNamed: "silom")
+    var credits = 10000
     
     let cameraNode = SKCameraNode()
     let cameraMovePointsPerSec: CGFloat = 200.0
@@ -64,7 +66,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //Add Planet
         planet.name = "planet"
-        planet.setScale(6.0)
+        planet.setScale(1.0)
         planet.position = (CGPoint(x:0, y:0))
         planet.zPosition = -1
         addChild(planet)
@@ -124,17 +126,30 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //Add UIElements
 
-        livesLabel.text = "Shields: \(shields)"
-        livesLabel.fontColor = SKColor.green
-        livesLabel.fontSize = 48
-        livesLabel.zPosition = 150
-        livesLabel.horizontalAlignmentMode = .left
-        livesLabel.verticalAlignmentMode = .bottom
-        livesLabel.position = CGPoint(
+        shieldsLabel.text = "Shields: \(shields)"
+        shieldsLabel.fontColor = SKColor.white
+        shieldsLabel.fontSize = 48
+        shieldsLabel.zPosition = 150
+        shieldsLabel.horizontalAlignmentMode = .left
+        shieldsLabel.verticalAlignmentMode = .bottom
+        shieldsLabel.position = CGPoint(
             x: -playableRect.size.width/2 + CGFloat(20),
             y: -playableRect.size.height/2 + CGFloat(20))
-        cameraNode.addChild(livesLabel)
+        cameraNode.addChild(shieldsLabel)
+        
+        creditsLabel.text = "Credits: \(credits)"
+        creditsLabel.fontColor = SKColor.white
+        creditsLabel.fontSize = 48
+        creditsLabel.zPosition = 150
+        creditsLabel.horizontalAlignmentMode = .left
+        creditsLabel.verticalAlignmentMode = .bottom
+        creditsLabel.position = CGPoint(
+            x: -playableRect.size.width/2 + CGFloat(420),
+            y: -playableRect.size.height/2 + CGFloat(20))
+        cameraNode.addChild(creditsLabel)
     }
+    
+    
     
     override func update(_ currentTime: TimeInterval) {
         if lastUpdateTime > 0 {
@@ -178,11 +193,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func sceneTouched(touchLocation:CGPoint) {
         moveShipToward(location: touchLocation)
         if planet.contains(touchLocation) && planet.contains(ship.position) {
-            if let speed = ship.physicsBody {
-                if speed.velocity.dx > 100 {
-                    print("you are moving too fast to land")
+            if let unwrappedShip = ship.physicsBody {
+                if abs(unwrappedShip.velocity.dx) > 100 {
+                    run(SKAction.playSoundFileNamed("sfx_movement_portal4.wav",
+                                                    waitForCompletion: false))
                 } else {
-                    print("land that shit")
+                    run(SKAction.playSoundFileNamed("sfx_sounds_falling8.wav",
+                                                    waitForCompletion: false))
+                    print(unwrappedShip.velocity.dx)
+                    print(unwrappedShip.velocity.dy)
                     landShip()
                     
                 }
@@ -370,7 +389,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 triggerShield(contactPoint: contact.contactPoint, contactNormal: contact.contactNormal)
                 run(SKAction.playSoundFileNamed("sfx_exp_odd6.wav", waitForCompletion: false))
                 shields -= 1
-                livesLabel.text = "Shields: \(shields)"
+                shieldsLabel.text = "Shields: \(shields)"
             }
         } else if contact.bodyB.node?.name == "asteroid" {
         }
