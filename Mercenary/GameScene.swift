@@ -21,8 +21,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let playableRect: CGRect
     let shieldsLabel = SKLabelNode(fontNamed: "silom")
     var shields = 3
+
+    let fuelLabel = SKLabelNode(fontNamed: "silom")
     let creditsLabel = SKLabelNode(fontNamed: "silom")
-    var credits = 10000
     
     let cameraNode = SKCameraNode()
     let cameraMovePointsPerSec: CGFloat = 200.0
@@ -126,9 +127,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //Add UIElements
 
-        shieldsLabel.text = "Shields: \(shields)"
+        shieldsLabel.text = "Shields: \(GameViewController.shields)"
         shieldsLabel.fontColor = SKColor.white
-        shieldsLabel.fontSize = 48
+        shieldsLabel.fontSize = 36
         shieldsLabel.zPosition = 150
         shieldsLabel.horizontalAlignmentMode = .left
         shieldsLabel.verticalAlignmentMode = .bottom
@@ -137,16 +138,28 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             y: -playableRect.size.height/2 + CGFloat(20))
         cameraNode.addChild(shieldsLabel)
         
-        creditsLabel.text = "Credits: \(credits)"
+        creditsLabel.text = "Credits: \(GameViewController.credits)"
         creditsLabel.fontColor = SKColor.white
-        creditsLabel.fontSize = 48
+        creditsLabel.fontSize = 36
         creditsLabel.zPosition = 150
         creditsLabel.horizontalAlignmentMode = .left
         creditsLabel.verticalAlignmentMode = .bottom
         creditsLabel.position = CGPoint(
-            x: -playableRect.size.width/2 + CGFloat(420),
-            y: -playableRect.size.height/2 + CGFloat(20))
+            x: -playableRect.size.width/2 + CGFloat(320),
+            y: playableRect.size.height/2 - CGFloat(20))
         cameraNode.addChild(creditsLabel)
+        
+        fuelLabel.text = "Fuel: \(GameViewController.fuel)"
+        fuelLabel.fontColor = SKColor.white
+        fuelLabel.fontSize = 36
+        fuelLabel.zPosition = 150
+        fuelLabel.horizontalAlignmentMode = .left
+        fuelLabel.verticalAlignmentMode = .bottom
+        fuelLabel.position = CGPoint(
+            x: -playableRect.size.width/2 + CGFloat(720),
+            y: -playableRect.size.height/2 + CGFloat(20))
+        cameraNode.addChild(fuelLabel)
+        
     }
     
     

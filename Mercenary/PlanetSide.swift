@@ -10,6 +10,15 @@ import Foundation
 import SpriteKit
 class PlanetSideScene: SKScene {
     let playableRect: CGRect
+    let spaceportBar = SKSpriteNode(imageNamed:"spaceportbar")
+    let missionComputer = SKSpriteNode(imageNamed:"missioncomputer")
+    let refuel = SKSpriteNode(imageNamed:"refuel")
+    let commodityExchange = SKSpriteNode(imageNamed:"commodityexchange")
+    let outfit = SKSpriteNode(imageNamed:"outfit")
+    let shipyard = SKSpriteNode(imageNamed:"shipyard")
+    let leave = SKSpriteNode(imageNamed:"leave")
+    var fuel = GameViewController.fuel
+    var maxFuel = GameViewController.maxFuel
     
     override init(size: CGSize) {
         
@@ -35,7 +44,8 @@ class PlanetSideScene: SKScene {
         //Planet Description
         let descriptionTextView = UITextView()
         let description = "Earth is storied to be the humble birthplace of humankind. Although once a politically important world to the Inner Ring millenia ago, radiation from forgotten wars have left its inhabitants with horrifying mutations and, if the myths are to be believed, extraordinary gifts."
-        descriptionTextView.frame = CGRect(x: 400, y: 20, width: 250, height: 80)
+        
+        descriptionTextView.frame = CGRect(x: 400, y: 10, width: 250, height: 100)
         descriptionTextView.text = description
         descriptionTextView.backgroundColor = UIColor.black
         descriptionTextView.textColor = UIColor.white
@@ -45,20 +55,20 @@ class PlanetSideScene: SKScene {
         
         //Background
         background.position =
-            CGPoint(x: 600, y: 900)
+            CGPoint(x: 600, y: 850)
         background.size.width = 1100
         background.size.height = 900
         self.addChild(background)
         
         //Spaceport Bar
-        let spaceportBar = SKSpriteNode(imageNamed:"spaceportbar")
+
         spaceportBar.position =
             CGPoint(x: 300, y: 300)
         spaceportBar.setScale(1.0)
         self.addChild(spaceportBar)
         
         // Mission Computer
-        let missionComputer = SKSpriteNode(imageNamed:"missioncomputer")
+
         missionComputer.position =
             CGPoint(x: 900, y: 300)
         missionComputer.setScale(1.0)
@@ -68,37 +78,37 @@ class PlanetSideScene: SKScene {
         //MARK: Sidebar
         
         // Refuel
-        let refuel = SKSpriteNode(imageNamed:"refuel")
+
         refuel.position =
-            CGPoint(x: 1650, y: 900)
+            CGPoint(x: 1600, y: 900)
         refuel.setScale(1.0)
         self.addChild(refuel)
         
         // Commodity Exchange
-        let commodityExchange = SKSpriteNode(imageNamed:"commodityexchange")
+
         commodityExchange.position =
-            CGPoint(x: 1650, y: 750)
+            CGPoint(x: 1600, y: 750)
         commodityExchange.setScale(1.0)
         self.addChild(commodityExchange)
         
         // Outfit
-        let outfit = SKSpriteNode(imageNamed:"outfit")
+
         outfit.position =
-            CGPoint(x: 1650, y: 600)
+            CGPoint(x: 1600, y: 600)
         outfit.setScale(1.0)
         self.addChild(outfit)
         
         // Shipyard
-        let shipyard = SKSpriteNode(imageNamed:"shipyard")
+
         shipyard.position =
-            CGPoint(x: 1650, y: 450)
+            CGPoint(x: 1600, y: 450)
         shipyard.setScale(1.0)
         self.addChild(shipyard)
         
         // Leave
-        let leave = SKSpriteNode(imageNamed:"leave")
+
         leave.position =
-            CGPoint(x: 1650, y: 300)
+            CGPoint(x: 1600, y: 300)
         leave.setScale(1.0)
         self.addChild(leave)
         
@@ -113,7 +123,15 @@ class PlanetSideScene: SKScene {
             self.view?.presentScene(myScene, transition: reveal)
         }
         self.run(SKAction.sequence([wait, block]))
-        
+    }
+    
+    //Refuel
+    func sceneTouched(touchLocation:CGPoint) {
+        if refuel.contains(touchLocation) && GameViewController.fuel < GameViewController.maxFuel {
+            GameViewController.fuel = GameViewController.maxFuel
+            GameViewController.credits -= 500*(GameViewController.maxFuel-GameViewController.fuel)
+        }
     }
 }
+
 

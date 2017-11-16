@@ -9,9 +9,13 @@
 import UIKit
 import SpriteKit
 class GameViewController: UIViewController {
+    static var fuel = 4
+    static var maxFuel = 4
+    static var credits = 10000
+    static var cargo = 0
+    static var capacity = 20
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let scene =
             GameScene(size:CGSize(width: 2048, height: 1536))
         let skView = self.view as! SKView
