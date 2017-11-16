@@ -115,7 +115,56 @@ class PlanetSideScene: SKScene {
     
     }
     func sceneTouched(touchLocation:CGPoint) {
+        
+        //Spaceport Bar
+        if spaceportBar.contains(touchLocation) {
+            print("spaceportBar")
+            run(SKAction.playSoundFileNamed("sfx_coin_cluster3.wav", waitForCompletion: false))
+            
+        }
+        
+        //Mission Computer
+        if missionComputer.contains(touchLocation) {
+            print("missionComputer")
+            run(SKAction.playSoundFileNamed("sfx_coin_cluster3.wav", waitForCompletion: false))
+            
+        }
+        
+        //Refuel
+        if refuel.contains(touchLocation) {
+            if GameViewController.fuel < GameViewController.maxFuel {
+                GameViewController.fuel = GameViewController.maxFuel
+                GameViewController.credits -= 500*(GameViewController.maxFuel-GameViewController.fuel)
+                run(SKAction.playSoundFileNamed("sfx_sound_poweron.wav", waitForCompletion: false))
+            } else {
+                run(SKAction.playSoundFileNamed("sfx_sounds_error13.wav", waitForCompletion: false))
+            }
+        }
+        
+        //Commodity Exchange
+        if commodityExchange.contains(touchLocation) {
+            print("commodityExchange")
+            run(SKAction.playSoundFileNamed("sfx_coin_cluster3.wav", waitForCompletion: false))
+            
+        }
+        
+        //Outfit
+        if outfit.contains(touchLocation) {
+            print("outfit")
+            run(SKAction.playSoundFileNamed("sfx_coin_cluster3.wav", waitForCompletion: false))
+            
+        }
+        
+        //Shipyard
+        if shipyard.contains(touchLocation) {
+            print("shipyard")
+            run(SKAction.playSoundFileNamed("sfx_coin_cluster3.wav", waitForCompletion: false))
+            
+        }
+        
+        //Leave
         if leave.contains(touchLocation) {
+            run(SKAction.playSoundFileNamed("sfx_sound_poweron.wav", waitForCompletion: false))
             let wait = SKAction.wait(forDuration: 0.2)
             let block = SKAction.run {
             let myScene = GameScene(size: self.size)
@@ -123,16 +172,9 @@ class PlanetSideScene: SKScene {
             let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
             //Only remove UI Elements in main thread or use Grand Central Dispatch:
             self.descriptionTextView.removeFromSuperview()
-                    
             self.view?.presentScene(myScene, transition: reveal)
             }
         self.run(SKAction.sequence([wait, block]))
-    
-    //Refuel
-        if refuel.contains(touchLocation) && GameViewController.fuel < GameViewController.maxFuel {
-                    GameViewController.fuel = GameViewController.maxFuel
-                    GameViewController.credits -= 500*(GameViewController.maxFuel-GameViewController.fuel)
-                }
             }
         }
     
@@ -143,17 +185,6 @@ class PlanetSideScene: SKScene {
         }
         let touchLocation = touch.location(in: self)
         sceneTouched(touchLocation: touchLocation)
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>,
-                               with event: UIEvent?) {
-        guard let touch = touches.first else {
-            return
-        }
-        
-        let touchLocation = touch.location(in: self)
-        sceneTouched(touchLocation: touchLocation)
-        
     }
 }
 
