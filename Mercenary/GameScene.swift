@@ -127,7 +127,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //Add UIElements
 
-        shieldsLabel.text = "Shields: \(GameViewController.shields)"
+        shieldsLabel.text = "Shields: \(shields)"
         shieldsLabel.fontColor = SKColor.white
         shieldsLabel.fontSize = 36
         shieldsLabel.zPosition = 150
