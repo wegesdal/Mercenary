@@ -19,6 +19,7 @@ class PlanetSideScene: SKScene {
     let leave = SKSpriteNode(imageNamed:"leave")
     var fuel = GameViewController.fuel
     var maxFuel = GameViewController.maxFuel
+    let descriptionTextView = UITextView()
     
     override init(size: CGSize) {
         
@@ -42,7 +43,7 @@ class PlanetSideScene: SKScene {
             background = SKSpriteNode(imageNamed:"Demeter.jpg")
         
         //Planet Description
-        let descriptionTextView = UITextView()
+
         let description = "Earth is storied to be the humble birthplace of humankind. Although once a politically important world to the Inner Ring millenia ago, radiation from forgotten wars have left its inhabitants with horrifying mutations and, if the myths are to be believed, extraordinary gifts."
         
         descriptionTextView.frame = CGRect(x: 400, y: 10, width: 250, height: 100)
@@ -56,8 +57,8 @@ class PlanetSideScene: SKScene {
         //Background
         background.position =
             CGPoint(x: 600, y: 850)
-        background.size.width = 1100
-        background.size.height = 900
+        background.size.width = 900
+        background.size.height = 600
         self.addChild(background)
         
         //Spaceport Bar
@@ -111,26 +112,48 @@ class PlanetSideScene: SKScene {
             CGPoint(x: 1600, y: 300)
         leave.setScale(1.0)
         self.addChild(leave)
-        
-        let wait = SKAction.wait(forDuration: 10.0)
-        let block = SKAction.run {
+    
+    }
+    func sceneTouched(touchLocation:CGPoint) {
+        if leave.contains(touchLocation) {
+            let wait = SKAction.wait(forDuration: 0.2)
+            let block = SKAction.run {
             let myScene = GameScene(size: self.size)
             myScene.scaleMode = self.scaleMode
-            let reveal = SKTransition.flipHorizontal(withDuration: 4.5)
+            let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
             //Only remove UI Elements in main thread or use Grand Central Dispatch:
-            descriptionTextView.removeFromSuperview()
-            
+            self.descriptionTextView.removeFromSuperview()
+                    
             self.view?.presentScene(myScene, transition: reveal)
-        }
+            }
         self.run(SKAction.sequence([wait, block]))
-    }
     
     //Refuel
-    func sceneTouched(touchLocation:CGPoint) {
         if refuel.contains(touchLocation) && GameViewController.fuel < GameViewController.maxFuel {
-            GameViewController.fuel = GameViewController.maxFuel
-            GameViewController.credits -= 500*(GameViewController.maxFuel-GameViewController.fuel)
+                    GameViewController.fuel = GameViewController.maxFuel
+                    GameViewController.credits -= 500*(GameViewController.maxFuel-GameViewController.fuel)
+                }
+            }
         }
+    
+    override func touchesBegan(_ touches: Set<UITouch>,
+                               with event: UIEvent?) {
+        guard let touch = touches.first else {
+            return
+        }
+        let touchLocation = touch.location(in: self)
+        sceneTouched(touchLocation: touchLocation)
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>,
+                               with event: UIEvent?) {
+        guard let touch = touches.first else {
+            return
+        }
+        
+        let touchLocation = touch.location(in: self)
+        sceneTouched(touchLocation: touchLocation)
+        
     }
 }
 

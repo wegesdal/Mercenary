@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F304AB1E1FBD55F5004E55B5 /* Ships.swift in Sources */ = {isa = PBXBuildFile; fileRef = F304AB1D1FBD55F5004E55B5 /* Ships.swift */; };
 		F328C27E1FB803DF00A8830F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328C27D1FB803DF00A8830F /* AppDelegate.swift */; };
 		F328C2841FB803DF00A8830F /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328C2831FB803DF00A8830F /* GameScene.swift */; };
 		F328C2861FB803DF00A8830F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328C2851FB803DF00A8830F /* GameViewController.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F304AB1D1FBD55F5004E55B5 /* Ships.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ships.swift; sourceTree = "<group>"; };
 		F328C27A1FB803DF00A8830F /* Mercenary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mercenary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F328C27D1FB803DF00A8830F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F328C2831FB803DF00A8830F /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -88,26 +90,27 @@
 			children = (
 				F328C27D1FB803DF00A8830F /* AppDelegate.swift */,
 				F328C2831FB803DF00A8830F /* GameScene.swift */,
+				F304AB1D1FBD55F5004E55B5 /* Ships.swift */,
 				F383A98A1FB98F8300547838 /* GameOverScene.swift */,
 				F363BF4B1FBADDF10073054B /* PlanetSide.swift */,
 				F328C2A81FB81A7A00A8830F /* MyUtils.swift */,
 				F3F340371FBB801C003B9940 /* Silom.ttf */,
 				F328C2851FB803DF00A8830F /* GameViewController.swift */,
-				F383A9921FB9924000547838 /* sfx_exp_shortest_hard5.wav */,
 				F383A9901FB9923400547838 /* sfx_exp_odd6.wav */,
 				F3F340511FBBF6BF003B9940 /* sfx_movement_portal4.wav */,
 				F3F3404F1FBBF6A2003B9940 /* sfx_sounds_falling8.wav */,
 				F328C2871FB803DF00A8830F /* Main.storyboard */,
+				F383A9921FB9924000547838 /* sfx_exp_shortest_hard5.wav */,
 				F3F3404D1FBBEED8003B9940 /* shipyard.png */,
 				F383A9941FB9929A00547838 /* sfx_deathscream_human3.wav */,
 				F363C0421FBAF6100073054B /* sfx_sound_mechanicalnoise6.wav */,
 				F383A98E1FB9922500547838 /* sfx_exp_odd4.wav */,
 				F383A9961FB9976700547838 /* YouDie.png */,
 				F383A98C1FB9920200547838 /* sfx_wpn_laser11.wav */,
+				F328C28F1FB803DF00A8830F /* Info.plist */,
 				F363BF491FBAD7C10073054B /* SKAction+Extensions.swift */,
 				F328C28A1FB803DF00A8830F /* Assets.xcassets */,
 				F328C28C1FB803DF00A8830F /* LaunchScreen.storyboard */,
-				F328C28F1FB803DF00A8830F /* Info.plist */,
 			);
 			path = Mercenary;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				F328C2841FB803DF00A8830F /* GameScene.swift in Sources */,
 				F328C2861FB803DF00A8830F /* GameViewController.swift in Sources */,
 				F363BF4A1FBAD7C10073054B /* SKAction+Extensions.swift in Sources */,
+				F304AB1E1FBD55F5004E55B5 /* Ships.swift in Sources */,
 				F328C27E1FB803DF00A8830F /* AppDelegate.swift in Sources */,
 				F328C2A91FB81A7A00A8830F /* MyUtils.swift in Sources */,
 			);

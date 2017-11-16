@@ -19,6 +19,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let shipRotateRadiansPerSec: CGFloat = 4.0*π
     var shipTextures:[SKTexture] = []
     let playableRect: CGRect
+    let armorLabel = SKLabelNode(fontNamed: "silom")
+    var armor = 1
     let shieldsLabel = SKLabelNode(fontNamed: "silom")
     var shields = 3
 
@@ -127,16 +129,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //Add UIElements
 
-        shieldsLabel.text = "Shields: \(shields)"
-        shieldsLabel.fontColor = SKColor.white
-        shieldsLabel.fontSize = 36
-        shieldsLabel.zPosition = 150
-        shieldsLabel.horizontalAlignmentMode = .left
-        shieldsLabel.verticalAlignmentMode = .bottom
-        shieldsLabel.position = CGPoint(
-            x: -playableRect.size.width/2 + CGFloat(20),
-            y: -playableRect.size.height/2 + CGFloat(20))
-        cameraNode.addChild(shieldsLabel)
+
         
         creditsLabel.text = "Credits: \(GameViewController.credits)"
         creditsLabel.fontColor = SKColor.white
@@ -145,8 +138,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         creditsLabel.horizontalAlignmentMode = .left
         creditsLabel.verticalAlignmentMode = .bottom
         creditsLabel.position = CGPoint(
-            x: -playableRect.size.width/2 + CGFloat(320),
-            y: playableRect.size.height/2 - CGFloat(20))
+            x: playableRect.size.width/6,
+            y: -playableRect.size.height/2 + CGFloat(20))
         cameraNode.addChild(creditsLabel)
         
         fuelLabel.text = "Fuel: \(GameViewController.fuel)"
@@ -156,11 +149,37 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         fuelLabel.horizontalAlignmentMode = .left
         fuelLabel.verticalAlignmentMode = .bottom
         fuelLabel.position = CGPoint(
-            x: -playableRect.size.width/2 + CGFloat(720),
-            y: -playableRect.size.height/2 + CGFloat(20))
+            x: playableRect.size.width/3,
+            y: playableRect.size.height/2 - CGFloat(40))
         cameraNode.addChild(fuelLabel)
+     
+        
+        armorLabel.text = "Armor: \(armor)"
+        armorLabel.fontColor = SKColor.white
+        armorLabel.fontSize = 36
+        armorLabel.zPosition = 150
+        armorLabel.horizontalAlignmentMode = .left
+        armorLabel.verticalAlignmentMode = .bottom
+        armorLabel.position = CGPoint(
+            x: playableRect.size.width/3,
+            y: playableRect.size.height/2 - CGFloat(80))
+        cameraNode.addChild(armorLabel)
+        
+        shieldsLabel.text = "Shields: \(shields)"
+        shieldsLabel.fontColor = SKColor.white
+        shieldsLabel.fontSize = 36
+        shieldsLabel.zPosition = 150
+        shieldsLabel.horizontalAlignmentMode = .left
+        shieldsLabel.verticalAlignmentMode = .bottom
+        shieldsLabel.position = CGPoint(
+            x: playableRect.size.width/3,
+            y: playableRect.size.height/2 - CGFloat(120))
+        cameraNode.addChild(shieldsLabel)
+        
         
     }
+    
+    
     
     
     
