@@ -23,7 +23,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var armor = 1
     let shieldsLabel = SKLabelNode(fontNamed: "silom")
     var shields = 3
-
+    var alive = true
+    
+    // Seconds elapsed since last action
+    var timeSinceLastAction = TimeInterval(0)
+    
+    // Seconds before performing next action. Choose a default value
+    var timeUntilNextAction = TimeInterval(2)
+    
     let fuelLabel = SKLabelNode(fontNamed: "silom")
     let creditsLabel = SKLabelNode(fontNamed: "silom")
     
@@ -81,8 +88,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gravField.strength = 2
         addChild(gravField);
         
-        
-        //Scrolling Background
+        //Background
         backgroundColor = SKColor.black
         
         //Add Ship
@@ -121,7 +127,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         fuelLabel.horizontalAlignmentMode = .left
         fuelLabel.verticalAlignmentMode = .bottom
         fuelLabel.position = CGPoint(
-            x: playableRect.size.width/3,
+            x: -playableRect.size.width/2,
             y: playableRect.size.height/2 - CGFloat(40))
         cameraNode.addChild(fuelLabel)
      
@@ -133,7 +139,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         armorLabel.horizontalAlignmentMode = .left
         armorLabel.verticalAlignmentMode = .bottom
         armorLabel.position = CGPoint(
-            x: playableRect.size.width/3,
+            x: -playableRect.size.width/2,
             y: playableRect.size.height/2 - CGFloat(80))
         cameraNode.addChild(armorLabel)
         
@@ -144,7 +150,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         shieldsLabel.horizontalAlignmentMode = .left
         shieldsLabel.verticalAlignmentMode = .bottom
         shieldsLabel.position = CGPoint(
-            x: playableRect.size.width/3,
+            x: -playableRect.size.width/2,
             y: playableRect.size.height/2 - CGFloat(120))
         cameraNode.addChild(shieldsLabel)
         
@@ -175,6 +181,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         } else {
             dt = 0 }
         lastUpdateTime = currentTime
+
+        timeSinceLastAction += dt
+        
+        if timeSinceLastAction >= timeUntilNextAction {
+            
+        // perform your action
+            if shields < 1 && alive == true {
+            //sirens
+            run(SKAction.playSoundFileNamed("sfx_movement_portal4.wav", waitForCompletion: false))
+            let colorOn = SKAction.colorize(with: SKColor.red, colorBlendFactor: 1, duration: 0.1)
+            let colorOff = SKAction.colorize(with: SKColor.white, colorBlendFactor: 1, duration: 0.7)
+            let actions = [colorOn, colorOff]
+            ship.run(SKAction.sequence(actions))
+            }
+            
+        // reset
+        timeSinceLastAction = TimeInterval(0)
+        //Seconds until next action
+        timeUntilNextAction = 1
+        }
+        
         rotate(sprite: ship, direction: velocity, rotateRadiansPerSec: shipRotateRadiansPerSec)
         
         //move parallax
@@ -226,10 +253,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 } else {
                     run(SKAction.playSoundFileNamed("sfx_sounds_falling8.wav",
                                                     waitForCompletion: false))
-                    print(unwrappedShip.velocity.dx)
-                    print(unwrappedShip.velocity.dy)
                     landShip()
-                    
                 }
             }
         }
@@ -252,7 +276,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let touchLocation = touch.location(in: self)
         sceneTouched(touchLocation: touchLocation)
-
     }
     
     func rotate(sprite: SKSpriteNode, direction: CGPoint, rotateRadiansPerSec: CGFloat) {
@@ -362,6 +385,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 let bombBlast = explosion(intensity: 0.6)
                 bombBlast.position = contact.contactPoint
                 addChild(bombBlast)
+                alive = false
 
             } else {
                 triggerShield(contactPoint: contact.contactPoint, contactNormal: contact.contactNormal)
