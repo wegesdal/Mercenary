@@ -176,12 +176,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             y: playableRect.size.height/2 - CGFloat(120))
         cameraNode.addChild(shieldsLabel)
         
+        // Add Starfield with 3 emitterNodes for a parallax effect
+        // - Stars in top layer: light, fast, big
+        // - ...
+        // - Stars in back layer: dark, slow, small
+        var emitterNode = starfieldEmitter(color: SKColor.lightGray, starSpeedY: 50, starsPerSecond: 1, starScaleFactor: 0.2)
+        emitterNode.name = "topNode"
+        emitterNode.zPosition = 10
+        cameraNode.addChild(emitterNode)
         
+        emitterNode = starfieldEmitter(color: SKColor.gray, starSpeedY: 30, starsPerSecond: 2, starScaleFactor: 0.1)
+        emitterNode.name = "midNode"
+        emitterNode.zPosition = 11
+        cameraNode.addChild(emitterNode)
+        
+        emitterNode = starfieldEmitter(color: SKColor.darkGray, starSpeedY: 15, starsPerSecond: 4, starScaleFactor: 0.05)
+        emitterNode.name = "botNode"
+        emitterNode.zPosition = 12
+        cameraNode.addChild(emitterNode)
+
     }
-    
-    
-    
-    
     
     override func update(_ currentTime: TimeInterval) {
         if lastUpdateTime > 0 {
@@ -190,6 +204,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             dt = 0 }
         lastUpdateTime = currentTime
         rotate(sprite: ship, direction: velocity, rotateRadiansPerSec: shipRotateRadiansPerSec)
+        
+        //move parallax
+        cameraNode.childNode(withName: "topNode")?.position.x = ship.position.x/4
+        cameraNode.childNode(withName: "topNode")?.position.y = ship.position.y/4
+        cameraNode.childNode(withName: "midNode")?.position.x = ship.position.x/6
+        cameraNode.childNode(withName: "midNode")?.position.y = ship.position.y/6
+        cameraNode.childNode(withName: "botNode")?.position.x = ship.position.x/8
+        cameraNode.childNode(withName: "botNode")?.position.y = ship.position.y/8
         
         var shipAnimationIndex = Int(2.5 + 2*ship.zRotation/π)
         if shipAnimationIndex >= 4 {
@@ -300,6 +322,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 }
     
     func moveCamera() {
+            
+            
         cameraNode.position = ship.position
         enumerateChildNodes(withName: "background") { node, _ in
             let background = node as! SKSpriteNode
@@ -473,6 +497,31 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         emitter.particleBlendMode = SKBlendMode.add
         emitter.run(SKAction.removeFromParentAfterDelay(2.0))
         return emitter
+    }
+    
+    func starfieldEmitter(color: SKColor, starSpeedY: CGFloat, starsPerSecond: CGFloat, starScaleFactor: CGFloat) -> SKEmitterNode {
+        
+        // Determine the time a star is visible on screen
+        let lifetime =  frame.size.height * UIScreen.main.scale / starSpeedY
+        
+        // Create the emitter node
+        let emitterNode = SKEmitterNode()
+        emitterNode.particleTexture = SKTexture(imageNamed: "Star")
+        emitterNode.particleBirthRate = starsPerSecond
+        emitterNode.particleColor = SKColor.lightGray
+        emitterNode.particleSpeed = starSpeedY * -1
+        emitterNode.particleScale = starScaleFactor
+        emitterNode.particleColorBlendFactor = 1
+        emitterNode.particleLifetime = lifetime
+        
+        // Position in the middle at top of the screen
+        emitterNode.position = CGPoint(x: frame.size.width/2, y: frame.size.height)
+        emitterNode.particlePositionRange = CGVector(dx: frame.size.width, dy: 0)
+        
+        // Fast forward the effect to start with a filled screen
+        emitterNode.advanceSimulationTime(TimeInterval(lifetime))
+        
+        return emitterNode
     }
 }
 
