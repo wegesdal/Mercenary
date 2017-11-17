@@ -84,8 +84,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.gravity = CGVector(dx:0, dy: 0);
         let gravField = SKFieldNode.radialGravityField(); // Create grav field
         gravField.position = planet.position
-        gravField.falloff = 1
-        gravField.strength = 2
+        gravField.falloff = 0.7
+        gravField.strength = 3
         addChild(gravField);
         
         //Background
@@ -127,10 +127,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         fuelLabel.horizontalAlignmentMode = .left
         fuelLabel.verticalAlignmentMode = .bottom
         fuelLabel.position = CGPoint(
-            x: -playableRect.size.width/2,
+            x: -playableRect.size.width/2 + 40,
             y: playableRect.size.height/2 - CGFloat(40))
         cameraNode.addChild(fuelLabel)
-     
         
         armorLabel.text = "Armor: \(armor)"
         armorLabel.fontColor = SKColor.white
@@ -139,8 +138,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         armorLabel.horizontalAlignmentMode = .left
         armorLabel.verticalAlignmentMode = .bottom
         armorLabel.position = CGPoint(
-            x: -playableRect.size.width/2,
-            y: playableRect.size.height/2 - CGFloat(80))
+            x: -playableRect.size.width/2 + 220,
+            y: playableRect.size.height/2 - CGFloat(40))
         cameraNode.addChild(armorLabel)
         
         shieldsLabel.text = "Shields: \(shields)"
@@ -150,8 +149,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         shieldsLabel.horizontalAlignmentMode = .left
         shieldsLabel.verticalAlignmentMode = .bottom
         shieldsLabel.position = CGPoint(
-            x: -playableRect.size.width/2,
-            y: playableRect.size.height/2 - CGFloat(120))
+            x: -playableRect.size.width/2 + 420,
+            y: playableRect.size.height/2 - CGFloat(40))
         cameraNode.addChild(shieldsLabel)
         
         // Add Starfield with 3 emitterNodes for a parallax effect
@@ -237,7 +236,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let intensity : CGFloat = 10000.0 // put your value
         let xv = intensity * CGFloat(cosf(calcRotation))
         let yv = intensity * CGFloat(sinf(calcRotation))
-        let vector = CGVector(dx: -xv, dy: -yv)
+        let vector = CGVector(dx: -xv/2.5, dy: -yv/2.5)
         
         // apply force to spaceship
         ship.physicsBody?.applyForce(vector)
@@ -248,7 +247,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if planet.contains(touchLocation) && planet.contains(ship.position) {
             if let unwrappedShip = ship.physicsBody {
                 if abs(unwrappedShip.velocity.dx) > 100 {
-                    run(SKAction.playSoundFileNamed("sfx_movement_portal4.wav",
+                    run(SKAction.playSoundFileNamed("sfx_sounds_error13.wav",
                                                     waitForCompletion: false))
                 } else {
                     run(SKAction.playSoundFileNamed("sfx_sounds_falling8.wav",
