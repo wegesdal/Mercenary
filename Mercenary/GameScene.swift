@@ -84,34 +84,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //Scrolling Background
         backgroundColor = SKColor.black
-
-        for i in 0...1 {
-            let background = backgroundNode()
-            background.anchorPoint = CGPoint.zero
-            background.position =
-                CGPoint(x: CGFloat(i)*background.size.width, y: 0)
-            background.name = "background"
-            background.zPosition = -20
-            addChild(background)
-        }
-        for i in 0...1 {
-            let background = backgroundNode()
-            background.anchorPoint = CGPoint.zero
-            background.position =
-                CGPoint(x: 0, y: CGFloat(i)*background.size.height)
-            background.name = "background"
-            background.zPosition = -20
-            addChild(background)
-        }
-        for i in 0...1 {
-            let background = backgroundNode()
-            background.anchorPoint = CGPoint.zero
-            background.position =
-                CGPoint(x: CGFloat(i)*background.size.width, y: CGFloat(i)*background.size.height)
-            background.name = "background"
-            background.zPosition = -20
-            addChild(background)
-        }
         
         //Add Ship
         ship.physicsBody = SKPhysicsBody(circleOfRadius: max(ship.size.width / 2, ship.size.height / 2))
@@ -289,58 +261,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         sprite.zRotation += shortest.sign() * amountToRotate
     }
     
-    func backgroundNode() -> SKSpriteNode {
-
-        let backgroundNode = SKSpriteNode()
-        backgroundNode.anchorPoint = CGPoint.zero
-        backgroundNode.name = "background"
-        
-        let background1 = SKSpriteNode(texture: atlas.textureNamed("space.png"))
-        background1.anchorPoint = CGPoint.zero
-        background1.position = CGPoint(x: 0, y: 0)
-        backgroundNode.addChild(background1)
-        
-        let background2 = SKSpriteNode(texture: atlas.textureNamed("space.png"))
-        background2.anchorPoint = CGPoint.zero
-        background2.position = CGPoint(x: background1.size.width, y: 0)
-        backgroundNode.addChild(background2)
-        
-        let background3 = SKSpriteNode(texture: atlas.textureNamed("space.png"))
-        background3.anchorPoint = CGPoint.zero
-        background3.position = CGPoint(x: 0, y: background1.size.height)
-        backgroundNode.addChild(background3)
-        
-        let background4 = SKSpriteNode(texture: atlas.textureNamed("space.png"))
-        background4.anchorPoint = CGPoint.zero
-        background4.position = CGPoint(x: background1.size.width, y: background1.size.height)
-        backgroundNode.addChild(background4)
-        
-        backgroundNode.size = CGSize(
-            width: background1.size.width*2,
-            height: background1.size.height*2)
-        return backgroundNode
-}
-    
     func moveCamera() {
-            
-            
         cameraNode.position = ship.position
-        enumerateChildNodes(withName: "background") { node, _ in
-            let background = node as! SKSpriteNode
-            if background.position.x + background.size.width < self.cameraRect.origin.x {
-                background.position = CGPoint(x: background.position.x + background.size.width*2, y: background.position.y)
-            }
-            if background.position.x - background.size.width > self.cameraRect.origin.x {
-                background.position = CGPoint(x: background.position.x - background.size.width*2, y: background.position.y)
-            }
-            if background.position.y + background.size.height < self.cameraRect.origin.y {
-                background.position = CGPoint(x: background.position.x, y: background.position.y + background.size.height*2)
-            }
-            if background.position.y - background.size.height > self.cameraRect.origin.y {
-                background.position = CGPoint(x: background.position.x, y: background.position.y - background.size.height*2)
-            }
-
-        }
     }
     
     func spawnAsteroid() {
