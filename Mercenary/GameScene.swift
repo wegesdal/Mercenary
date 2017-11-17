@@ -91,7 +91,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             background.position =
                 CGPoint(x: CGFloat(i)*background.size.width, y: 0)
             background.name = "background"
-            background.zPosition = -2
+            background.zPosition = -20
             addChild(background)
         }
         for i in 0...1 {
@@ -100,7 +100,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             background.position =
                 CGPoint(x: 0, y: CGFloat(i)*background.size.height)
             background.name = "background"
-            background.zPosition = -2
+            background.zPosition = -20
             addChild(background)
         }
         for i in 0...1 {
@@ -109,7 +109,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             background.position =
                 CGPoint(x: CGFloat(i)*background.size.width, y: CGFloat(i)*background.size.height)
             background.name = "background"
-            background.zPosition = -2
+            background.zPosition = -20
             addChild(background)
         }
         
@@ -180,19 +180,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // - Stars in top layer: light, fast, big
         // - ...
         // - Stars in back layer: dark, slow, small
-        var emitterNode = starfieldEmitter(color: SKColor.lightGray, starSpeedY: 50, starsPerSecond: 1, starScaleFactor: 0.2)
+        var emitterNode = starfieldEmitter(color: SKColor.lightGray, starSpeedY: 9, starsPerSecond: 1, starScaleFactor: 0.2)
         emitterNode.name = "topNode"
-        emitterNode.zPosition = 10
+        emitterNode.zPosition = -10
         cameraNode.addChild(emitterNode)
         
-        emitterNode = starfieldEmitter(color: SKColor.gray, starSpeedY: 30, starsPerSecond: 2, starScaleFactor: 0.1)
+        emitterNode = starfieldEmitter(color: SKColor.gray, starSpeedY: 6, starsPerSecond: 2, starScaleFactor: 0.1)
         emitterNode.name = "midNode"
-        emitterNode.zPosition = 11
+        emitterNode.zPosition = -11
         cameraNode.addChild(emitterNode)
         
-        emitterNode = starfieldEmitter(color: SKColor.darkGray, starSpeedY: 15, starsPerSecond: 4, starScaleFactor: 0.05)
+        emitterNode = starfieldEmitter(color: SKColor.darkGray, starSpeedY: 3, starsPerSecond: 4, starScaleFactor: 0.05)
         emitterNode.name = "botNode"
-        emitterNode.zPosition = 12
+        emitterNode.zPosition = -12
         cameraNode.addChild(emitterNode)
 
     }
@@ -206,12 +206,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         rotate(sprite: ship, direction: velocity, rotateRadiansPerSec: shipRotateRadiansPerSec)
         
         //move parallax
-        cameraNode.childNode(withName: "topNode")?.position.x = ship.position.x/4
-        cameraNode.childNode(withName: "topNode")?.position.y = ship.position.y/4
-        cameraNode.childNode(withName: "midNode")?.position.x = ship.position.x/6
-        cameraNode.childNode(withName: "midNode")?.position.y = ship.position.y/6
-        cameraNode.childNode(withName: "botNode")?.position.x = ship.position.x/8
-        cameraNode.childNode(withName: "botNode")?.position.y = ship.position.y/8
+        cameraNode.childNode(withName: "topNode")?.position.x = -ship.position.x/12
+        cameraNode.childNode(withName: "topNode")?.position.y = -ship.position.y/12
+        cameraNode.childNode(withName: "midNode")?.position.x = -ship.position.x/24
+        cameraNode.childNode(withName: "midNode")?.position.y = -ship.position.y/24
+        cameraNode.childNode(withName: "botNode")?.position.x = -ship.position.x/36
+        cameraNode.childNode(withName: "botNode")?.position.y = -ship.position.y/36
         
         var shipAnimationIndex = Int(2.5 + 2*ship.zRotation/π)
         if shipAnimationIndex >= 4 {
@@ -516,7 +516,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // Position in the middle at top of the screen
         emitterNode.position = CGPoint(x: frame.size.width/2, y: frame.size.height)
-        emitterNode.particlePositionRange = CGVector(dx: frame.size.width, dy: 0)
+        emitterNode.particlePositionRange = CGVector(dx: frame.size.width*3, dy: frame.size.height*3)
         
         // Fast forward the effect to start with a filled screen
         emitterNode.advanceSimulationTime(TimeInterval(lifetime))
