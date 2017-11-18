@@ -240,8 +240,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let vector = CGVector(dx: -xv/2.5, dy: -yv/2.5)
         
         // apply force to spaceship
-        print(ship.zRotation)
-        let engineTrail = engine(intensity: 0.3, angle: -π, color: SKColor.red)
+        let engineTrail = engine(intensity: 0.1, angle: π, color: SKColor.red)
         ship.addChild(engineTrail)
         ship.physicsBody?.applyForce(vector)
     }
@@ -431,22 +430,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let particleTexture = SKTexture(imageNamed: "spark")
         emitter.zPosition = -2
         emitter.particleTexture = particleTexture
-        emitter.particleBirthRate = 4000 * intensity
-        emitter.numParticlesToEmit = Int(400 * intensity)
-        emitter.particleLifetime = 2.0
+        emitter.particleBirthRate = 8000 * intensity
+        emitter.numParticlesToEmit = Int(1000 * intensity)
+        emitter.particleLifetime = 0.125
         emitter.emissionAngle = angle
-        emitter.emissionAngleRange = CGFloat(0.05)
-        emitter.particleSpeed = 600 * intensity
+        emitter.emissionAngleRange = CGFloat(0.3)
+        emitter.particleSpeed = 3600 * intensity
         emitter.particleSpeedRange = 1000 * intensity
         emitter.particleAlpha = 1.0
         emitter.particleAlphaRange = 0.25
-        emitter.particleScale = 0.5
+        emitter.particleScale = 0.2
         emitter.particleScaleRange = 0.3
         emitter.particleScaleSpeed = -1.5
         emitter.particleColor = color
         emitter.particleColorBlendFactor = 1
         emitter.particleBlendMode = SKBlendMode.add
-        emitter.run(SKAction.removeFromParentAfterDelay(2.0))
+        emitter.run(SKAction.removeFromParentAfterDelay(0.125))
         return emitter
     }
     
