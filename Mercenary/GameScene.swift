@@ -19,6 +19,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let shipRotateRadiansPerSec: CGFloat = 4.0*π
     var shipTextures:[SKTexture] = []
     let playableRect: CGRect
+    var svector: CGVector = CGVector(dx: 0, dy: 0)
     let armorLabel = SKLabelNode(fontNamed: "silom")
     var armor = 1
     let shieldsLabel = SKLabelNode(fontNamed: "silom")
@@ -50,7 +51,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             height: playableRect.height)
     }
     
-    
     override init(size: CGSize) {
 
         let maxAspectRatio:CGFloat = 16.0/9.0 // 1
@@ -59,8 +59,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         playableRect = CGRect(x: 0, y: playableMargin,
                               width: size.width,
                               height: playableHeight) // 4
-
-        
         super.init(size: size)
     }
     
@@ -248,12 +246,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let intensity : CGFloat = 10000.0 // put your value
         let xv = intensity * CGFloat(cosf(calcRotation))
         let yv = intensity * CGFloat(sinf(calcRotation))
-        let vector = CGVector(dx: -xv/2.5, dy: -yv/2.5)
+        svector = CGVector(dx: -xv/2.5, dy: -yv/2.5)
         
         // apply force to spaceship
         let engineTrail = engine(intensity: 0.1, angle: π, color: SKColor.red)
         ship.addChild(engineTrail)
-        ship.physicsBody?.applyForce(vector)
+        ship.physicsBody?.applyForce(svector)
     }
     
     func sceneTouched(touchLocation:CGPoint) {
@@ -412,7 +410,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
 
     
-    // MARK: - Particles
+    // MARK: Particles
 
     func explosion(intensity: CGFloat, color: SKColor) -> SKEmitterNode {
         let emitter = SKEmitterNode()
@@ -487,6 +485,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         return emitterNode
     }
     
+    //MARK: Gestures
+    
     func shake() {
         print("Shake")
         run(SKAction.playSoundFileNamed("sfx_wpn_laser11.wav",
@@ -495,27 +495,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     @objc func tappedView(_ sender:UITapGestureRecognizer) {
-        
         let point:CGPoint = sender.location(in: self.view)
-        
         print("Single tap")
-        
         print(point)
         
     }
     
     // what gets called when there's a double tap...
-    
     //notice the sender is a parameter. This is why we added (_:) that part to the selector earlier
     
     @objc func tappedView2(_ sender:UITapGestureRecognizer) {
-        
         let point:CGPoint = sender.location(in: self.view)
-        
         print("Double tap")
-        
         print(point)
-        
+        let projectile = SKSpriteNode(texture: SKTexture(imageNamed: "Star"))
+        projectile.physicsBody = SKPhysicsBody(circleOfRadius: max(projectile.size.width / 2, projectile.size.height / 2))
+        projectile.position = ship.position
+        addChild(projectile)
+        projectile.physicsBody?.applyForce(svector)
     }
 }
 
