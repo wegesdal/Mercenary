@@ -24,7 +24,15 @@ class GameViewController: UIViewController {
         skView.ignoresSiblingOrder = true
         scene.scaleMode = .aspectFill
         skView.presentScene(scene)
+        skView.isMultipleTouchEnabled = true
         
+    }
+    override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            if let skView = view as? SKView, let scene = skView.scene as? GameScene {
+                scene.shake()
+            }
+        }
     }
     override var prefersStatusBarHidden: Bool {
         return true

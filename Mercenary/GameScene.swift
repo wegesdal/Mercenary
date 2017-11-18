@@ -24,6 +24,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let shieldsLabel = SKLabelNode(fontNamed: "silom")
     var shields = 3
     var alive = true
+    let tapRec = UITapGestureRecognizer()
+    let tapRec2 = UITapGestureRecognizer()
     
     // Seconds elapsed since last action
     var timeSinceLastAction = TimeInterval(0)
@@ -57,12 +59,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         playableRect = CGRect(x: 0, y: playableMargin,
                               width: size.width,
                               height: playableHeight) // 4
-        
-        ship.name = "ship"
-        shipTextures.append(atlas.textureNamed("model_S.png"));
-        shipTextures.append(atlas.textureNamed("model_E.png"));
-        shipTextures.append(atlas.textureNamed("model_N.png"));
-        shipTextures.append(atlas.textureNamed("model_W.png"))
+
         
         super.init(size: size)
     }
@@ -73,6 +70,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     override func didMove(to view: SKView) {
+        tapRec.addTarget(self, action:#selector(GameScene.tappedView(_:) ))
+        tapRec.numberOfTouchesRequired = 1
+        tapRec.numberOfTapsRequired = 1
+        self.view!.addGestureRecognizer(tapRec)
+        
+        
+        tapRec2.addTarget(self, action:#selector(GameScene.tappedView2(_:) ))
+        tapRec2.numberOfTouchesRequired = 1
+        tapRec2.numberOfTapsRequired = 2  //2 taps instead of 1 this time
+        self.view!.addGestureRecognizer(tapRec2)
+        
+        //Add Ship
+        ship.name = "ship"
+        shipTextures.append(atlas.textureNamed("model_S.png"));
+        shipTextures.append(atlas.textureNamed("model_E.png"));
+        shipTextures.append(atlas.textureNamed("model_N.png"));
+        shipTextures.append(atlas.textureNamed("model_W.png"))
         
         //Add Planet
         planet.name = "planet"
@@ -107,9 +121,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         run(SKAction.repeatForever(SKAction.sequence([SKAction.run() { [weak self] in self?.spawnAsteroid()}, SKAction.wait(forDuration: 3.0)])))
         
         //Add UIElements
-
-
-        
         creditsLabel.text = "Credits: \(GameViewController.credits)"
         creditsLabel.fontColor = SKColor.white
         creditsLabel.fontSize = 36
@@ -399,6 +410,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+
+    
     // MARK: - Particles
 
     func explosion(intensity: CGFloat, color: SKColor) -> SKEmitterNode {
@@ -472,6 +485,37 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         emitterNode.advanceSimulationTime(TimeInterval(lifetime))
         
         return emitterNode
+    }
+    
+    func shake() {
+        print("Shake")
+        run(SKAction.playSoundFileNamed("sfx_wpn_laser11.wav",
+                                        waitForCompletion: false))
+        
+    }
+    
+    @objc func tappedView(_ sender:UITapGestureRecognizer) {
+        
+        let point:CGPoint = sender.location(in: self.view)
+        
+        print("Single tap")
+        
+        print(point)
+        
+    }
+    
+    // what gets called when there's a double tap...
+    
+    //notice the sender is a parameter. This is why we added (_:) that part to the selector earlier
+    
+    @objc func tappedView2(_ sender:UITapGestureRecognizer) {
+        
+        let point:CGPoint = sender.location(in: self.view)
+        
+        print("Double tap")
+        
+        print(point)
+        
     }
 }
 
