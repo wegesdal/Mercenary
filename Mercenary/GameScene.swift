@@ -79,7 +79,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         planet.texture!.filteringMode = .nearest
         planet.setScale(5.0)
         planet.position = (CGPoint(x:0, y:0))
-        planet.zPosition = -1
+        planet.zPosition = -4
         addChild(planet)
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVector(dx:0, dy: 0);
