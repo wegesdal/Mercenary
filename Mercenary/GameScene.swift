@@ -249,7 +249,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         svector = CGVector(dx: -xv/2.5, dy: -yv/2.5)
         
         // apply force to spaceship
-        let engineTrail = engine(intensity: 0.1, angle: π, color: SKColor.red)
+        let engineTrail = engineEmitter(intensity: 0.1, angle: π, color: SKColor.red)
         ship.addChild(engineTrail)
         ship.physicsBody?.applyForce(svector)
     }
@@ -377,7 +377,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
      func triggerShield(contactPoint:CGPoint, contactNormal:CGVector) {
         ship.physicsBody?.applyImpulse(contactNormal)
-        let shieldBlast = explosion(intensity: 0.3, color: SKColor.green)
+        let shieldBlast = explosionEmitter(intensity: 0.3, color: SKColor.green)
         shieldBlast.position = contactPoint
         addChild(shieldBlast)
     }
@@ -392,9 +392,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 spawnScrap(contactPoint: contact.contactPoint, contactNormal: contact.contactNormal)
                 run(SKAction.playSoundFileNamed("sfx_exp_odd4.wav", waitForCompletion: false))
                 contact.bodyA.node?.removeFromParent()
-                let bombBlast = explosion(intensity: 1.2, color: SKColor.orange)
-                bombBlast.position = contact.contactPoint
-                addChild(bombBlast)
+                let explosion = explosionEmitter(intensity: 1.2, color: SKColor.orange)
+                explosion.position = contact.contactPoint
+                addChild(explosion)
                 alive = false
 
             } else {
@@ -405,11 +405,32 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         } else if contact.bodyB.node?.name == "asteroid" {
         }
+        if contact.bodyA.node?.name == "projectile" {
+            for _ in 0...2 {
+                spawnChips(contactPoint: contact.contactPoint, contactNormal: contact.contactNormal)
+                contact.bodyB.node?.removeFromParent()
+            }
+            run(SKAction.playSoundFileNamed("sfx_exp_shortest_hard5.wav", waitForCompletion: false))
+            contact.bodyA.node?.removeFromParent()
+            let explosion = explosionEmitter(intensity: 1.2, color: SKColor.orange)
+            explosion.position = contact.contactPoint
+            addChild(explosion)
+        } else if contact.bodyB.node?.name == "projectile" {
+            for _ in 0...2 {
+                spawnChips(contactPoint: contact.contactPoint, contactNormal: contact.contactNormal)
+                contact.bodyA.node?.removeFromParent()
+            }
+            run(SKAction.playSoundFileNamed("sfx_exp_shortest_hard5.wav", waitForCompletion: false))
+            contact.bodyB.node?.removeFromParent()
+            let explosion = explosionEmitter(intensity: 1.2, color: SKColor.orange)
+            explosion.position = contact.contactPoint
+            addChild(explosion)
+        }
     }
 
     // MARK: Particles
 
-    func explosion(intensity: CGFloat, color: SKColor) -> SKEmitterNode {
+    func explosionEmitter(intensity: CGFloat, color: SKColor) -> SKEmitterNode {
         let emitter = SKEmitterNode()
         let particleTexture = SKTexture(imageNamed: "spark")
         emitter.zPosition = 2
@@ -433,7 +454,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         return emitter
     }
     
-    func engine(intensity: CGFloat, angle: CGFloat, color: SKColor) -> SKEmitterNode {
+    func engineEmitter(intensity: CGFloat, angle: CGFloat, color: SKColor) -> SKEmitterNode {
         let emitter = SKEmitterNode()
         let particleTexture = SKTexture(imageNamed: "spark")
         emitter.zPosition = -2
@@ -505,23 +526,29 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let point:CGPoint = sender.location(in: self.view)
         print("Double tap")
         print(point)
-        let projectile = SKSpriteNode(texture: SKTexture(imageNamed: "Star"))
-        projectile.physicsBody = SKPhysicsBody(circleOfRadius: max(projectile.size.width / 2, projectile.size.height / 2))
-        projectile.position = ship.position
-        projectile.zPosition = -3
-        projectile.physicsBody?.mass = 0.3
-        projectile.physicsBody?.categoryBitMask = 0b0001
-        projectile.physicsBody?.collisionBitMask = 0b0001
-        ship.physicsBody?.categoryBitMask = 0b0010
-        ship.physicsBody?.collisionBitMask = 0b0010
-        addChild(projectile)
-        ship.physicsBody?.applyImpulse(CGVector(dx: -0.2 * svector.dx, dy: -0.2 * svector.dy))
-        projectile.physicsBody?.applyImpulse(CGVector(dx: 0.2 * svector.dx, dy: 0.2 * svector.dy))
-        //projectile.physicsBody?.applyImpulse(svector)
-        let wait = SKAction.wait(forDuration: 10.0)
-        let removeFromParent = SKAction.removeFromParent()
-        let actions = [wait, removeFromParent]
-        projectile.run(SKAction.sequence(actions))
+        if alive == true {
+            let projectile = SKSpriteNode(texture: SKTexture(imageNamed: "spark"))
+            projectile.name = "projectile"
+            projectile.physicsBody = SKPhysicsBody(circleOfRadius: max(projectile.size.width / 2, projectile.size.height / 2))
+            projectile.position = ship.position
+            projectile.zPosition = -3
+            projectile.setScale(0.4)
+            projectile.physicsBody?.mass = 0.3
+            projectile.physicsBody?.categoryBitMask = 0b0001
+            projectile.physicsBody?.collisionBitMask = 0b0001
+            ship.physicsBody?.categoryBitMask = 0b0010
+            ship.physicsBody?.collisionBitMask = 0b0010
+            run(SKAction.playSoundFileNamed("sfx_wpn_laser11.wav",
+                                            waitForCompletion: false))
+            addChild(projectile)
+            ship.physicsBody?.applyImpulse(CGVector(dx: -0.2 * svector.dx, dy: -0.2 * svector.dy))
+            projectile.physicsBody?.applyImpulse(CGVector(dx: 0.2 * svector.dx, dy: 0.2 * svector.dy))
+            //projectile.physicsBody?.applyImpulse(svector)
+            let wait = SKAction.wait(forDuration: 10.0)
+            let removeFromParent = SKAction.removeFromParent()
+            let actions = [wait, removeFromParent]
+            projectile.run(SKAction.sequence(actions))
+        }
     }
 }
 
