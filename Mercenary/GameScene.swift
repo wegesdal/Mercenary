@@ -10,7 +10,7 @@ import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     let atlas = SKTextureAtlas(named: "atlas")
-    let planet = SKSpriteNode(imageNamed:"planet")
+    let planet = SKSpriteNode(imageNamed:"DemeterP.gif")
     let ship = SKSpriteNode(imageNamed:"model_N.png")
     var lastUpdateTime: TimeInterval = 0
     var dt: TimeInterval = 0
@@ -76,7 +76,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //Add Planet
         planet.name = "planet"
-        planet.setScale(1.0)
+        planet.texture!.filteringMode = .nearest
+        planet.setScale(5.0)
         planet.position = (CGPoint(x:0, y:0))
         planet.zPosition = -1
         addChild(planet)
@@ -239,6 +240,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let vector = CGVector(dx: -xv/2.5, dy: -yv/2.5)
         
         // apply force to spaceship
+        print(ship.zRotation)
+        let engineTrail = engine(intensity: 0.3, angle: -π, color: SKColor.red)
+        ship.addChild(engineTrail)
         ship.physicsBody?.applyForce(vector)
     }
     
@@ -365,7 +369,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
      func triggerShield(contactPoint:CGPoint, contactNormal:CGVector) {
         ship.physicsBody?.applyImpulse(contactNormal)
-        let shieldBlast = shieldSplosion(intensity: 0.2)
+        let shieldBlast = explosion(intensity: 0.3, color: SKColor.green)
         shieldBlast.position = contactPoint
         addChild(shieldBlast)
     }
@@ -381,7 +385,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 spawnScrap(contactPoint: contact.contactPoint, contactNormal: contact.contactNormal)
                 run(SKAction.playSoundFileNamed("sfx_exp_odd4.wav", waitForCompletion: false))
                 contact.bodyA.node?.removeFromParent()
-                let bombBlast = explosion(intensity: 0.6)
+                let bombBlast = explosion(intensity: 1.2, color: SKColor.orange)
                 bombBlast.position = contact.contactPoint
                 addChild(bombBlast)
                 alive = false
@@ -397,7 +401,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     // MARK: - Particles
-    func explosion(intensity: CGFloat) -> SKEmitterNode {
+
+    func explosion(intensity: CGFloat, color: SKColor) -> SKEmitterNode {
         let emitter = SKEmitterNode()
         let particleTexture = SKTexture(imageNamed: "spark")
         emitter.zPosition = 2
@@ -411,33 +416,34 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         emitter.particleSpeedRange = 1000 * intensity
         emitter.particleAlpha = 1.0
         emitter.particleAlphaRange = 0.25
-        emitter.particleScale = 1.2
-        emitter.particleScaleRange = 2.0
+        emitter.particleScale = 0.5
+        emitter.particleScaleRange = 0.3
         emitter.particleScaleSpeed = -1.5
-        emitter.particleColor = SKColor.orange
+        emitter.particleColor = color
         emitter.particleColorBlendFactor = 1
         emitter.particleBlendMode = SKBlendMode.add
         emitter.run(SKAction.removeFromParentAfterDelay(2.0))
         return emitter
     }
-    func shieldSplosion(intensity: CGFloat) -> SKEmitterNode {
+    
+    func engine(intensity: CGFloat, angle: CGFloat, color: SKColor) -> SKEmitterNode {
         let emitter = SKEmitterNode()
-        let particleTexture = SKTexture(imageNamed: "shield")
-        emitter.zPosition = 2
+        let particleTexture = SKTexture(imageNamed: "spark")
+        emitter.zPosition = -2
         emitter.particleTexture = particleTexture
         emitter.particleBirthRate = 4000 * intensity
-        emitter.numParticlesToEmit = Int(240 * intensity)
+        emitter.numParticlesToEmit = Int(400 * intensity)
         emitter.particleLifetime = 2.0
-        emitter.emissionAngle = CGFloat(π/2)
-        emitter.emissionAngleRange = CGFloat(π)
+        emitter.emissionAngle = angle
+        emitter.emissionAngleRange = CGFloat(0.05)
         emitter.particleSpeed = 600 * intensity
         emitter.particleSpeedRange = 1000 * intensity
         emitter.particleAlpha = 1.0
         emitter.particleAlphaRange = 0.25
-        emitter.particleScale = 0.8
-        emitter.particleScaleRange = 2.0
+        emitter.particleScale = 0.5
+        emitter.particleScaleRange = 0.3
         emitter.particleScaleSpeed = -1.5
-        emitter.particleColor = SKColor.green
+        emitter.particleColor = color
         emitter.particleColorBlendFactor = 1
         emitter.particleBlendMode = SKBlendMode.add
         emitter.run(SKAction.removeFromParentAfterDelay(2.0))

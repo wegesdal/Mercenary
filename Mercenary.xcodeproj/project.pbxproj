@@ -28,6 +28,7 @@
 		F3B17DA71FBD74DB00C968BE /* sfx_coin_cluster3.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3B17DA61FBD74DB00C968BE /* sfx_coin_cluster3.wav */; };
 		F3B17DA91FBD770F00C968BE /* sfx_sound_poweron.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3B17DA81FBD770F00C968BE /* sfx_sound_poweron.wav */; };
 		F3B17DAB1FBD786400C968BE /* sfx_sounds_error13.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3B17DAA1FBD786400C968BE /* sfx_sounds_error13.wav */; };
+		F3B17EB31FBFDA9100C968BE /* DemeterP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3B17EB21FBFDA9000C968BE /* DemeterP.gif */; };
 		F3F340381FBB80CE003B9940 /* Silom.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3F340371FBB801C003B9940 /* Silom.ttf */; };
 		F3F3404E1FBBEED8003B9940 /* shipyard.png in Resources */ = {isa = PBXBuildFile; fileRef = F3F3404D1FBBEED8003B9940 /* shipyard.png */; };
 		F3F340501FBBF6A3003B9940 /* sfx_sounds_falling8.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3F3404F1FBBF6A2003B9940 /* sfx_sounds_falling8.wav */; };
@@ -58,6 +59,7 @@
 		F3B17DA61FBD74DB00C968BE /* sfx_coin_cluster3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_coin_cluster3.wav; sourceTree = "<group>"; };
 		F3B17DA81FBD770F00C968BE /* sfx_sound_poweron.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_sound_poweron.wav; sourceTree = "<group>"; };
 		F3B17DAA1FBD786400C968BE /* sfx_sounds_error13.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_sounds_error13.wav; sourceTree = "<group>"; };
+		F3B17EB21FBFDA9000C968BE /* DemeterP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = DemeterP.gif; path = ../../../Downloads/cosmics/Paired/DemeterP.gif; sourceTree = "<group>"; };
 		F3F340371FBB801C003B9940 /* Silom.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Silom.ttf; sourceTree = "<group>"; };
 		F3F3404D1FBBEED8003B9940 /* shipyard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shipyard.png; path = ../../Buttons/shipyard.png; sourceTree = "<group>"; };
 		F3F3404F1FBBF6A2003B9940 /* sfx_sounds_falling8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_sounds_falling8.wav; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				F3B17DA81FBD770F00C968BE /* sfx_sound_poweron.wav */,
 				F383A9941FB9929A00547838 /* sfx_deathscream_human3.wav */,
 				F3B17DAA1FBD786400C968BE /* sfx_sounds_error13.wav */,
+				F3B17EB21FBFDA9000C968BE /* DemeterP.gif */,
 				F363C0421FBAF6100073054B /* sfx_sound_mechanicalnoise6.wav */,
 				F3B17DA61FBD74DB00C968BE /* sfx_coin_cluster3.wav */,
 				F383A98E1FB9922500547838 /* sfx_exp_odd4.wav */,
@@ -193,6 +196,7 @@
 				F3F340381FBB80CE003B9940 /* Silom.ttf in Resources */,
 				F383A9951FB9929B00547838 /* sfx_deathscream_human3.wav in Resources */,
 				F3F340521FBBF6BF003B9940 /* sfx_movement_portal4.wav in Resources */,
+				F3B17EB31FBFDA9100C968BE /* DemeterP.gif in Resources */,
 				F383A98F1FB9922500547838 /* sfx_exp_odd4.wav in Resources */,
 				F3B17DAB1FBD786400C968BE /* sfx_sounds_error13.wav in Resources */,
 				F363C0431FBAF6110073054B /* sfx_sound_mechanicalnoise6.wav in Resources */,
