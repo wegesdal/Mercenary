@@ -249,7 +249,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         svector = CGVector(dx: -xv/2.5, dy: -yv/2.5)
         
         // apply force to spaceship
-        let engineTrail = engineEmitter(intensity: 0.1, angle: π, color: SKColor.red)
+        let engineTrail = trailEmitter(intensity: 0.1, angle: π, color: SKColor.red, duration: 0.125)
         ship.addChild(engineTrail)
         ship.physicsBody?.applyForce(svector)
     }
@@ -444,7 +444,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         emitter.particleSpeedRange = 1000 * intensity
         emitter.particleAlpha = 1.0
         emitter.particleAlphaRange = 0.25
-        emitter.particleScale = 0.5
+        emitter.particleScale = 0.2
         emitter.particleScaleRange = 0.3
         emitter.particleScaleSpeed = -1.5
         emitter.particleColor = color
@@ -454,14 +454,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         return emitter
     }
     
-    func engineEmitter(intensity: CGFloat, angle: CGFloat, color: SKColor) -> SKEmitterNode {
+    func trailEmitter(intensity: CGFloat, angle: CGFloat, color: SKColor, duration: CGFloat) -> SKEmitterNode {
         let emitter = SKEmitterNode()
         let particleTexture = SKTexture(imageNamed: "spark")
         emitter.zPosition = -2
         emitter.particleTexture = particleTexture
         emitter.particleBirthRate = 8000 * intensity
         emitter.numParticlesToEmit = Int(1000 * intensity)
-        emitter.particleLifetime = 0.125
+        emitter.particleLifetime = duration
         emitter.emissionAngle = angle
         emitter.emissionAngleRange = CGFloat(0.3)
         emitter.particleSpeed = 3600 * intensity
@@ -474,7 +474,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         emitter.particleColor = color
         emitter.particleColorBlendFactor = 1
         emitter.particleBlendMode = SKBlendMode.add
-        emitter.run(SKAction.removeFromParentAfterDelay(0.125))
+        emitter.run(SKAction.removeFromParentAfterDelay(0.35))
         return emitter
     }
     
@@ -509,14 +509,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         print("Shake")
         run(SKAction.playSoundFileNamed("sfx_wpn_laser11.wav",
                                         waitForCompletion: false))
-        
     }
     
     @objc func tappedView(_ sender:UITapGestureRecognizer) {
         let point:CGPoint = sender.location(in: self.view)
         print("Single tap")
         print(point)
-        
     }
     
     // what gets called when there's a double tap...
@@ -531,6 +529,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             projectile.name = "projectile"
             projectile.physicsBody = SKPhysicsBody(circleOfRadius: max(projectile.size.width / 2, projectile.size.height / 2))
             projectile.position = ship.position
+            projectile.zRotation = ship.zRotation
             projectile.zPosition = -3
             projectile.setScale(0.4)
             projectile.physicsBody?.mass = 0.3
@@ -541,10 +540,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             run(SKAction.playSoundFileNamed("sfx_wpn_laser11.wav",
                                             waitForCompletion: false))
             addChild(projectile)
+            let projectileTrail = trailEmitter(intensity: 0.4, angle: π, color: SKColor.green, duration: 10.0)
+            projectile.addChild(projectileTrail)
             ship.physicsBody?.applyImpulse(CGVector(dx: -0.2 * svector.dx, dy: -0.2 * svector.dy))
-            projectile.physicsBody?.applyImpulse(CGVector(dx: 0.2 * svector.dx, dy: 0.2 * svector.dy))
+            projectile.physicsBody?.applyImpulse(CGVector(dx: 0.1 * svector.dx, dy: 0.1 * svector.dy))
             //projectile.physicsBody?.applyImpulse(svector)
-            let wait = SKAction.wait(forDuration: 10.0)
+            let wait = SKAction.wait(forDuration: 1.0)
             let removeFromParent = SKAction.removeFromParent()
             let actions = [wait, removeFromParent]
             projectile.run(SKAction.sequence(actions))
