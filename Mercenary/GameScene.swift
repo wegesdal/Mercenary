@@ -382,7 +382,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(shieldBlast)
     }
     
-    
     func didBegin(_ contact: SKPhysicsContact) {
         if contact.bodyA.node?.name == "ship" {
             for _ in 0...2 {
@@ -407,9 +406,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         } else if contact.bodyB.node?.name == "asteroid" {
         }
     }
-    
 
-    
     // MARK: Particles
 
     func explosion(intensity: CGFloat, color: SKColor) -> SKEmitterNode {
@@ -511,8 +508,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let projectile = SKSpriteNode(texture: SKTexture(imageNamed: "Star"))
         projectile.physicsBody = SKPhysicsBody(circleOfRadius: max(projectile.size.width / 2, projectile.size.height / 2))
         projectile.position = ship.position
+        projectile.zPosition = -3
+        projectile.physicsBody?.mass = 0.3
+        projectile.physicsBody?.categoryBitMask = 0b0001
+        projectile.physicsBody?.collisionBitMask = 0b0001
+        ship.physicsBody?.categoryBitMask = 0b0010
+        ship.physicsBody?.collisionBitMask = 0b0010
         addChild(projectile)
-        projectile.physicsBody?.applyForce(svector)
+        ship.physicsBody?.applyImpulse(CGVector(dx: -0.2 * svector.dx, dy: -0.2 * svector.dy))
+        projectile.physicsBody?.applyImpulse(CGVector(dx: 0.2 * svector.dx, dy: 0.2 * svector.dy))
+        //projectile.physicsBody?.applyImpulse(svector)
+        let wait = SKAction.wait(forDuration: 10.0)
+        let removeFromParent = SKAction.removeFromParent()
+        let actions = [wait, removeFromParent]
+        projectile.run(SKAction.sequence(actions))
     }
 }
 
