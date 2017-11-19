@@ -209,7 +209,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func update(_ currentTime: TimeInterval) {
         
-        showMap()
         
         if lastUpdateTime > 0 {
             dt = currentTime - lastUpdateTime
@@ -222,6 +221,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if timeSinceLastAction >= timeUntilNextAction {
             
         // perform your action
+            showMap()
             if shields < 1 && alive == true {
             //sirens
             run(SKAction.playSoundFileNamed("sfx_movement_portal4.wav", waitForCompletion: false))
@@ -229,12 +229,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let colorOff = SKAction.colorize(with: SKColor.white, colorBlendFactor: 1, duration: 0.7)
             let actions = [colorOn, colorOff]
             ship.run(SKAction.sequence(actions))
+            
             }
             
         // reset
         timeSinceLastAction = TimeInterval(0)
         //Seconds until next action
-        timeUntilNextAction = 1
+        timeUntilNextAction = 0.2
         }
         
         rotate(sprite: ship, direction: velocity, rotateRadiansPerSec: shipRotateRadiansPerSec)
@@ -328,10 +329,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func spawnAsteroid() {
         let asteroid = SKSpriteNode(texture: atlas.textureNamed("asteroid.png"))
         asteroid.position = CGPoint(
-            x: CGFloat.random(min: playableRect.minX * -4,
-                              max: playableRect.maxX * 4),
-            y: CGFloat.random(min: playableRect.minY * -4,
-                              max: playableRect.maxY * 4))
+            x: CGFloat.random(min: -16000,
+                              max: 16000),
+            y: CGFloat.random(min: -8000,
+                              max: 8000))
         asteroid.setScale(0)
         asteroid.name = "asteroid"
         addChild(asteroid)
@@ -341,7 +342,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         asteroid.physicsBody!.contactTestBitMask = asteroid.physicsBody!.collisionBitMask
         
         let appear = SKAction.scale(to: 1.0, duration: 0.5)
-        let wait = SKAction.wait(forDuration: 10.0)
+        let wait = SKAction.wait(forDuration: 15.0)
 
         let disappear = SKAction.scale(to: 0, duration: 0.5)
         let removeFromParent = SKAction.removeFromParent()
@@ -405,14 +406,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         enumerateChildNodes(withName: "asteroid") {
             node, _ in
-            let ping = self.explosionEmitter(intensity: 0.5, color: SKColor.red)
+            let ping = self.explosionEmitter(intensity: 0.2, color: SKColor.red)
             ping.name = "ping"
             ping.position = node.position/30
             self.camera?.addChild(ping)
         }
         enumerateChildNodes(withName: "ship") {
             node, _ in
-            let ping = self.explosionEmitter(intensity: 0.8, color: SKColor.green)
+            let ping = self.explosionEmitter(intensity: 0.2, color: SKColor.green)
             ping.name = "ping"
             ping.position = node.position/30
             self.camera?.addChild(ping)
