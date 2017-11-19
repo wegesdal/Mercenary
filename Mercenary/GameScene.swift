@@ -283,15 +283,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func sceneTouched(touchLocation:CGPoint) {
         moveShipToward(location: touchLocation)
-        if planet.contains(touchLocation) && planet.contains(ship.position) {
-            if let unwrappedShip = ship.physicsBody {
-                if abs(unwrappedShip.velocity.dx) > 100 {
-                    run(SKAction.playSoundFileNamed("sfx_sounds_error13.wav",
+        if alive == true {
+            if planet.contains(touchLocation) && planet.contains(ship.position) {
+                if let unwrappedShip = ship.physicsBody {
+                    if abs(unwrappedShip.velocity.dx) > 100 {
+                        run(SKAction.playSoundFileNamed("sfx_sounds_error13.wav",
+                                                        waitForCompletion: false))
+                    } else {
+                        run(SKAction.playSoundFileNamed("sfx_sounds_falling8.wav",
                                                     waitForCompletion: false))
-                } else {
-                    run(SKAction.playSoundFileNamed("sfx_sounds_falling8.wav",
-                                                    waitForCompletion: false))
-                    landShip()
+                        landShip()
+                    }
                 }
             }
         }
@@ -406,14 +408,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         enumerateChildNodes(withName: "asteroid") {
             node, _ in
-            let ping = self.explosionEmitter(intensity: 0.2, color: SKColor.red)
+            let ping = self.explosionEmitter(intensity: 0.1, color: SKColor.red)
             ping.name = "ping"
             ping.position = node.position/30
             self.camera?.addChild(ping)
         }
         enumerateChildNodes(withName: "ship") {
             node, _ in
-            let ping = self.explosionEmitter(intensity: 0.2, color: SKColor.green)
+            let ping = self.explosionEmitter(intensity: 0.1, color: SKColor.green)
             ping.name = "ping"
             ping.position = node.position/30
             self.camera?.addChild(ping)
