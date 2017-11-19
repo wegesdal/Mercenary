@@ -17,18 +17,30 @@ class PlanetSideScene: SKScene {
     let outfit = SKSpriteNode(imageNamed:"outfit")
     let shipyard = SKSpriteNode(imageNamed:"shipyard")
     let leave = SKSpriteNode(imageNamed:"leave")
-    var fuel = GameViewController.fuel
-    var maxFuel = GameViewController.maxFuel
+    let cameraNode = SKCameraNode()
+    let cameraMovePointsPerSec: CGFloat = 200.0
+    var cameraRect : CGRect {
+        let x = cameraNode.position.x - size.width/2
+            + (size.width - playableRect.width)/2
+        let y = cameraNode.position.y - size.height/2
+            + (size.height - playableRect.height)/2
+        return CGRect(
+            x: x,
+            y: y,
+            width: playableRect.width,
+            height: playableRect.height)
+    }
+
     let descriptionTextView = UITextView()
     
     override init(size: CGSize) {
         
-        let maxAspectRatio:CGFloat = 16.0/9.0 // 1
-        let playableHeight = size.width / maxAspectRatio // 2
-        let playableMargin = (size.height-playableHeight)/2.0 // 3
+        let maxAspectRatio:CGFloat = 16.0/9.0
+        let playableHeight = size.width / maxAspectRatio
+        let playableMargin = (size.height-playableHeight)/2.0
         playableRect = CGRect(x: 0, y: playableMargin,
                               width: size.width,
-                              height: playableHeight) // 4
+                              height: playableHeight)
         
         super.init(size: size)
     }
@@ -42,11 +54,17 @@ class PlanetSideScene: SKScene {
         var background: SKSpriteNode
             background = SKSpriteNode(imageNamed:"Demeter.jpg")
         
+        
+        //Add Camera
+        addChild(cameraNode)
+        camera = cameraNode
+        cameraNode.position = CGPoint(x: size.width/2, y: size.height/2)
+        
         //Planet Description
 
-        let description = "Earth is storied to be the humble birthplace of humankind. Although once a politically important world to the Inner Ring millenia ago, radiation from forgotten wars have left its inhabitants with horrifying mutations and, if the myths are to be believed, extraordinary gifts."
+        let description = "Named for Demeter, goddess of death and rebirth. Once breadbasket of the Core, it remains under strict martial law following the emergence of a mysterious plague."
         
-        descriptionTextView.frame = CGRect(x: 400, y: 10, width: 250, height: 100)
+        descriptionTextView.frame = CGRect(x: 5, y: 200, width: 400, height: 285)
         descriptionTextView.text = description
         descriptionTextView.backgroundColor = UIColor.black
         descriptionTextView.textColor = UIColor.white
@@ -55,61 +73,88 @@ class PlanetSideScene: SKScene {
         self.view?.addSubview(descriptionTextView)
         
         //Background
+        background.texture!.filteringMode = .nearest
+        background.setScale(2.0)
         background.position =
-            CGPoint(x: 600, y: 850)
-        background.size.width = 900
-        background.size.height = 600
+            CGPoint(x: 625, y: 1000)
         self.addChild(background)
+        
+        //Add UIElements
+
+        let creditsLabel = SKLabelNode(fontNamed: "silom")
+        creditsLabel.text = "Credits: \(GameViewController.credits)"
+        creditsLabel.fontColor = SKColor.white
+        creditsLabel.fontSize = 36
+        creditsLabel.zPosition = 150
+        creditsLabel.horizontalAlignmentMode = .left
+        creditsLabel.verticalAlignmentMode = .bottom
+        creditsLabel.position = CGPoint(
+            x: playableRect.size.width/6,
+            y: -playableRect.size.height/2 + CGFloat(20))
+        cameraNode.addChild(creditsLabel)
+        
+        let fuelLabel = SKLabelNode(fontNamed: "silom")
+        fuelLabel.text = "Fuel: \(GameViewController.fuel)"
+        fuelLabel.fontColor = SKColor.white
+        fuelLabel.fontSize = 36
+        fuelLabel.zPosition = 150
+        fuelLabel.horizontalAlignmentMode = .left
+        fuelLabel.verticalAlignmentMode = .bottom
+        fuelLabel.position = CGPoint(
+            x: playableRect.size.width/6,
+            y: playableRect.size.height/2 - CGFloat(40))
+        cameraNode.addChild(fuelLabel)
+        
+        
+        //MARK: Sidebar
+        
+        // Refuel
+        
+        refuel.position =
+            CGPoint(x: 1650, y: 1225)
+        refuel.setScale(1.0)
+        self.addChild(refuel)
         
         //Spaceport Bar
 
         spaceportBar.position =
-            CGPoint(x: 300, y: 300)
+            CGPoint(x: 1650, y: 1075)
         spaceportBar.setScale(1.0)
         self.addChild(spaceportBar)
         
         // Mission Computer
 
         missionComputer.position =
-            CGPoint(x: 900, y: 300)
+            CGPoint(x: 1650, y: 925)
         missionComputer.setScale(1.0)
         self.addChild(missionComputer)
         
-        
-        //MARK: Sidebar
-        
-        // Refuel
-
-        refuel.position =
-            CGPoint(x: 1600, y: 900)
-        refuel.setScale(1.0)
-        self.addChild(refuel)
-        
+    
         // Commodity Exchange
 
         commodityExchange.position =
-            CGPoint(x: 1600, y: 750)
+            CGPoint(x: 1650, y: 775)
         commodityExchange.setScale(1.0)
         self.addChild(commodityExchange)
         
         // Outfit
 
         outfit.position =
-            CGPoint(x: 1600, y: 600)
+            CGPoint(x: 1650, y: 625)
         outfit.setScale(1.0)
         self.addChild(outfit)
         
         // Shipyard
 
         shipyard.position =
-            CGPoint(x: 1600, y: 450)
+            CGPoint(x: 1650, y: 475)
         shipyard.setScale(1.0)
         self.addChild(shipyard)
         
         // Leave
 
         leave.position =
-            CGPoint(x: 1600, y: 300)
+            CGPoint(x: 1650, y: 325)
         leave.setScale(1.0)
         self.addChild(leave)
     

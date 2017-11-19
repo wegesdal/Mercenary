@@ -53,12 +53,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override init(size: CGSize) {
 
-        let maxAspectRatio:CGFloat = 16.0/9.0 // 1
-        let playableHeight = size.width / maxAspectRatio // 2
-        let playableMargin = (size.height-playableHeight)/2.0 // 3
+        let maxAspectRatio:CGFloat = 16.0/9.0
+        let playableHeight = size.width / maxAspectRatio
+        let playableMargin = (size.height-playableHeight)/2.0
         playableRect = CGRect(x: 0, y: playableMargin,
                               width: size.width,
-                              height: playableHeight) // 4
+                              height: playableHeight)
         super.init(size: size)
     }
     
@@ -68,6 +68,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     override func didMove(to view: SKView) {
+        
+        //Tap enabled
         tapRec.addTarget(self, action:#selector(GameScene.tappedView(_:) ))
         tapRec.numberOfTouchesRequired = 1
         tapRec.numberOfTapsRequired = 1
@@ -116,7 +118,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         cameraNode.position = CGPoint(x: size.width/2, y: size.height/2)
         
         //Add Asteroids
-        run(SKAction.repeatForever(SKAction.sequence([SKAction.run() { [weak self] in self?.spawnAsteroid()}, SKAction.wait(forDuration: 3.0)])))
+        run(SKAction.repeatForever(SKAction.sequence([SKAction.run() { [weak self] in self?.spawnAsteroid()}, SKAction.wait(forDuration: 1.0)])))
         
         //Add UIElements
         creditsLabel.text = "Credits: \(GameViewController.credits)"
@@ -137,7 +139,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         fuelLabel.horizontalAlignmentMode = .left
         fuelLabel.verticalAlignmentMode = .bottom
         fuelLabel.position = CGPoint(
-            x: -playableRect.size.width/2 + 40,
+            x: playableRect.size.width/6,
             y: playableRect.size.height/2 - CGFloat(40))
         cameraNode.addChild(fuelLabel)
         
@@ -148,7 +150,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         armorLabel.horizontalAlignmentMode = .left
         armorLabel.verticalAlignmentMode = .bottom
         armorLabel.position = CGPoint(
-            x: -playableRect.size.width/2 + 220,
+            x: -playableRect.size.width/2 + 240,
             y: playableRect.size.height/2 - CGFloat(40))
         cameraNode.addChild(armorLabel)
         
@@ -159,7 +161,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         shieldsLabel.horizontalAlignmentMode = .left
         shieldsLabel.verticalAlignmentMode = .bottom
         shieldsLabel.position = CGPoint(
-            x: -playableRect.size.width/2 + 420,
+            x: -playableRect.size.width/2 + 40,
             y: playableRect.size.height/2 - CGFloat(40))
         cameraNode.addChild(shieldsLabel)
         
@@ -302,10 +304,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func spawnAsteroid() {
         let asteroid = SKSpriteNode(texture: atlas.textureNamed("asteroid.png"))
         asteroid.position = CGPoint(
-            x: CGFloat.random(min: playableRect.minX,
-                              max: playableRect.maxX),
-            y: CGFloat.random(min: playableRect.minY,
-                              max: playableRect.maxY))
+            x: CGFloat.random(min: playableRect.minX * -4,
+                              max: playableRect.maxX * 4),
+            y: CGFloat.random(min: playableRect.minY * -4,
+                              max: playableRect.maxY * 4))
         asteroid.setScale(0)
         asteroid.name = "asteroid"
         addChild(asteroid)
@@ -323,24 +325,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         asteroid.run(SKAction.sequence(actions))
     }
     
-    func spawnChips(contactPoint:CGPoint, contactNormal:CGVector) {
+    func spawnChips(contactPoint:CGPoint) {
         let chip = SKSpriteNode(texture: atlas.textureNamed("chip.png"))
         chip.position = contactPoint
         chip.name = "chip"
         addChild(chip)
         chip.physicsBody = SKPhysicsBody(circleOfRadius: max(chip.size.width / 2, chip.size.height / 2))
         chip.physicsBody?.mass = 3
-        chip.physicsBody?.applyImpulse(contactNormal)
-        chip.physicsBody?.applyAngularImpulse(0.1)
         let appear = SKAction.scale(to: 1.0, duration: 0.5)
-        let wait = SKAction.wait(forDuration: 10.0)
+        let wait = SKAction.wait(forDuration: 5.0)
         let disappear = SKAction.scale(to: 0, duration: 0.5)
         let removeFromParent = SKAction.removeFromParent()
         let actions = [appear, wait, disappear, removeFromParent]
         chip.run(SKAction.sequence(actions))
     }
     
-    func spawnScrap(contactPoint:CGPoint, contactNormal:CGVector) {
+    func spawnScrap(contactPoint:CGPoint) {
         let scraps = [SKSpriteNode(texture: atlas.textureNamed("shuttlechassis.model")), SKSpriteNode(texture: atlas.textureNamed("shuttlewindshield.model")), SKSpriteNode(texture: atlas.textureNamed("shuttlecargobay.model"))]
         for scrap in scraps {
             scrap.position = contactPoint
@@ -348,8 +348,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             addChild(scrap)
             scrap.physicsBody = SKPhysicsBody(circleOfRadius: max(scrap.size.width / 2, scrap.size.height / 2))
             scrap.physicsBody?.mass = 1.6
-            scrap.physicsBody?.applyImpulse(contactNormal)
-            scrap.physicsBody?.applyAngularImpulse(0.09)
+
             
             let appear = SKAction.scale(to: 1.0, duration: 0.5)
             let wait = SKAction.wait(forDuration: 10.0)
@@ -385,11 +384,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
         if contact.bodyA.node?.name == "ship" {
             for _ in 0...2 {
-                spawnChips(contactPoint: contact.contactPoint, contactNormal: contact.contactNormal)
+                spawnChips(contactPoint: contact.contactPoint)
                 contact.bodyB.node?.removeFromParent()
             }
             if shields < 1 {
-                spawnScrap(contactPoint: contact.contactPoint, contactNormal: contact.contactNormal)
+                spawnScrap(contactPoint: contact.contactPoint)
                 run(SKAction.playSoundFileNamed("sfx_exp_odd4.wav", waitForCompletion: false))
                 contact.bodyA.node?.removeFromParent()
                 let explosion = explosionEmitter(intensity: 1.2, color: SKColor.orange)
@@ -407,7 +406,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         if contact.bodyA.node?.name == "projectile" {
             for _ in 0...2 {
-                spawnChips(contactPoint: contact.contactPoint, contactNormal: contact.contactNormal)
+                spawnChips(contactPoint: contact.contactPoint)
                 contact.bodyB.node?.removeFromParent()
             }
             run(SKAction.playSoundFileNamed("sfx_exp_shortest_hard5.wav", waitForCompletion: false))
@@ -417,7 +416,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             addChild(explosion)
         } else if contact.bodyB.node?.name == "projectile" {
             for _ in 0...2 {
-                spawnChips(contactPoint: contact.contactPoint, contactNormal: contact.contactNormal)
+                spawnChips(contactPoint: contact.contactPoint)
                 contact.bodyA.node?.removeFromParent()
             }
             run(SKAction.playSoundFileNamed("sfx_exp_shortest_hard5.wav", waitForCompletion: false))
@@ -473,6 +472,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         emitter.particleScaleSpeed = -1.5
         emitter.particleColor = color
         emitter.particleColorBlendFactor = 1
+        emitter.particleColorBlendFactorRange = 3
         emitter.particleBlendMode = SKBlendMode.add
         emitter.run(SKAction.removeFromParentAfterDelay(0.35))
         return emitter
@@ -507,7 +507,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func shake() {
         print("Shake")
-        run(SKAction.playSoundFileNamed("sfx_wpn_laser11.wav",
+        run(SKAction.playSoundFileNamed("sfx_sounds_interaction6.wav",
                                         waitForCompletion: false))
     }
     
