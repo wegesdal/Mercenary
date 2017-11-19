@@ -27,6 +27,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var alive = true
     let tapRec = UITapGestureRecognizer()
     let tapRec2 = UITapGestureRecognizer()
+    let swipeRightRec = UISwipeGestureRecognizer()
+    let swipeLeftRec = UISwipeGestureRecognizer()
+    let swipeUpRec = UISwipeGestureRecognizer()
+    let swipeDownRec = UISwipeGestureRecognizer()
     
     // Seconds elapsed since last action
     var timeSinceLastAction = TimeInterval(0)
@@ -69,6 +73,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func didMove(to view: SKView) {
         
+        swipeRightRec.addTarget(self, action: #selector(GameScene.swipedRight) )
+        swipeRightRec.direction = .right
+        self.view!.addGestureRecognizer(swipeRightRec)
+        
+        swipeLeftRec.addTarget(self, action: #selector(GameScene.swipedLeft) )
+        swipeLeftRec.direction = .left
+        self.view!.addGestureRecognizer(swipeLeftRec)
+        
+        
+        swipeUpRec.addTarget(self, action: #selector(GameScene.swipedUp) )
+        swipeUpRec.direction = .up
+        self.view!.addGestureRecognizer(swipeUpRec)
+        
+        swipeDownRec.addTarget(self, action: #selector(GameScene.swipedDown) )
+        swipeDownRec.direction = .down
+        self.view!.addGestureRecognizer(swipeDownRec)
+
         //Tap enabled
         tapRec.addTarget(self, action:#selector(GameScene.tappedView(_:) ))
         tapRec.numberOfTouchesRequired = 1
@@ -187,6 +208,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func update(_ currentTime: TimeInterval) {
+        
+        showMap()
+        
         if lastUpdateTime > 0 {
             dt = currentTime - lastUpdateTime
         } else {
@@ -374,12 +398,36 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         view?.presentScene(planetSide, transition: reveal)
     }
     
+    func showMap(){
+        camera?.enumerateChildNodes(withName: "ping") {
+            node, _ in
+            node.removeFromParent()
+        }
+        enumerateChildNodes(withName: "asteroid") {
+            node, _ in
+            let ping = self.explosionEmitter(intensity: 0.5, color: SKColor.red)
+            ping.name = "ping"
+            ping.position = node.position/30
+            self.camera?.addChild(ping)
+        }
+        enumerateChildNodes(withName: "ship") {
+            node, _ in
+            let ping = self.explosionEmitter(intensity: 0.8, color: SKColor.green)
+            ping.name = "ping"
+            ping.position = node.position/30
+            self.camera?.addChild(ping)
+        }
+    }
+    
      func triggerShield(contactPoint:CGPoint, contactNormal:CGVector) {
         ship.physicsBody?.applyImpulse(contactNormal)
         let shieldBlast = explosionEmitter(intensity: 0.3, color: SKColor.green)
         shieldBlast.position = contactPoint
         addChild(shieldBlast)
     }
+    
+    
+    //MARK: Physics
     
     func didBegin(_ contact: SKPhysicsContact) {
         if contact.bodyA.node?.name == "ship" {
@@ -504,6 +552,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     //MARK: Gestures
+    @objc func swipedRight() {
+        print("next weapon")
+        print("Right")
+        
+    }
+    
+    @objc func swipedLeft() {
+        print("previous weapon")
+        print("Left")
+    }
+    
+    @objc func swipedUp() {
+        print("Up")
+        print("Show Map / Hide Radar")
+    }
+    
+    @objc func swipedDown() {
+        print("Show Radar / Hide Map")
+        print("Down")
+    }
     
     func shake() {
         print("Shake")
@@ -515,6 +583,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let point:CGPoint = sender.location(in: self.view)
         print("Single tap")
         print(point)
+        print("Targeting Computer")
     }
     
     // what gets called when there's a double tap...
