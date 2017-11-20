@@ -30,8 +30,6 @@ class PlanetSideScene: SKScene {
             width: playableRect.width,
             height: playableRect.height)
     }
-
-    let descriptionTextView = UITextView()
     
     override init(size: CGSize) {
         
@@ -61,16 +59,22 @@ class PlanetSideScene: SKScene {
         cameraNode.position = CGPoint(x: size.width/2, y: size.height/2)
         
         //Planet Description
-
-        let description = "Named for Demeter, goddess of death and rebirth. Once breadbasket of the Core, it remains under strict martial law following the emergence of a mysterious plague."
         
-        descriptionTextView.frame = CGRect(x: 5, y: 200, width: 400, height: 285)
-        descriptionTextView.text = description
-        descriptionTextView.backgroundColor = UIColor.black
-        descriptionTextView.textColor = UIColor.white
-        descriptionTextView.font = UIFont(name: "helvetica", size: 16)
-        descriptionTextView.isEditable = false
-        self.view?.addSubview(descriptionTextView)
+        let lb = SKLabelNode(fontNamed: "silom")
+        lb.text = "Named for Demeter, goddess of death and rebirth. Once the breadbasket of the Core, the planet now exists under strict martial law following the emergence of a mysterious plague."
+        lb.fontColor = SKColor.white
+        lb.fontSize = 36
+        lb.zPosition = 150
+        lb.horizontalAlignmentMode = .left
+        lb.verticalAlignmentMode = .bottom
+        lb.position = CGPoint(
+            x: CGFloat(20),
+            y: CGFloat(500))
+        lb.numberOfLines = 4
+        lb.zPosition = 50
+        lb.preferredMaxLayoutWidth = 1000
+        self.addChild(lb)
+        
         
         //Background
         background.texture!.filteringMode = .nearest
@@ -215,8 +219,6 @@ class PlanetSideScene: SKScene {
             let myScene = GameScene(size: self.size)
             myScene.scaleMode = self.scaleMode
             let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
-            //Only remove UI Elements in main thread or use Grand Central Dispatch:
-            self.descriptionTextView.removeFromSuperview()
             self.view?.presentScene(myScene, transition: reveal)
             }
         self.run(SKAction.sequence([wait, block]))
