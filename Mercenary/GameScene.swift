@@ -29,8 +29,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let tapRec2 = UITapGestureRecognizer()
     let swipeRightRec = UISwipeGestureRecognizer()
     let swipeLeftRec = UISwipeGestureRecognizer()
-    let swipeUpRec = UISwipeGestureRecognizer()
-    let swipeDownRec = UISwipeGestureRecognizer()
+    //let swipeUpRec = UISwipeGestureRecognizer()
+    //let swipeDownRec = UISwipeGestureRecognizer()
     
     // Seconds elapsed since last action
     var timeSinceLastAction = TimeInterval(0)
@@ -82,13 +82,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.view!.addGestureRecognizer(swipeLeftRec)
         
         
-        swipeUpRec.addTarget(self, action: #selector(GameScene.swipedUp) )
-        swipeUpRec.direction = .up
-        self.view!.addGestureRecognizer(swipeUpRec)
+        //swipeUpRec.addTarget(self, action: #selector(GameScene.swipedUp) )
+        //swipeUpRec.direction = .up
+        //self.view!.addGestureRecognizer(swipeUpRec)
         
-        swipeDownRec.addTarget(self, action: #selector(GameScene.swipedDown) )
-        swipeDownRec.direction = .down
-        self.view!.addGestureRecognizer(swipeDownRec)
+        //swipeDownRec.addTarget(self, action: #selector(GameScene.swipedDown) )
+        //swipeDownRec.direction = .down
+        //self.view!.addGestureRecognizer(swipeDownRec)
 
         //Tap enabled
         tapRec.addTarget(self, action:#selector(GameScene.tappedView(_:) ))
@@ -235,7 +235,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // reset
         timeSinceLastAction = TimeInterval(0)
         //Seconds until next action
-        timeUntilNextAction = 0.2
+        timeUntilNextAction = 0.4
         }
         
         rotate(sprite: ship, direction: velocity, rotateRadiansPerSec: shipRotateRadiansPerSec)
@@ -388,7 +388,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func deathFunction(){
-        let gameOverScene = GameOverScene(size: size, won: false)
+        let gameOverScene = GameOverScene(size: size)
         gameOverScene.scaleMode = scaleMode
         let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
         view?.presentScene(gameOverScene, transition: reveal)
@@ -566,15 +566,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         print("Left")
     }
     
-    @objc func swipedUp() {
-        print("Up")
-        print("Show Map / Hide Radar")
-    }
+    //@objc func swipedUp() {
+    //    print("Up")
+    //    print("Show Map / Hide Radar")
+    //}
     
-    @objc func swipedDown() {
-        print("Show Radar / Hide Map")
-        print("Down")
-    }
+    //@objc func swipedDown() {
+    //    print("Show Radar / Hide Map")
+    //    print("Down")
+    //}
     
     func shake() {
         print("Shake")

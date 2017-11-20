@@ -18,6 +18,7 @@
 		F363BF4A1FBAD7C10073054B /* SKAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F363BF491FBAD7C10073054B /* SKAction+Extensions.swift */; };
 		F363BF4C1FBADDF10073054B /* PlanetSideScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F363BF4B1FBADDF10073054B /* PlanetSideScene.swift */; };
 		F363C0431FBAF6110073054B /* sfx_sound_mechanicalnoise6.wav in Resources */ = {isa = PBXBuildFile; fileRef = F363C0421FBAF6100073054B /* sfx_sound_mechanicalnoise6.wav */; };
+		F3755B061FC2754000C39369 /* MapFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3755B051FC2754000C39369 /* MapFile.swift */; };
 		F383A98B1FB98F8300547838 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F383A98A1FB98F8300547838 /* GameOverScene.swift */; };
 		F383A98D1FB9920200547838 /* sfx_wpn_laser11.wav in Resources */ = {isa = PBXBuildFile; fileRef = F383A98C1FB9920200547838 /* sfx_wpn_laser11.wav */; };
 		F383A98F1FB9922500547838 /* sfx_exp_odd4.wav in Resources */ = {isa = PBXBuildFile; fileRef = F383A98E1FB9922500547838 /* sfx_exp_odd4.wav */; };
@@ -53,6 +54,7 @@
 		F363BF491FBAD7C10073054B /* SKAction+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SKAction+Extensions.swift"; path = "../../../Downloads/2D_Apple_Games_by_Tutorials_3/16-particle-systems/final/DropCharge/DropCharge/SKTUtils/SKAction+Extensions.swift"; sourceTree = "<group>"; };
 		F363BF4B1FBADDF10073054B /* PlanetSideScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetSideScene.swift; sourceTree = "<group>"; };
 		F363C0421FBAF6100073054B /* sfx_sound_mechanicalnoise6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_sound_mechanicalnoise6.wav; sourceTree = "<group>"; };
+		F3755B051FC2754000C39369 /* MapFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFile.swift; sourceTree = "<group>"; };
 		F383A98A1FB98F8300547838 /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		F383A98C1FB9920200547838 /* sfx_wpn_laser11.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_wpn_laser11.wav; sourceTree = "<group>"; };
 		F383A98E1FB9922500547838 /* sfx_exp_odd4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_exp_odd4.wav; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				F328C27D1FB803DF00A8830F /* AppDelegate.swift */,
 				F328C2831FB803DF00A8830F /* GameScene.swift */,
+				F3755B051FC2754000C39369 /* MapFile.swift */,
 				F304AB1D1FBD55F5004E55B5 /* Ships.swift */,
 				F383A98A1FB98F8300547838 /* GameOverScene.swift */,
 				F363BF4B1FBADDF10073054B /* PlanetSideScene.swift */,
@@ -233,6 +236,7 @@
 				F383A98B1FB98F8300547838 /* GameOverScene.swift in Sources */,
 				F363BF4C1FBADDF10073054B /* PlanetSideScene.swift in Sources */,
 				F328C2841FB803DF00A8830F /* GameScene.swift in Sources */,
+				F3755B061FC2754000C39369 /* MapFile.swift in Sources */,
 				F328C2861FB803DF00A8830F /* GameViewController.swift in Sources */,
 				F363BF4A1FBAD7C10073054B /* SKAction+Extensions.swift in Sources */,
 				F304AB1E1FBD55F5004E55B5 /* Ships.swift in Sources */,
