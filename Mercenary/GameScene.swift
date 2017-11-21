@@ -18,7 +18,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var velocity = CGPoint.zero
     let shipRotateRadiansPerSec: CGFloat = 4.0*π
     var shipTextures:[SKTexture] = []
-    let playableRect: CGRect
     var svector: CGVector = CGVector(dx: 0, dy: 0)
     let armorLabel = SKLabelNode(fontNamed: "silom")
     var armor = 1
@@ -45,24 +44,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let cameraMovePointsPerSec: CGFloat = 200.0
     var cameraRect : CGRect {
         let x = cameraNode.position.x - size.width/2
-            + (size.width - playableRect.width)/2
         let y = cameraNode.position.y - size.height/2
-            + (size.height - playableRect.height)/2
         return CGRect(
             x: x,
             y: y,
-            width: playableRect.width,
-            height: playableRect.height)
+            width: size.width,
+            height: size.height)
     }
     
     override init(size: CGSize) {
-
-        let maxAspectRatio:CGFloat = 16.0/9.0
-        let playableHeight = size.width / maxAspectRatio
-        let playableMargin = (size.height-playableHeight)/2.0
-        playableRect = CGRect(x: 0, y: playableMargin,
-                              width: size.width,
-                              height: playableHeight)
         super.init(size: size)
     }
     
@@ -149,8 +139,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         creditsLabel.horizontalAlignmentMode = .left
         creditsLabel.verticalAlignmentMode = .bottom
         creditsLabel.position = CGPoint(
-            x: playableRect.size.width/6,
-            y: -playableRect.size.height/2 + CGFloat(20))
+            x: size.width/6,
+            y: -size.height/2 + CGFloat(20))
         cameraNode.addChild(creditsLabel)
         
         fuelLabel.text = "Fuel: \(GameViewController.fuel)"
@@ -160,8 +150,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         fuelLabel.horizontalAlignmentMode = .left
         fuelLabel.verticalAlignmentMode = .bottom
         fuelLabel.position = CGPoint(
-            x: playableRect.size.width/6,
-            y: playableRect.size.height/2 - CGFloat(40))
+            x: size.width/6,
+            y: size.height/2 - CGFloat(40))
         cameraNode.addChild(fuelLabel)
         
         armorLabel.text = "Armor: \(armor)"
@@ -171,8 +161,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         armorLabel.horizontalAlignmentMode = .left
         armorLabel.verticalAlignmentMode = .bottom
         armorLabel.position = CGPoint(
-            x: -playableRect.size.width/2 + 240,
-            y: playableRect.size.height/2 - CGFloat(40))
+            x: -size.width/2 + 240,
+            y: size.height/2 - CGFloat(40))
         cameraNode.addChild(armorLabel)
         
         shieldsLabel.text = "Shields: \(shields)"
@@ -182,8 +172,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         shieldsLabel.horizontalAlignmentMode = .left
         shieldsLabel.verticalAlignmentMode = .bottom
         shieldsLabel.position = CGPoint(
-            x: -playableRect.size.width/2 + 40,
-            y: playableRect.size.height/2 - CGFloat(40))
+            x: -size.width/2 + 40,
+            y: size.height/2 - CGFloat(40))
         cameraNode.addChild(shieldsLabel)
         
         // Add Starfield with 3 emitterNodes for a parallax effect
