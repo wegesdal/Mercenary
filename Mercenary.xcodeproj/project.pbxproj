@@ -15,10 +15,130 @@
 		F328C28B1FB803DF00A8830F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F328C28A1FB803DF00A8830F /* Assets.xcassets */; };
 		F328C28E1FB803DF00A8830F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F328C28C1FB803DF00A8830F /* LaunchScreen.storyboard */; };
 		F328C2A91FB81A7A00A8830F /* MyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328C2A81FB81A7A00A8830F /* MyUtils.swift */; };
-		F363BF4A1FBAD7C10073054B /* SKAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F363BF491FBAD7C10073054B /* SKAction+Extensions.swift */; };
 		F363BF4C1FBADDF10073054B /* PlanetSideScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F363BF4B1FBADDF10073054B /* PlanetSideScene.swift */; };
 		F363C0431FBAF6110073054B /* sfx_sound_mechanicalnoise6.wav in Resources */ = {isa = PBXBuildFile; fileRef = F363C0421FBAF6100073054B /* sfx_sound_mechanicalnoise6.wav */; };
-		F3755B061FC2754000C39369 /* MapFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3755B051FC2754000C39369 /* MapFile.swift */; };
+		F3755B841FC393D400C39369 /* Indra.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B0A1FC393D400C39369 /* Indra.jpg */; };
+		F3755B851FC393D400C39369 /* NingiramaP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B0B1FC393D400C39369 /* NingiramaP.gif */; };
+		F3755B861FC393D400C39369 /* Abeona.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B0C1FC393D400C39369 /* Abeona.jpg */; };
+		F3755B871FC393D400C39369 /* IuturnaP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B0D1FC393D400C39369 /* IuturnaP.gif */; };
+		F3755B881FC393D400C39369 /* BuriP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B0E1FC393D400C39369 /* BuriP.gif */; };
+		F3755B891FC393D400C39369 /* HoursP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B0F1FC393D400C39369 /* HoursP.gif */; };
+		F3755B8A1FC393D400C39369 /* CamulosP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B101FC393D400C39369 /* CamulosP.gif */; };
+		F3755B8B1FC393D400C39369 /* SogblenP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B111FC393D400C39369 /* SogblenP.gif */; };
+		F3755B8C1FC393D400C39369 /* Huangti.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B121FC393D400C39369 /* Huangti.jpg */; };
+		F3755B8D1FC393D400C39369 /* WusquusS.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B131FC393D400C39369 /* WusquusS.gif */; };
+		F3755B8E1FC393D400C39369 /* JunoS.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B141FC393D400C39369 /* JunoS.gif */; };
+		F3755B8F1FC393D400C39369 /* Candra.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B151FC393D400C39369 /* Candra.jpg */; };
+		F3755B901FC393D400C39369 /* Tin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B161FC393D400C39369 /* Tin.jpg */; };
+		F3755B911FC393D400C39369 /* UsasP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B171FC393D400C39369 /* UsasP.gif */; };
+		F3755B921FC393D400C39369 /* Juno.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B181FC393D400C39369 /* Juno.jpg */; };
+		F3755B931FC393D400C39369 /* FujinP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B191FC393D400C39369 /* FujinP.gif */; };
+		F3755B941FC393D400C39369 /* HeimdallS.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B1A1FC393D400C39369 /* HeimdallS.gif */; };
+		F3755B951FC393D400C39369 /* Faivarongo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B1B1FC393D400C39369 /* Faivarongo.jpg */; };
+		F3755B961FC393D400C39369 /* Anti.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B1C1FC393D400C39369 /* Anti.jpg */; };
+		F3755B971FC393D400C39369 /* EAlomP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B1D1FC393D400C39369 /* EAlomP.gif */; };
+		F3755B981FC393D400C39369 /* GaunabP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B1E1FC393D400C39369 /* GaunabP.gif */; };
+		F3755B991FC393D400C39369 /* Karta.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B1F1FC393D400C39369 /* Karta.jpg */; };
+		F3755B9A1FC393D400C39369 /* TuleS.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B201FC393D400C39369 /* TuleS.gif */; };
+		F3755B9B1FC393D400C39369 /* GerraP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B211FC393D400C39369 /* GerraP.gif */; };
+		F3755B9C1FC393D400C39369 /* HastseyaltiP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B221FC393D400C39369 /* HastseyaltiP.gif */; };
+		F3755B9D1FC393D400C39369 /* Iuturna.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B231FC393D400C39369 /* Iuturna.jpg */; };
+		F3755B9E1FC393D400C39369 /* Zurvan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B241FC393D400C39369 /* Zurvan.jpg */; };
+		F3755B9F1FC393D400C39369 /* Demeter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B251FC393D400C39369 /* Demeter.jpg */; };
+		F3755BA01FC393D400C39369 /* LiluriP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B261FC393D400C39369 /* LiluriP.gif */; };
+		F3755BA11FC393D400C39369 /* Aegir.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B271FC393D400C39369 /* Aegir.jpg */; };
+		F3755BA21FC393D400C39369 /* KybeleP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B281FC393D400C39369 /* KybeleP.gif */; };
+		F3755BA31FC393D400C39369 /* Badb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B291FC393D400C39369 /* Badb.jpg */; };
+		F3755BA41FC393D400C39369 /* Osande.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B2A1FC393D400C39369 /* Osande.jpg */; };
+		F3755BA51FC393D400C39369 /* Hours.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B2B1FC393D400C39369 /* Hours.jpg */; };
+		F3755BA61FC393D400C39369 /* Aditi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B2C1FC393D400C39369 /* Aditi.jpg */; };
+		F3755BA71FC393D400C39369 /* TinP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B2D1FC393D400C39369 /* TinP.gif */; };
+		F3755BA81FC393D400C39369 /* Zipakna.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B2E1FC393D400C39369 /* Zipakna.jpg */; };
+		F3755BA91FC393D400C39369 /* HuangTiS.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B2F1FC393D400C39369 /* HuangTiS.gif */; };
+		F3755BAA1FC393D400C39369 /* FaivarongoP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B301FC393D400C39369 /* FaivarongoP.gif */; };
+		F3755BAB1FC393D400C39369 /* Daphne.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B311FC393D400C39369 /* Daphne.jpg */; };
+		F3755BAC1FC393D400C39369 /* Debwen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B321FC393D400C39369 /* Debwen.jpg */; };
+		F3755BAD1FC393D400C39369 /* Jokinam.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B331FC393D400C39369 /* Jokinam.jpg */; };
+		F3755BAE1FC393D400C39369 /* Mamlambo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B341FC393D400C39369 /* Mamlambo.jpg */; };
+		F3755BAF1FC393D400C39369 /* LeukotheaP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B351FC393D400C39369 /* LeukotheaP.gif */; };
+		F3755BB01FC393D400C39369 /* YinamtilanP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B361FC393D400C39369 /* YinamtilanP.gif */; };
+		F3755BB11FC393D400C39369 /* Qeskinaqu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B371FC393D400C39369 /* Qeskinaqu.jpg */; };
+		F3755BB21FC393D400C39369 /* Hastseyalti.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B381FC393D400C39369 /* Hastseyalti.jpg */; };
+		F3755BB31FC393D400C39369 /* CandraP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B391FC393D400C39369 /* CandraP.gif */; };
+		F3755BB41FC393D400C39369 /* Wusquus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B3A1FC393D400C39369 /* Wusquus.jpg */; };
+		F3755BB51FC393D400C39369 /* Tule.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B3B1FC393D400C39369 /* Tule.jpg */; };
+		F3755BB61FC393D400C39369 /* AditiP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B3C1FC393D400C39369 /* AditiP.gif */; };
+		F3755BB71FC393D400C39369 /* SisyphosP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B3D1FC393D400C39369 /* SisyphosP.gif */; };
+		F3755BB81FC393D400C39369 /* YamadutiP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B3E1FC393D400C39369 /* YamadutiP.gif */; };
+		F3755BB91FC393D400C39369 /* Kybele.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B3F1FC393D400C39369 /* Kybele.jpg */; };
+		F3755BBA1FC393D400C39369 /* ZurvanP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B401FC393D400C39369 /* ZurvanP.gif */; };
+		F3755BBB1FC393D400C39369 /* IgalilikP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B411FC393D400C39369 /* IgalilikP.gif */; };
+		F3755BBC1FC393D400C39369 /* Zababa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B421FC393D400C39369 /* Zababa.jpg */; };
+		F3755BBD1FC393D400C39369 /* Yamaduti.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B431FC393D400C39369 /* Yamaduti.jpg */; };
+		F3755BBE1FC393D400C39369 /* BelenusP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B441FC393D400C39369 /* BelenusP.gif */; };
+		F3755BBF1FC393D400C39369 /* UsinsS.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B451FC393D400C39369 /* UsinsS.gif */; };
+		F3755BC01FC393D400C39369 /* Garuda.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B461FC393D400C39369 /* Garuda.jpg */; };
+		F3755BC11FC393D400C39369 /* AbeonaP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B471FC393D400C39369 /* AbeonaP.gif */; };
+		F3755BC21FC393D400C39369 /* Sgana.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B481FC393D400C39369 /* Sgana.jpg */; };
+		F3755BC31FC393D400C39369 /* DaphneP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B491FC393D400C39369 /* DaphneP.gif */; };
+		F3755BC41FC393D400C39369 /* AegirP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B4A1FC393D400C39369 /* AegirP.gif */; };
+		F3755BC51FC393D400C39369 /* Ningirama.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B4B1FC393D400C39369 /* Ningirama.jpg */; };
+		F3755BC61FC393D400C39369 /* JokinamP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B4C1FC393D400C39369 /* JokinamP.gif */; };
+		F3755BC71FC393D400C39369 /* GarudaS.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B4D1FC393D400C39369 /* GarudaS.gif */; };
+		F3755BC81FC393D400C39369 /* Ekchuah.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B4E1FC393D400C39369 /* Ekchuah.jpg */; };
+		F3755BC91FC393D400C39369 /* OsandeP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B4F1FC393D400C39369 /* OsandeP.gif */; };
+		F3755BCA1FC393D400C39369 /* ZababaP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B501FC393D400C39369 /* ZababaP.gif */; };
+		F3755BCB1FC393D400C39369 /* Leukothea.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B511FC393D400C39369 /* Leukothea.jpg */; };
+		F3755BCC1FC393D400C39369 /* Yinamtilan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B521FC393D400C39369 /* Yinamtilan.jpg */; };
+		F3755BCD1FC393D400C39369 /* KartaP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B531FC393D400C39369 /* KartaP.gif */; };
+		F3755BCE1FC393D400C39369 /* Wepwawet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B541FC393D400C39369 /* Wepwawet.jpg */; };
+		F3755BCF1FC393D400C39369 /* Ran.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B551FC393D400C39369 /* Ran.jpg */; };
+		F3755BD01FC393D400C39369 /* Sogblen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B561FC393D400C39369 /* Sogblen.jpg */; };
+		F3755BD11FC393D400C39369 /* IndraP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B571FC393D400C39369 /* IndraP.gif */; };
+		F3755BD21FC393D400C39369 /* PoenimusP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B581FC393D400C39369 /* PoenimusP.gif */; };
+		F3755BD31FC393D400C39369 /* SganaP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B591FC393D400C39369 /* SganaP.gif */; };
+		F3755BD41FC393D400C39369 /* Usins.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B5A1FC393D400C39369 /* Usins.jpg */; };
+		F3755BD51FC393D400C39369 /* YumCimil.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B5B1FC393D400C39369 /* YumCimil.jpg */; };
+		F3755BD61FC393D400C39369 /* QeskinaquS.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B5C1FC393D400C39369 /* QeskinaquS.gif */; };
+		F3755BD71FC393D400C39369 /* Jabru.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B5D1FC393D400C39369 /* Jabru.jpg */; };
+		F3755BD81FC393D400C39369 /* Fujin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B5E1FC393D400C39369 /* Fujin.jpg */; };
+		F3755BD91FC393D400C39369 /* JabruS.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B5F1FC393D400C39369 /* JabruS.gif */; };
+		F3755BDA1FC393D400C39369 /* Cipactli.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B601FC393D400C39369 /* Cipactli.jpg */; };
+		F3755BDB1FC393D400C39369 /* Balder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B611FC393D400C39369 /* Balder.jpg */; };
+		F3755BDC1FC393D400C39369 /* MamlamboP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B621FC393D400C39369 /* MamlamboP.gif */; };
+		F3755BDD1FC393D400C39369 /* Belenus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B631FC393D400C39369 /* Belenus.jpg */; };
+		F3755BDE1FC393D400C39369 /* BadbP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B641FC393D400C39369 /* BadbP.gif */; };
+		F3755BDF1FC393D400C39369 /* Buri.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B651FC393D400C39369 /* Buri.jpg */; };
+		F3755BE01FC393D400C39369 /* LomoP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B661FC393D400C39369 /* LomoP.gif */; };
+		F3755BE11FC393D400C39369 /* XolotlNanahuatl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B671FC393D400C39369 /* XolotlNanahuatl.jpg */; };
+		F3755BE21FC393D400C39369 /* Poenimus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B681FC393D400C39369 /* Poenimus.jpg */; };
+		F3755BE31FC393D400C39369 /* RanP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B691FC393D400C39369 /* RanP.gif */; };
+		F3755BE41FC393D400C39369 /* CipactliP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B6A1FC393D400C39369 /* CipactliP.gif */; };
+		F3755BE51FC393D400C39369 /* Liluri.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B6B1FC393D400C39369 /* Liluri.jpg */; };
+		F3755BE61FC393D400C39369 /* Kuju.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B6C1FC393D400C39369 /* Kuju.jpg */; };
+		F3755BE71FC393D400C39369 /* DemeterP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B6D1FC393D400C39369 /* DemeterP.gif */; };
+		F3755BE81FC393D400C39369 /* ZipaknaP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B6E1FC393D400C39369 /* ZipaknaP.gif */; };
+		F3755BE91FC393D400C39369 /* Lomo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B6F1FC393D400C39369 /* Lomo.jpg */; };
+		F3755BEA1FC393D400C39369 /* AntiP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B701FC393D400C39369 /* AntiP.gif */; };
+		F3755BEB1FC393D400C39369 /* XolotlNanahuatlP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B711FC393D400C39369 /* XolotlNanahuatlP.gif */; };
+		F3755BEC1FC393D400C39369 /* Gerra.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B721FC393D400C39369 /* Gerra.jpg */; };
+		F3755BED1FC393D400C39369 /* Camulos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B731FC393D400C39369 /* Camulos.jpg */; };
+		F3755BEE1FC393D400C39369 /* Wajet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B741FC393D400C39369 /* Wajet.jpg */; };
+		F3755BEF1FC393D400C39369 /* Gukumatz.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B751FC393D400C39369 /* Gukumatz.jpg */; };
+		F3755BF01FC393D400C39369 /* BalderP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B761FC393D400C39369 /* BalderP.gif */; };
+		F3755BF11FC393D400C39369 /* DebwenP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B771FC393D400C39369 /* DebwenP.gif */; };
+		F3755BF21FC393D400C39369 /* Heimdall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B781FC393D400C39369 /* Heimdall.jpg */; };
+		F3755BF31FC393D400C39369 /* Igalilik.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B791FC393D400C39369 /* Igalilik.jpg */; };
+		F3755BF41FC393D400C39369 /* WepwawetP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B7A1FC393D400C39369 /* WepwawetP.gif */; };
+		F3755BF51FC393D400C39369 /* GukumatzS.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B7B1FC393D400C39369 /* GukumatzS.gif */; };
+		F3755BF61FC393D400C39369 /* EAlom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B7C1FC393D400C39369 /* EAlom.jpg */; };
+		F3755BF71FC393D400C39369 /* EkChuahP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B7D1FC393D400C39369 /* EkChuahP.gif */; };
+		F3755BF81FC393D400C39369 /* YumCimilP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B7E1FC393D400C39369 /* YumCimilP.gif */; };
+		F3755BF91FC393D400C39369 /* Usas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B7F1FC393D400C39369 /* Usas.jpg */; };
+		F3755BFA1FC393D400C39369 /* Sisyphos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B801FC393D400C39369 /* Sisyphos.jpg */; };
+		F3755BFB1FC393D400C39369 /* WajetP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B811FC393D400C39369 /* WajetP.gif */; };
+		F3755BFC1FC393D400C39369 /* Gaunab.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B821FC393D400C39369 /* Gaunab.jpg */; };
+		F3755BFD1FC393D400C39369 /* KujuS.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B831FC393D400C39369 /* KujuS.gif */; };
 		F383A98B1FB98F8300547838 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F383A98A1FB98F8300547838 /* GameOverScene.swift */; };
 		F383A98D1FB9920200547838 /* sfx_wpn_laser11.wav in Resources */ = {isa = PBXBuildFile; fileRef = F383A98C1FB9920200547838 /* sfx_wpn_laser11.wav */; };
 		F383A98F1FB9922500547838 /* sfx_exp_odd4.wav in Resources */ = {isa = PBXBuildFile; fileRef = F383A98E1FB9922500547838 /* sfx_exp_odd4.wav */; };
@@ -29,12 +149,12 @@
 		F3B17DA71FBD74DB00C968BE /* sfx_coin_cluster3.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3B17DA61FBD74DB00C968BE /* sfx_coin_cluster3.wav */; };
 		F3B17DA91FBD770F00C968BE /* sfx_sound_poweron.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3B17DA81FBD770F00C968BE /* sfx_sound_poweron.wav */; };
 		F3B17DAB1FBD786400C968BE /* sfx_sounds_error13.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3B17DAA1FBD786400C968BE /* sfx_sounds_error13.wav */; };
-		F3B17EB31FBFDA9100C968BE /* DemeterP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3B17EB21FBFDA9000C968BE /* DemeterP.gif */; };
 		F3B17EB51FC1648900C968BE /* sfx_sounds_interaction6.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3B17EB41FC1648900C968BE /* sfx_sounds_interaction6.wav */; };
 		F3B17EB71FC164DE00C968BE /* sfx_sounds_interaction24.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3B17EB61FC164DE00C968BE /* sfx_sounds_interaction24.wav */; };
 		F3B17EB91FC164FC00C968BE /* sfx_menu_select1.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3B17EB81FC164FC00C968BE /* sfx_menu_select1.wav */; };
 		F3B17EBB1FC1650700C968BE /* sfx_menu_select4.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3B17EBA1FC1650700C968BE /* sfx_menu_select4.wav */; };
 		F3B17EBD1FC1653B00C968BE /* sfx_sounds_pause7_out.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3B17EBC1FC1653B00C968BE /* sfx_sounds_pause7_out.wav */; };
+		F3DCE1261FC39934003DEE20 /* GalaxyTileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = F3DCE1251FC39934003DEE20 /* GalaxyTileset.sks */; };
 		F3F340381FBB80CE003B9940 /* Silom.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3F340371FBB801C003B9940 /* Silom.ttf */; };
 		F3F340501FBBF6A3003B9940 /* sfx_sounds_falling8.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3F3404F1FBBF6A2003B9940 /* sfx_sounds_falling8.wav */; };
 		F3F340521FBBF6BF003B9940 /* sfx_movement_portal4.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3F340511FBBF6BF003B9940 /* sfx_movement_portal4.wav */; };
@@ -51,10 +171,130 @@
 		F328C28D1FB803DF00A8830F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F328C28F1FB803DF00A8830F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F328C2A81FB81A7A00A8830F /* MyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUtils.swift; sourceTree = "<group>"; };
-		F363BF491FBAD7C10073054B /* SKAction+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SKAction+Extensions.swift"; path = "../../../Downloads/2D_Apple_Games_by_Tutorials_3/16-particle-systems/final/DropCharge/DropCharge/SKTUtils/SKAction+Extensions.swift"; sourceTree = "<group>"; };
 		F363BF4B1FBADDF10073054B /* PlanetSideScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetSideScene.swift; sourceTree = "<group>"; };
 		F363C0421FBAF6100073054B /* sfx_sound_mechanicalnoise6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_sound_mechanicalnoise6.wav; sourceTree = "<group>"; };
-		F3755B051FC2754000C39369 /* MapFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFile.swift; sourceTree = "<group>"; };
+		F3755B0A1FC393D400C39369 /* Indra.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Indra.jpg; sourceTree = "<group>"; };
+		F3755B0B1FC393D400C39369 /* NingiramaP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = NingiramaP.gif; sourceTree = "<group>"; };
+		F3755B0C1FC393D400C39369 /* Abeona.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Abeona.jpg; sourceTree = "<group>"; };
+		F3755B0D1FC393D400C39369 /* IuturnaP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = IuturnaP.gif; sourceTree = "<group>"; };
+		F3755B0E1FC393D400C39369 /* BuriP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BuriP.gif; sourceTree = "<group>"; };
+		F3755B0F1FC393D400C39369 /* HoursP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = HoursP.gif; sourceTree = "<group>"; };
+		F3755B101FC393D400C39369 /* CamulosP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = CamulosP.gif; sourceTree = "<group>"; };
+		F3755B111FC393D400C39369 /* SogblenP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SogblenP.gif; sourceTree = "<group>"; };
+		F3755B121FC393D400C39369 /* Huangti.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Huangti.jpg; sourceTree = "<group>"; };
+		F3755B131FC393D400C39369 /* WusquusS.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = WusquusS.gif; sourceTree = "<group>"; };
+		F3755B141FC393D400C39369 /* JunoS.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = JunoS.gif; sourceTree = "<group>"; };
+		F3755B151FC393D400C39369 /* Candra.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Candra.jpg; sourceTree = "<group>"; };
+		F3755B161FC393D400C39369 /* Tin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Tin.jpg; sourceTree = "<group>"; };
+		F3755B171FC393D400C39369 /* UsasP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = UsasP.gif; sourceTree = "<group>"; };
+		F3755B181FC393D400C39369 /* Juno.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Juno.jpg; sourceTree = "<group>"; };
+		F3755B191FC393D400C39369 /* FujinP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = FujinP.gif; sourceTree = "<group>"; };
+		F3755B1A1FC393D400C39369 /* HeimdallS.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = HeimdallS.gif; sourceTree = "<group>"; };
+		F3755B1B1FC393D400C39369 /* Faivarongo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Faivarongo.jpg; sourceTree = "<group>"; };
+		F3755B1C1FC393D400C39369 /* Anti.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Anti.jpg; sourceTree = "<group>"; };
+		F3755B1D1FC393D400C39369 /* EAlomP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = EAlomP.gif; sourceTree = "<group>"; };
+		F3755B1E1FC393D400C39369 /* GaunabP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = GaunabP.gif; sourceTree = "<group>"; };
+		F3755B1F1FC393D400C39369 /* Karta.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Karta.jpg; sourceTree = "<group>"; };
+		F3755B201FC393D400C39369 /* TuleS.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = TuleS.gif; sourceTree = "<group>"; };
+		F3755B211FC393D400C39369 /* GerraP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = GerraP.gif; sourceTree = "<group>"; };
+		F3755B221FC393D400C39369 /* HastseyaltiP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = HastseyaltiP.gif; sourceTree = "<group>"; };
+		F3755B231FC393D400C39369 /* Iuturna.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Iuturna.jpg; sourceTree = "<group>"; };
+		F3755B241FC393D400C39369 /* Zurvan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Zurvan.jpg; sourceTree = "<group>"; };
+		F3755B251FC393D400C39369 /* Demeter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Demeter.jpg; sourceTree = "<group>"; };
+		F3755B261FC393D400C39369 /* LiluriP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LiluriP.gif; sourceTree = "<group>"; };
+		F3755B271FC393D400C39369 /* Aegir.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Aegir.jpg; sourceTree = "<group>"; };
+		F3755B281FC393D400C39369 /* KybeleP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = KybeleP.gif; sourceTree = "<group>"; };
+		F3755B291FC393D400C39369 /* Badb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Badb.jpg; sourceTree = "<group>"; };
+		F3755B2A1FC393D400C39369 /* Osande.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Osande.jpg; sourceTree = "<group>"; };
+		F3755B2B1FC393D400C39369 /* Hours.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Hours.jpg; sourceTree = "<group>"; };
+		F3755B2C1FC393D400C39369 /* Aditi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Aditi.jpg; sourceTree = "<group>"; };
+		F3755B2D1FC393D400C39369 /* TinP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = TinP.gif; sourceTree = "<group>"; };
+		F3755B2E1FC393D400C39369 /* Zipakna.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Zipakna.jpg; sourceTree = "<group>"; };
+		F3755B2F1FC393D400C39369 /* HuangTiS.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = HuangTiS.gif; sourceTree = "<group>"; };
+		F3755B301FC393D400C39369 /* FaivarongoP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = FaivarongoP.gif; sourceTree = "<group>"; };
+		F3755B311FC393D400C39369 /* Daphne.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Daphne.jpg; sourceTree = "<group>"; };
+		F3755B321FC393D400C39369 /* Debwen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Debwen.jpg; sourceTree = "<group>"; };
+		F3755B331FC393D400C39369 /* Jokinam.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Jokinam.jpg; sourceTree = "<group>"; };
+		F3755B341FC393D400C39369 /* Mamlambo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Mamlambo.jpg; sourceTree = "<group>"; };
+		F3755B351FC393D400C39369 /* LeukotheaP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LeukotheaP.gif; sourceTree = "<group>"; };
+		F3755B361FC393D400C39369 /* YinamtilanP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = YinamtilanP.gif; sourceTree = "<group>"; };
+		F3755B371FC393D400C39369 /* Qeskinaqu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Qeskinaqu.jpg; sourceTree = "<group>"; };
+		F3755B381FC393D400C39369 /* Hastseyalti.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Hastseyalti.jpg; sourceTree = "<group>"; };
+		F3755B391FC393D400C39369 /* CandraP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = CandraP.gif; sourceTree = "<group>"; };
+		F3755B3A1FC393D400C39369 /* Wusquus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Wusquus.jpg; sourceTree = "<group>"; };
+		F3755B3B1FC393D400C39369 /* Tule.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Tule.jpg; sourceTree = "<group>"; };
+		F3755B3C1FC393D400C39369 /* AditiP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = AditiP.gif; sourceTree = "<group>"; };
+		F3755B3D1FC393D400C39369 /* SisyphosP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SisyphosP.gif; sourceTree = "<group>"; };
+		F3755B3E1FC393D400C39369 /* YamadutiP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = YamadutiP.gif; sourceTree = "<group>"; };
+		F3755B3F1FC393D400C39369 /* Kybele.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Kybele.jpg; sourceTree = "<group>"; };
+		F3755B401FC393D400C39369 /* ZurvanP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ZurvanP.gif; sourceTree = "<group>"; };
+		F3755B411FC393D400C39369 /* IgalilikP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = IgalilikP.gif; sourceTree = "<group>"; };
+		F3755B421FC393D400C39369 /* Zababa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Zababa.jpg; sourceTree = "<group>"; };
+		F3755B431FC393D400C39369 /* Yamaduti.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Yamaduti.jpg; sourceTree = "<group>"; };
+		F3755B441FC393D400C39369 /* BelenusP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BelenusP.gif; sourceTree = "<group>"; };
+		F3755B451FC393D400C39369 /* UsinsS.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = UsinsS.gif; sourceTree = "<group>"; };
+		F3755B461FC393D400C39369 /* Garuda.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Garuda.jpg; sourceTree = "<group>"; };
+		F3755B471FC393D400C39369 /* AbeonaP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = AbeonaP.gif; sourceTree = "<group>"; };
+		F3755B481FC393D400C39369 /* Sgana.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Sgana.jpg; sourceTree = "<group>"; };
+		F3755B491FC393D400C39369 /* DaphneP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = DaphneP.gif; sourceTree = "<group>"; };
+		F3755B4A1FC393D400C39369 /* AegirP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = AegirP.gif; sourceTree = "<group>"; };
+		F3755B4B1FC393D400C39369 /* Ningirama.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Ningirama.jpg; sourceTree = "<group>"; };
+		F3755B4C1FC393D400C39369 /* JokinamP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = JokinamP.gif; sourceTree = "<group>"; };
+		F3755B4D1FC393D400C39369 /* GarudaS.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = GarudaS.gif; sourceTree = "<group>"; };
+		F3755B4E1FC393D400C39369 /* Ekchuah.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Ekchuah.jpg; sourceTree = "<group>"; };
+		F3755B4F1FC393D400C39369 /* OsandeP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = OsandeP.gif; sourceTree = "<group>"; };
+		F3755B501FC393D400C39369 /* ZababaP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ZababaP.gif; sourceTree = "<group>"; };
+		F3755B511FC393D400C39369 /* Leukothea.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Leukothea.jpg; sourceTree = "<group>"; };
+		F3755B521FC393D400C39369 /* Yinamtilan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Yinamtilan.jpg; sourceTree = "<group>"; };
+		F3755B531FC393D400C39369 /* KartaP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = KartaP.gif; sourceTree = "<group>"; };
+		F3755B541FC393D400C39369 /* Wepwawet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Wepwawet.jpg; sourceTree = "<group>"; };
+		F3755B551FC393D400C39369 /* Ran.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Ran.jpg; sourceTree = "<group>"; };
+		F3755B561FC393D400C39369 /* Sogblen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Sogblen.jpg; sourceTree = "<group>"; };
+		F3755B571FC393D400C39369 /* IndraP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = IndraP.gif; sourceTree = "<group>"; };
+		F3755B581FC393D400C39369 /* PoenimusP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = PoenimusP.gif; sourceTree = "<group>"; };
+		F3755B591FC393D400C39369 /* SganaP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SganaP.gif; sourceTree = "<group>"; };
+		F3755B5A1FC393D400C39369 /* Usins.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Usins.jpg; sourceTree = "<group>"; };
+		F3755B5B1FC393D400C39369 /* YumCimil.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = YumCimil.jpg; sourceTree = "<group>"; };
+		F3755B5C1FC393D400C39369 /* QeskinaquS.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = QeskinaquS.gif; sourceTree = "<group>"; };
+		F3755B5D1FC393D400C39369 /* Jabru.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Jabru.jpg; sourceTree = "<group>"; };
+		F3755B5E1FC393D400C39369 /* Fujin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Fujin.jpg; sourceTree = "<group>"; };
+		F3755B5F1FC393D400C39369 /* JabruS.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = JabruS.gif; sourceTree = "<group>"; };
+		F3755B601FC393D400C39369 /* Cipactli.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Cipactli.jpg; sourceTree = "<group>"; };
+		F3755B611FC393D400C39369 /* Balder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Balder.jpg; sourceTree = "<group>"; };
+		F3755B621FC393D400C39369 /* MamlamboP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = MamlamboP.gif; sourceTree = "<group>"; };
+		F3755B631FC393D400C39369 /* Belenus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Belenus.jpg; sourceTree = "<group>"; };
+		F3755B641FC393D400C39369 /* BadbP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BadbP.gif; sourceTree = "<group>"; };
+		F3755B651FC393D400C39369 /* Buri.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Buri.jpg; sourceTree = "<group>"; };
+		F3755B661FC393D400C39369 /* LomoP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LomoP.gif; sourceTree = "<group>"; };
+		F3755B671FC393D400C39369 /* XolotlNanahuatl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = XolotlNanahuatl.jpg; sourceTree = "<group>"; };
+		F3755B681FC393D400C39369 /* Poenimus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Poenimus.jpg; sourceTree = "<group>"; };
+		F3755B691FC393D400C39369 /* RanP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = RanP.gif; sourceTree = "<group>"; };
+		F3755B6A1FC393D400C39369 /* CipactliP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = CipactliP.gif; sourceTree = "<group>"; };
+		F3755B6B1FC393D400C39369 /* Liluri.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Liluri.jpg; sourceTree = "<group>"; };
+		F3755B6C1FC393D400C39369 /* Kuju.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Kuju.jpg; sourceTree = "<group>"; };
+		F3755B6D1FC393D400C39369 /* DemeterP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = DemeterP.gif; sourceTree = "<group>"; };
+		F3755B6E1FC393D400C39369 /* ZipaknaP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ZipaknaP.gif; sourceTree = "<group>"; };
+		F3755B6F1FC393D400C39369 /* Lomo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Lomo.jpg; sourceTree = "<group>"; };
+		F3755B701FC393D400C39369 /* AntiP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = AntiP.gif; sourceTree = "<group>"; };
+		F3755B711FC393D400C39369 /* XolotlNanahuatlP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = XolotlNanahuatlP.gif; sourceTree = "<group>"; };
+		F3755B721FC393D400C39369 /* Gerra.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Gerra.jpg; sourceTree = "<group>"; };
+		F3755B731FC393D400C39369 /* Camulos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Camulos.jpg; sourceTree = "<group>"; };
+		F3755B741FC393D400C39369 /* Wajet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Wajet.jpg; sourceTree = "<group>"; };
+		F3755B751FC393D400C39369 /* Gukumatz.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Gukumatz.jpg; sourceTree = "<group>"; };
+		F3755B761FC393D400C39369 /* BalderP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BalderP.gif; sourceTree = "<group>"; };
+		F3755B771FC393D400C39369 /* DebwenP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = DebwenP.gif; sourceTree = "<group>"; };
+		F3755B781FC393D400C39369 /* Heimdall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Heimdall.jpg; sourceTree = "<group>"; };
+		F3755B791FC393D400C39369 /* Igalilik.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Igalilik.jpg; sourceTree = "<group>"; };
+		F3755B7A1FC393D400C39369 /* WepwawetP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = WepwawetP.gif; sourceTree = "<group>"; };
+		F3755B7B1FC393D400C39369 /* GukumatzS.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = GukumatzS.gif; sourceTree = "<group>"; };
+		F3755B7C1FC393D400C39369 /* EAlom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = EAlom.jpg; sourceTree = "<group>"; };
+		F3755B7D1FC393D400C39369 /* EkChuahP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = EkChuahP.gif; sourceTree = "<group>"; };
+		F3755B7E1FC393D400C39369 /* YumCimilP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = YumCimilP.gif; sourceTree = "<group>"; };
+		F3755B7F1FC393D400C39369 /* Usas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Usas.jpg; sourceTree = "<group>"; };
+		F3755B801FC393D400C39369 /* Sisyphos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Sisyphos.jpg; sourceTree = "<group>"; };
+		F3755B811FC393D400C39369 /* WajetP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = WajetP.gif; sourceTree = "<group>"; };
+		F3755B821FC393D400C39369 /* Gaunab.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Gaunab.jpg; sourceTree = "<group>"; };
+		F3755B831FC393D400C39369 /* KujuS.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = KujuS.gif; sourceTree = "<group>"; };
 		F383A98A1FB98F8300547838 /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		F383A98C1FB9920200547838 /* sfx_wpn_laser11.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_wpn_laser11.wav; sourceTree = "<group>"; };
 		F383A98E1FB9922500547838 /* sfx_exp_odd4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_exp_odd4.wav; sourceTree = "<group>"; };
@@ -65,12 +305,12 @@
 		F3B17DA61FBD74DB00C968BE /* sfx_coin_cluster3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_coin_cluster3.wav; sourceTree = "<group>"; };
 		F3B17DA81FBD770F00C968BE /* sfx_sound_poweron.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_sound_poweron.wav; sourceTree = "<group>"; };
 		F3B17DAA1FBD786400C968BE /* sfx_sounds_error13.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_sounds_error13.wav; sourceTree = "<group>"; };
-		F3B17EB21FBFDA9000C968BE /* DemeterP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = DemeterP.gif; path = ../../../Downloads/cosmics/Paired/DemeterP.gif; sourceTree = "<group>"; };
 		F3B17EB41FC1648900C968BE /* sfx_sounds_interaction6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_sounds_interaction6.wav; sourceTree = "<group>"; };
 		F3B17EB61FC164DE00C968BE /* sfx_sounds_interaction24.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_sounds_interaction24.wav; sourceTree = "<group>"; };
 		F3B17EB81FC164FC00C968BE /* sfx_menu_select1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_menu_select1.wav; sourceTree = "<group>"; };
 		F3B17EBA1FC1650700C968BE /* sfx_menu_select4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_menu_select4.wav; sourceTree = "<group>"; };
 		F3B17EBC1FC1653B00C968BE /* sfx_sounds_pause7_out.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_sounds_pause7_out.wav; sourceTree = "<group>"; };
+		F3DCE1251FC39934003DEE20 /* GalaxyTileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GalaxyTileset.sks; sourceTree = "<group>"; };
 		F3F340371FBB801C003B9940 /* Silom.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Silom.ttf; sourceTree = "<group>"; };
 		F3F3404F1FBBF6A2003B9940 /* sfx_sounds_falling8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_sounds_falling8.wav; sourceTree = "<group>"; };
 		F3F340511FBBF6BF003B9940 /* sfx_movement_portal4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_movement_portal4.wav; sourceTree = "<group>"; };
@@ -108,38 +348,175 @@
 			children = (
 				F328C27D1FB803DF00A8830F /* AppDelegate.swift */,
 				F328C2831FB803DF00A8830F /* GameScene.swift */,
-				F3755B051FC2754000C39369 /* MapFile.swift */,
+				F3DCE1251FC39934003DEE20 /* GalaxyTileset.sks */,
 				F304AB1D1FBD55F5004E55B5 /* Ships.swift */,
 				F383A98A1FB98F8300547838 /* GameOverScene.swift */,
 				F363BF4B1FBADDF10073054B /* PlanetSideScene.swift */,
 				F328C2A81FB81A7A00A8830F /* MyUtils.swift */,
 				F3F340371FBB801C003B9940 /* Silom.ttf */,
 				F328C2851FB803DF00A8830F /* GameViewController.swift */,
-				F383A9901FB9923400547838 /* sfx_exp_odd6.wav */,
-				F3F340511FBBF6BF003B9940 /* sfx_movement_portal4.wav */,
-				F3F3404F1FBBF6A2003B9940 /* sfx_sounds_falling8.wav */,
+				F3755B091FC393D400C39369 /* Planet Art */,
 				F328C2871FB803DF00A8830F /* Main.storyboard */,
-				F383A9921FB9924000547838 /* sfx_exp_shortest_hard5.wav */,
-				F3B17DA81FBD770F00C968BE /* sfx_sound_poweron.wav */,
-				F383A9941FB9929A00547838 /* sfx_deathscream_human3.wav */,
-				F3B17EBC1FC1653B00C968BE /* sfx_sounds_pause7_out.wav */,
-				F3B17EBA1FC1650700C968BE /* sfx_menu_select4.wav */,
-				F3B17EB81FC164FC00C968BE /* sfx_menu_select1.wav */,
-				F3B17DAA1FBD786400C968BE /* sfx_sounds_error13.wav */,
-				F3B17EB61FC164DE00C968BE /* sfx_sounds_interaction24.wav */,
-				F3B17EB21FBFDA9000C968BE /* DemeterP.gif */,
-				F363C0421FBAF6100073054B /* sfx_sound_mechanicalnoise6.wav */,
-				F3B17EB41FC1648900C968BE /* sfx_sounds_interaction6.wav */,
-				F3B17DA61FBD74DB00C968BE /* sfx_coin_cluster3.wav */,
-				F383A98E1FB9922500547838 /* sfx_exp_odd4.wav */,
+				F3755BFE1FC394A800C39369 /* Sound Effects */,
 				F383A9961FB9976700547838 /* YouDie.png */,
-				F383A98C1FB9920200547838 /* sfx_wpn_laser11.wav */,
 				F328C28F1FB803DF00A8830F /* Info.plist */,
-				F363BF491FBAD7C10073054B /* SKAction+Extensions.swift */,
 				F328C28A1FB803DF00A8830F /* Assets.xcassets */,
 				F328C28C1FB803DF00A8830F /* LaunchScreen.storyboard */,
 			);
 			path = Mercenary;
+			sourceTree = "<group>";
+		};
+		F3755B091FC393D400C39369 /* Planet Art */ = {
+			isa = PBXGroup;
+			children = (
+				F3755B0A1FC393D400C39369 /* Indra.jpg */,
+				F3755B0B1FC393D400C39369 /* NingiramaP.gif */,
+				F3755B0C1FC393D400C39369 /* Abeona.jpg */,
+				F3755B0D1FC393D400C39369 /* IuturnaP.gif */,
+				F3755B0E1FC393D400C39369 /* BuriP.gif */,
+				F3755B0F1FC393D400C39369 /* HoursP.gif */,
+				F3755B101FC393D400C39369 /* CamulosP.gif */,
+				F3755B111FC393D400C39369 /* SogblenP.gif */,
+				F3755B121FC393D400C39369 /* Huangti.jpg */,
+				F3755B131FC393D400C39369 /* WusquusS.gif */,
+				F3755B141FC393D400C39369 /* JunoS.gif */,
+				F3755B151FC393D400C39369 /* Candra.jpg */,
+				F3755B161FC393D400C39369 /* Tin.jpg */,
+				F3755B171FC393D400C39369 /* UsasP.gif */,
+				F3755B181FC393D400C39369 /* Juno.jpg */,
+				F3755B191FC393D400C39369 /* FujinP.gif */,
+				F3755B1A1FC393D400C39369 /* HeimdallS.gif */,
+				F3755B1B1FC393D400C39369 /* Faivarongo.jpg */,
+				F3755B1C1FC393D400C39369 /* Anti.jpg */,
+				F3755B1D1FC393D400C39369 /* EAlomP.gif */,
+				F3755B1E1FC393D400C39369 /* GaunabP.gif */,
+				F3755B1F1FC393D400C39369 /* Karta.jpg */,
+				F3755B201FC393D400C39369 /* TuleS.gif */,
+				F3755B211FC393D400C39369 /* GerraP.gif */,
+				F3755B221FC393D400C39369 /* HastseyaltiP.gif */,
+				F3755B231FC393D400C39369 /* Iuturna.jpg */,
+				F3755B241FC393D400C39369 /* Zurvan.jpg */,
+				F3755B251FC393D400C39369 /* Demeter.jpg */,
+				F3755B261FC393D400C39369 /* LiluriP.gif */,
+				F3755B271FC393D400C39369 /* Aegir.jpg */,
+				F3755B281FC393D400C39369 /* KybeleP.gif */,
+				F3755B291FC393D400C39369 /* Badb.jpg */,
+				F3755B2A1FC393D400C39369 /* Osande.jpg */,
+				F3755B2B1FC393D400C39369 /* Hours.jpg */,
+				F3755B2C1FC393D400C39369 /* Aditi.jpg */,
+				F3755B2D1FC393D400C39369 /* TinP.gif */,
+				F3755B2E1FC393D400C39369 /* Zipakna.jpg */,
+				F3755B2F1FC393D400C39369 /* HuangTiS.gif */,
+				F3755B301FC393D400C39369 /* FaivarongoP.gif */,
+				F3755B311FC393D400C39369 /* Daphne.jpg */,
+				F3755B321FC393D400C39369 /* Debwen.jpg */,
+				F3755B331FC393D400C39369 /* Jokinam.jpg */,
+				F3755B341FC393D400C39369 /* Mamlambo.jpg */,
+				F3755B351FC393D400C39369 /* LeukotheaP.gif */,
+				F3755B361FC393D400C39369 /* YinamtilanP.gif */,
+				F3755B371FC393D400C39369 /* Qeskinaqu.jpg */,
+				F3755B381FC393D400C39369 /* Hastseyalti.jpg */,
+				F3755B391FC393D400C39369 /* CandraP.gif */,
+				F3755B3A1FC393D400C39369 /* Wusquus.jpg */,
+				F3755B3B1FC393D400C39369 /* Tule.jpg */,
+				F3755B3C1FC393D400C39369 /* AditiP.gif */,
+				F3755B3D1FC393D400C39369 /* SisyphosP.gif */,
+				F3755B3E1FC393D400C39369 /* YamadutiP.gif */,
+				F3755B3F1FC393D400C39369 /* Kybele.jpg */,
+				F3755B401FC393D400C39369 /* ZurvanP.gif */,
+				F3755B411FC393D400C39369 /* IgalilikP.gif */,
+				F3755B421FC393D400C39369 /* Zababa.jpg */,
+				F3755B431FC393D400C39369 /* Yamaduti.jpg */,
+				F3755B441FC393D400C39369 /* BelenusP.gif */,
+				F3755B451FC393D400C39369 /* UsinsS.gif */,
+				F3755B461FC393D400C39369 /* Garuda.jpg */,
+				F3755B471FC393D400C39369 /* AbeonaP.gif */,
+				F3755B481FC393D400C39369 /* Sgana.jpg */,
+				F3755B491FC393D400C39369 /* DaphneP.gif */,
+				F3755B4A1FC393D400C39369 /* AegirP.gif */,
+				F3755B4B1FC393D400C39369 /* Ningirama.jpg */,
+				F3755B4C1FC393D400C39369 /* JokinamP.gif */,
+				F3755B4D1FC393D400C39369 /* GarudaS.gif */,
+				F3755B4E1FC393D400C39369 /* Ekchuah.jpg */,
+				F3755B4F1FC393D400C39369 /* OsandeP.gif */,
+				F3755B501FC393D400C39369 /* ZababaP.gif */,
+				F3755B511FC393D400C39369 /* Leukothea.jpg */,
+				F3755B521FC393D400C39369 /* Yinamtilan.jpg */,
+				F3755B531FC393D400C39369 /* KartaP.gif */,
+				F3755B541FC393D400C39369 /* Wepwawet.jpg */,
+				F3755B551FC393D400C39369 /* Ran.jpg */,
+				F3755B561FC393D400C39369 /* Sogblen.jpg */,
+				F3755B571FC393D400C39369 /* IndraP.gif */,
+				F3755B581FC393D400C39369 /* PoenimusP.gif */,
+				F3755B591FC393D400C39369 /* SganaP.gif */,
+				F3755B5A1FC393D400C39369 /* Usins.jpg */,
+				F3755B5B1FC393D400C39369 /* YumCimil.jpg */,
+				F3755B5C1FC393D400C39369 /* QeskinaquS.gif */,
+				F3755B5D1FC393D400C39369 /* Jabru.jpg */,
+				F3755B5E1FC393D400C39369 /* Fujin.jpg */,
+				F3755B5F1FC393D400C39369 /* JabruS.gif */,
+				F3755B601FC393D400C39369 /* Cipactli.jpg */,
+				F3755B611FC393D400C39369 /* Balder.jpg */,
+				F3755B621FC393D400C39369 /* MamlamboP.gif */,
+				F3755B631FC393D400C39369 /* Belenus.jpg */,
+				F3755B641FC393D400C39369 /* BadbP.gif */,
+				F3755B651FC393D400C39369 /* Buri.jpg */,
+				F3755B661FC393D400C39369 /* LomoP.gif */,
+				F3755B671FC393D400C39369 /* XolotlNanahuatl.jpg */,
+				F3755B681FC393D400C39369 /* Poenimus.jpg */,
+				F3755B691FC393D400C39369 /* RanP.gif */,
+				F3755B6A1FC393D400C39369 /* CipactliP.gif */,
+				F3755B6B1FC393D400C39369 /* Liluri.jpg */,
+				F3755B6C1FC393D400C39369 /* Kuju.jpg */,
+				F3755B6D1FC393D400C39369 /* DemeterP.gif */,
+				F3755B6E1FC393D400C39369 /* ZipaknaP.gif */,
+				F3755B6F1FC393D400C39369 /* Lomo.jpg */,
+				F3755B701FC393D400C39369 /* AntiP.gif */,
+				F3755B711FC393D400C39369 /* XolotlNanahuatlP.gif */,
+				F3755B721FC393D400C39369 /* Gerra.jpg */,
+				F3755B731FC393D400C39369 /* Camulos.jpg */,
+				F3755B741FC393D400C39369 /* Wajet.jpg */,
+				F3755B751FC393D400C39369 /* Gukumatz.jpg */,
+				F3755B761FC393D400C39369 /* BalderP.gif */,
+				F3755B771FC393D400C39369 /* DebwenP.gif */,
+				F3755B781FC393D400C39369 /* Heimdall.jpg */,
+				F3755B791FC393D400C39369 /* Igalilik.jpg */,
+				F3755B7A1FC393D400C39369 /* WepwawetP.gif */,
+				F3755B7B1FC393D400C39369 /* GukumatzS.gif */,
+				F3755B7C1FC393D400C39369 /* EAlom.jpg */,
+				F3755B7D1FC393D400C39369 /* EkChuahP.gif */,
+				F3755B7E1FC393D400C39369 /* YumCimilP.gif */,
+				F3755B7F1FC393D400C39369 /* Usas.jpg */,
+				F3755B801FC393D400C39369 /* Sisyphos.jpg */,
+				F3755B811FC393D400C39369 /* WajetP.gif */,
+				F3755B821FC393D400C39369 /* Gaunab.jpg */,
+				F3755B831FC393D400C39369 /* KujuS.gif */,
+			);
+			path = "Planet Art";
+			sourceTree = "<group>";
+		};
+		F3755BFE1FC394A800C39369 /* Sound Effects */ = {
+			isa = PBXGroup;
+			children = (
+				F383A9921FB9924000547838 /* sfx_exp_shortest_hard5.wav */,
+				F3B17DA81FBD770F00C968BE /* sfx_sound_poweron.wav */,
+				F383A9901FB9923400547838 /* sfx_exp_odd6.wav */,
+				F3F3404F1FBBF6A2003B9940 /* sfx_sounds_falling8.wav */,
+				F383A9941FB9929A00547838 /* sfx_deathscream_human3.wav */,
+				F3F340511FBBF6BF003B9940 /* sfx_movement_portal4.wav */,
+				F3B17EBC1FC1653B00C968BE /* sfx_sounds_pause7_out.wav */,
+				F3B17EBA1FC1650700C968BE /* sfx_menu_select4.wav */,
+				F3B17EB81FC164FC00C968BE /* sfx_menu_select1.wav */,
+				F3B17DAA1FBD786400C968BE /* sfx_sounds_error13.wav */,
+				F383A98C1FB9920200547838 /* sfx_wpn_laser11.wav */,
+				F3B17EB61FC164DE00C968BE /* sfx_sounds_interaction24.wav */,
+				F363C0421FBAF6100073054B /* sfx_sound_mechanicalnoise6.wav */,
+				F3B17EB41FC1648900C968BE /* sfx_sounds_interaction6.wav */,
+				F3B17DA61FBD74DB00C968BE /* sfx_coin_cluster3.wav */,
+				F383A98E1FB9922500547838 /* sfx_exp_odd4.wav */,
+			);
+			name = "Sound Effects";
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,28 +578,150 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3755BE41FC393D400C39369 /* CipactliP.gif in Resources */,
+				F3755B8C1FC393D400C39369 /* Huangti.jpg in Resources */,
+				F3755BD71FC393D400C39369 /* Jabru.jpg in Resources */,
+				F3755BDD1FC393D400C39369 /* Belenus.jpg in Resources */,
 				F328C2891FB803DF00A8830F /* Main.storyboard in Resources */,
+				F3755BFC1FC393D400C39369 /* Gaunab.jpg in Resources */,
+				F3755B881FC393D400C39369 /* BuriP.gif in Resources */,
+				F3755BF61FC393D400C39369 /* EAlom.jpg in Resources */,
+				F3755B951FC393D400C39369 /* Faivarongo.jpg in Resources */,
 				F3B17EB71FC164DE00C968BE /* sfx_sounds_interaction24.wav in Resources */,
 				F383A9911FB9923500547838 /* sfx_exp_odd6.wav in Resources */,
+				F3755BF41FC393D400C39369 /* WepwawetP.gif in Resources */,
 				F328C28B1FB803DF00A8830F /* Assets.xcassets in Resources */,
+				F3755BA21FC393D400C39369 /* KybeleP.gif in Resources */,
+				F3755BF71FC393D400C39369 /* EkChuahP.gif in Resources */,
+				F3755BC41FC393D400C39369 /* AegirP.gif in Resources */,
+				F3755BE21FC393D400C39369 /* Poenimus.jpg in Resources */,
+				F3755BEF1FC393D400C39369 /* Gukumatz.jpg in Resources */,
+				F3755BAC1FC393D400C39369 /* Debwen.jpg in Resources */,
+				F3755B991FC393D400C39369 /* Karta.jpg in Resources */,
+				F3755B841FC393D400C39369 /* Indra.jpg in Resources */,
+				F3755BE01FC393D400C39369 /* LomoP.gif in Resources */,
+				F3755BAB1FC393D400C39369 /* Daphne.jpg in Resources */,
+				F3755BD21FC393D400C39369 /* PoenimusP.gif in Resources */,
+				F3755BBD1FC393D400C39369 /* Yamaduti.jpg in Resources */,
+				F3755BD91FC393D400C39369 /* JabruS.gif in Resources */,
 				F3B17EB91FC164FC00C968BE /* sfx_menu_select1.wav in Resources */,
+				F3755BD41FC393D400C39369 /* Usins.jpg in Resources */,
+				F3755BCE1FC393D400C39369 /* Wepwawet.jpg in Resources */,
+				F3755BBE1FC393D400C39369 /* BelenusP.gif in Resources */,
 				F3B17DA91FBD770F00C968BE /* sfx_sound_poweron.wav in Resources */,
+				F3755BD51FC393D400C39369 /* YumCimil.jpg in Resources */,
+				F3DCE1261FC39934003DEE20 /* GalaxyTileset.sks in Resources */,
+				F3755BC61FC393D400C39369 /* JokinamP.gif in Resources */,
+				F3755B851FC393D400C39369 /* NingiramaP.gif in Resources */,
+				F3755BC11FC393D400C39369 /* AbeonaP.gif in Resources */,
+				F3755BE81FC393D400C39369 /* ZipaknaP.gif in Resources */,
 				F3B17EBD1FC1653B00C968BE /* sfx_sounds_pause7_out.wav in Resources */,
+				F3755B921FC393D400C39369 /* Juno.jpg in Resources */,
+				F3755BB81FC393D400C39369 /* YamadutiP.gif in Resources */,
+				F3755BE11FC393D400C39369 /* XolotlNanahuatl.jpg in Resources */,
+				F3755BEC1FC393D400C39369 /* Gerra.jpg in Resources */,
+				F3755BA41FC393D400C39369 /* Osande.jpg in Resources */,
+				F3755BCA1FC393D400C39369 /* ZababaP.gif in Resources */,
+				F3755BA51FC393D400C39369 /* Hours.jpg in Resources */,
+				F3755B9A1FC393D400C39369 /* TuleS.gif in Resources */,
+				F3755B941FC393D400C39369 /* HeimdallS.gif in Resources */,
+				F3755BA61FC393D400C39369 /* Aditi.jpg in Resources */,
+				F3755BA01FC393D400C39369 /* LiluriP.gif in Resources */,
+				F3755BCF1FC393D400C39369 /* Ran.jpg in Resources */,
+				F3755BDE1FC393D400C39369 /* BadbP.gif in Resources */,
+				F3755BB01FC393D400C39369 /* YinamtilanP.gif in Resources */,
+				F3755BDF1FC393D400C39369 /* Buri.jpg in Resources */,
+				F3755BA31FC393D400C39369 /* Badb.jpg in Resources */,
+				F3755BDC1FC393D400C39369 /* MamlamboP.gif in Resources */,
+				F3755BAD1FC393D400C39369 /* Jokinam.jpg in Resources */,
+				F3755BF21FC393D400C39369 /* Heimdall.jpg in Resources */,
 				F3F340501FBBF6A3003B9940 /* sfx_sounds_falling8.wav in Resources */,
 				F383A9971FB9976700547838 /* YouDie.png in Resources */,
+				F3755BFD1FC393D400C39369 /* KujuS.gif in Resources */,
 				F3B17EB51FC1648900C968BE /* sfx_sounds_interaction6.wav in Resources */,
+				F3755BB41FC393D400C39369 /* Wusquus.jpg in Resources */,
+				F3755BE91FC393D400C39369 /* Lomo.jpg in Resources */,
 				F328C28E1FB803DF00A8830F /* LaunchScreen.storyboard in Resources */,
+				F3755BC71FC393D400C39369 /* GarudaS.gif in Resources */,
+				F3755B931FC393D400C39369 /* FujinP.gif in Resources */,
+				F3755BB91FC393D400C39369 /* Kybele.jpg in Resources */,
+				F3755BAA1FC393D400C39369 /* FaivarongoP.gif in Resources */,
+				F3755BD11FC393D400C39369 /* IndraP.gif in Resources */,
+				F3755BC21FC393D400C39369 /* Sgana.jpg in Resources */,
+				F3755BB61FC393D400C39369 /* AditiP.gif in Resources */,
+				F3755B8F1FC393D400C39369 /* Candra.jpg in Resources */,
+				F3755BFA1FC393D400C39369 /* Sisyphos.jpg in Resources */,
 				F3F340381FBB80CE003B9940 /* Silom.ttf in Resources */,
+				F3755BE61FC393D400C39369 /* Kuju.jpg in Resources */,
+				F3755BAE1FC393D400C39369 /* Mamlambo.jpg in Resources */,
+				F3755B9C1FC393D400C39369 /* HastseyaltiP.gif in Resources */,
 				F383A9951FB9929B00547838 /* sfx_deathscream_human3.wav in Resources */,
+				F3755BC51FC393D400C39369 /* Ningirama.jpg in Resources */,
+				F3755BBF1FC393D400C39369 /* UsinsS.gif in Resources */,
+				F3755BCC1FC393D400C39369 /* Yinamtilan.jpg in Resources */,
+				F3755B8A1FC393D400C39369 /* CamulosP.gif in Resources */,
+				F3755BE31FC393D400C39369 /* RanP.gif in Resources */,
+				F3755BEA1FC393D400C39369 /* AntiP.gif in Resources */,
+				F3755BA11FC393D400C39369 /* Aegir.jpg in Resources */,
+				F3755B981FC393D400C39369 /* GaunabP.gif in Resources */,
+				F3755BED1FC393D400C39369 /* Camulos.jpg in Resources */,
+				F3755BBC1FC393D400C39369 /* Zababa.jpg in Resources */,
+				F3755BB31FC393D400C39369 /* CandraP.gif in Resources */,
+				F3755B911FC393D400C39369 /* UsasP.gif in Resources */,
+				F3755BB51FC393D400C39369 /* Tule.jpg in Resources */,
+				F3755B861FC393D400C39369 /* Abeona.jpg in Resources */,
+				F3755BCD1FC393D400C39369 /* KartaP.gif in Resources */,
+				F3755BF51FC393D400C39369 /* GukumatzS.gif in Resources */,
 				F3F340521FBBF6BF003B9940 /* sfx_movement_portal4.wav in Resources */,
-				F3B17EB31FBFDA9100C968BE /* DemeterP.gif in Resources */,
+				F3755BBA1FC393D400C39369 /* ZurvanP.gif in Resources */,
 				F383A98F1FB9922500547838 /* sfx_exp_odd4.wav in Resources */,
+				F3755BFB1FC393D400C39369 /* WajetP.gif in Resources */,
+				F3755BC31FC393D400C39369 /* DaphneP.gif in Resources */,
+				F3755BBB1FC393D400C39369 /* IgalilikP.gif in Resources */,
+				F3755BC91FC393D400C39369 /* OsandeP.gif in Resources */,
+				F3755BF81FC393D400C39369 /* YumCimilP.gif in Resources */,
+				F3755BB11FC393D400C39369 /* Qeskinaqu.jpg in Resources */,
+				F3755BC01FC393D400C39369 /* Garuda.jpg in Resources */,
+				F3755BAF1FC393D400C39369 /* LeukotheaP.gif in Resources */,
+				F3755BF31FC393D400C39369 /* Igalilik.jpg in Resources */,
+				F3755BA91FC393D400C39369 /* HuangTiS.gif in Resources */,
+				F3755BA71FC393D400C39369 /* TinP.gif in Resources */,
+				F3755B9E1FC393D400C39369 /* Zurvan.jpg in Resources */,
+				F3755BE51FC393D400C39369 /* Liluri.jpg in Resources */,
+				F3755BD81FC393D400C39369 /* Fujin.jpg in Resources */,
+				F3755BC81FC393D400C39369 /* Ekchuah.jpg in Resources */,
+				F3755BB21FC393D400C39369 /* Hastseyalti.jpg in Resources */,
+				F3755B9B1FC393D400C39369 /* GerraP.gif in Resources */,
+				F3755BD01FC393D400C39369 /* Sogblen.jpg in Resources */,
+				F3755B961FC393D400C39369 /* Anti.jpg in Resources */,
 				F3B17DAB1FBD786400C968BE /* sfx_sounds_error13.wav in Resources */,
+				F3755BF91FC393D400C39369 /* Usas.jpg in Resources */,
+				F3755B891FC393D400C39369 /* HoursP.gif in Resources */,
+				F3755B871FC393D400C39369 /* IuturnaP.gif in Resources */,
+				F3755BD31FC393D400C39369 /* SganaP.gif in Resources */,
+				F3755BDB1FC393D400C39369 /* Balder.jpg in Resources */,
+				F3755BF01FC393D400C39369 /* BalderP.gif in Resources */,
+				F3755B901FC393D400C39369 /* Tin.jpg in Resources */,
 				F363C0431FBAF6110073054B /* sfx_sound_mechanicalnoise6.wav in Resources */,
+				F3755BE71FC393D400C39369 /* DemeterP.gif in Resources */,
 				F383A9931FB9924100547838 /* sfx_exp_shortest_hard5.wav in Resources */,
+				F3755BCB1FC393D400C39369 /* Leukothea.jpg in Resources */,
+				F3755B9D1FC393D400C39369 /* Iuturna.jpg in Resources */,
+				F3755BEB1FC393D400C39369 /* XolotlNanahuatlP.gif in Resources */,
+				F3755BEE1FC393D400C39369 /* Wajet.jpg in Resources */,
+				F3755B971FC393D400C39369 /* EAlomP.gif in Resources */,
+				F3755BA81FC393D400C39369 /* Zipakna.jpg in Resources */,
+				F3755B8D1FC393D400C39369 /* WusquusS.gif in Resources */,
+				F3755BB71FC393D400C39369 /* SisyphosP.gif in Resources */,
+				F3755B8B1FC393D400C39369 /* SogblenP.gif in Resources */,
+				F3755B9F1FC393D400C39369 /* Demeter.jpg in Resources */,
+				F3755B8E1FC393D400C39369 /* JunoS.gif in Resources */,
 				F3B17DA71FBD74DB00C968BE /* sfx_coin_cluster3.wav in Resources */,
+				F3755BDA1FC393D400C39369 /* Cipactli.jpg in Resources */,
 				F3B17EBB1FC1650700C968BE /* sfx_menu_select4.wav in Resources */,
 				F383A98D1FB9920200547838 /* sfx_wpn_laser11.wav in Resources */,
+				F3755BD61FC393D400C39369 /* QeskinaquS.gif in Resources */,
+				F3755BF11FC393D400C39369 /* DebwenP.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,9 +735,7 @@
 				F383A98B1FB98F8300547838 /* GameOverScene.swift in Sources */,
 				F363BF4C1FBADDF10073054B /* PlanetSideScene.swift in Sources */,
 				F328C2841FB803DF00A8830F /* GameScene.swift in Sources */,
-				F3755B061FC2754000C39369 /* MapFile.swift in Sources */,
 				F328C2861FB803DF00A8830F /* GameViewController.swift in Sources */,
-				F363BF4A1FBAD7C10073054B /* SKAction+Extensions.swift in Sources */,
 				F304AB1E1FBD55F5004E55B5 /* Ships.swift in Sources */,
 				F328C27E1FB803DF00A8830F /* AppDelegate.swift in Sources */,
 				F328C2A91FB81A7A00A8830F /* MyUtils.swift in Sources */,

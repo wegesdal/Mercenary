@@ -500,7 +500,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         emitter.particleColor = color
         emitter.particleColorBlendFactor = 1
         emitter.particleBlendMode = SKBlendMode.add
-        emitter.run(SKAction.removeFromParentAfterDelay(2.0))
         return emitter
     }
     
@@ -525,7 +524,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         emitter.particleColorBlendFactor = 1
         emitter.particleColorBlendFactorRange = 3
         emitter.particleBlendMode = SKBlendMode.add
-        emitter.run(SKAction.removeFromParentAfterDelay(0.35))
         return emitter
     }
     
@@ -536,7 +534,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // Create the emitter node
         let emitterNode = SKEmitterNode()
-        emitterNode.particleTexture = SKTexture(imageNamed: "Star")
+        emitterNode.particleTexture = SKTexture(imageNamed: "star")
         emitterNode.particleBirthRate = starsPerSecond
         emitterNode.particleColor = SKColor.lightGray
         emitterNode.particleSpeed = starSpeedY * -1
