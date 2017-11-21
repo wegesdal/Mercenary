@@ -146,6 +146,8 @@
 		F383A9931FB9924100547838 /* sfx_exp_shortest_hard5.wav in Resources */ = {isa = PBXBuildFile; fileRef = F383A9921FB9924000547838 /* sfx_exp_shortest_hard5.wav */; };
 		F383A9951FB9929B00547838 /* sfx_deathscream_human3.wav in Resources */ = {isa = PBXBuildFile; fileRef = F383A9941FB9929A00547838 /* sfx_deathscream_human3.wav */; };
 		F383A9971FB9976700547838 /* YouDie.png in Resources */ = {isa = PBXBuildFile; fileRef = F383A9961FB9976700547838 /* YouDie.png */; };
+		F391BB101FC3F79C00DAF317 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F391BB0F1FC3F79C00DAF317 /* GameScene.sks */; };
+		F391BB131FC40EE500DAF317 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F391BB121FC40EE500DAF317 /* Int+Extensions.swift */; };
 		F3B17DA71FBD74DB00C968BE /* sfx_coin_cluster3.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3B17DA61FBD74DB00C968BE /* sfx_coin_cluster3.wav */; };
 		F3B17DA91FBD770F00C968BE /* sfx_sound_poweron.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3B17DA81FBD770F00C968BE /* sfx_sound_poweron.wav */; };
 		F3B17DAB1FBD786400C968BE /* sfx_sounds_error13.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3B17DAA1FBD786400C968BE /* sfx_sounds_error13.wav */; };
@@ -154,7 +156,7 @@
 		F3B17EB91FC164FC00C968BE /* sfx_menu_select1.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3B17EB81FC164FC00C968BE /* sfx_menu_select1.wav */; };
 		F3B17EBB1FC1650700C968BE /* sfx_menu_select4.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3B17EBA1FC1650700C968BE /* sfx_menu_select4.wav */; };
 		F3B17EBD1FC1653B00C968BE /* sfx_sounds_pause7_out.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3B17EBC1FC1653B00C968BE /* sfx_sounds_pause7_out.wav */; };
-		F3DCE1261FC39934003DEE20 /* GalaxyTileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = F3DCE1251FC39934003DEE20 /* GalaxyTileset.sks */; };
+		F3DCE1261FC39934003DEE20 /* GalaxyTiles.sks in Resources */ = {isa = PBXBuildFile; fileRef = F3DCE1251FC39934003DEE20 /* GalaxyTiles.sks */; };
 		F3F340381FBB80CE003B9940 /* Silom.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3F340371FBB801C003B9940 /* Silom.ttf */; };
 		F3F340501FBBF6A3003B9940 /* sfx_sounds_falling8.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3F3404F1FBBF6A2003B9940 /* sfx_sounds_falling8.wav */; };
 		F3F340521FBBF6BF003B9940 /* sfx_movement_portal4.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3F340511FBBF6BF003B9940 /* sfx_movement_portal4.wav */; };
@@ -302,6 +304,8 @@
 		F383A9921FB9924000547838 /* sfx_exp_shortest_hard5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_exp_shortest_hard5.wav; sourceTree = "<group>"; };
 		F383A9941FB9929A00547838 /* sfx_deathscream_human3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_deathscream_human3.wav; sourceTree = "<group>"; };
 		F383A9961FB9976700547838 /* YouDie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YouDie.png; sourceTree = "<group>"; };
+		F391BB0F1FC3F79C00DAF317 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		F391BB121FC40EE500DAF317 /* Int+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 		F3B17DA61FBD74DB00C968BE /* sfx_coin_cluster3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_coin_cluster3.wav; sourceTree = "<group>"; };
 		F3B17DA81FBD770F00C968BE /* sfx_sound_poweron.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_sound_poweron.wav; sourceTree = "<group>"; };
 		F3B17DAA1FBD786400C968BE /* sfx_sounds_error13.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_sounds_error13.wav; sourceTree = "<group>"; };
@@ -310,7 +314,7 @@
 		F3B17EB81FC164FC00C968BE /* sfx_menu_select1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_menu_select1.wav; sourceTree = "<group>"; };
 		F3B17EBA1FC1650700C968BE /* sfx_menu_select4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_menu_select4.wav; sourceTree = "<group>"; };
 		F3B17EBC1FC1653B00C968BE /* sfx_sounds_pause7_out.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_sounds_pause7_out.wav; sourceTree = "<group>"; };
-		F3DCE1251FC39934003DEE20 /* GalaxyTileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GalaxyTileset.sks; sourceTree = "<group>"; };
+		F3DCE1251FC39934003DEE20 /* GalaxyTiles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GalaxyTiles.sks; sourceTree = "<group>"; };
 		F3F340371FBB801C003B9940 /* Silom.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Silom.ttf; sourceTree = "<group>"; };
 		F3F3404F1FBBF6A2003B9940 /* sfx_sounds_falling8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_sounds_falling8.wav; sourceTree = "<group>"; };
 		F3F340511FBBF6BF003B9940 /* sfx_movement_portal4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_movement_portal4.wav; sourceTree = "<group>"; };
@@ -348,12 +352,14 @@
 			children = (
 				F328C27D1FB803DF00A8830F /* AppDelegate.swift */,
 				F328C2831FB803DF00A8830F /* GameScene.swift */,
-				F3DCE1251FC39934003DEE20 /* GalaxyTileset.sks */,
+				F391BB111FC3FD6C00DAF317 /* Scenes */,
+				F3DCE1251FC39934003DEE20 /* GalaxyTiles.sks */,
 				F304AB1D1FBD55F5004E55B5 /* Ships.swift */,
 				F383A98A1FB98F8300547838 /* GameOverScene.swift */,
 				F363BF4B1FBADDF10073054B /* PlanetSideScene.swift */,
 				F328C2A81FB81A7A00A8830F /* MyUtils.swift */,
 				F3F340371FBB801C003B9940 /* Silom.ttf */,
+				F391BB121FC40EE500DAF317 /* Int+Extensions.swift */,
 				F328C2851FB803DF00A8830F /* GameViewController.swift */,
 				F3755B091FC393D400C39369 /* Planet Art */,
 				F328C2871FB803DF00A8830F /* Main.storyboard */,
@@ -519,6 +525,14 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		F391BB111FC3FD6C00DAF317 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F391BB0F1FC3F79C00DAF317 /* GameScene.sks */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -610,7 +624,7 @@
 				F3755BBE1FC393D400C39369 /* BelenusP.gif in Resources */,
 				F3B17DA91FBD770F00C968BE /* sfx_sound_poweron.wav in Resources */,
 				F3755BD51FC393D400C39369 /* YumCimil.jpg in Resources */,
-				F3DCE1261FC39934003DEE20 /* GalaxyTileset.sks in Resources */,
+				F3DCE1261FC39934003DEE20 /* GalaxyTiles.sks in Resources */,
 				F3755BC61FC393D400C39369 /* JokinamP.gif in Resources */,
 				F3755B851FC393D400C39369 /* NingiramaP.gif in Resources */,
 				F3755BC11FC393D400C39369 /* AbeonaP.gif in Resources */,
@@ -722,6 +736,7 @@
 				F383A98D1FB9920200547838 /* sfx_wpn_laser11.wav in Resources */,
 				F3755BD61FC393D400C39369 /* QeskinaquS.gif in Resources */,
 				F3755BF11FC393D400C39369 /* DebwenP.gif in Resources */,
+				F391BB101FC3F79C00DAF317 /* GameScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -737,6 +752,7 @@
 				F328C2841FB803DF00A8830F /* GameScene.swift in Sources */,
 				F328C2861FB803DF00A8830F /* GameViewController.swift in Sources */,
 				F304AB1E1FBD55F5004E55B5 /* Ships.swift in Sources */,
+				F391BB131FC40EE500DAF317 /* Int+Extensions.swift in Sources */,
 				F328C27E1FB803DF00A8830F /* AppDelegate.swift in Sources */,
 				F328C2A91FB81A7A00A8830F /* MyUtils.swift in Sources */,
 			);
