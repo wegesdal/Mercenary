@@ -11,7 +11,7 @@ import SpriteKit
 class GameScene: SKScene, SKPhysicsContactDelegate {
     let atlas = SKTextureAtlas(named: "atlas")
     let planet = SKSpriteNode(imageNamed:"DemeterP.gif")
-    let ship = SKSpriteNode(imageNamed:"model_N.png")
+    let ship = SKSpriteNode(imageNamed:"ElinaMobile.png")
     var lastUpdateTime: TimeInterval = 0
     var dt: TimeInterval = 0
     let shipMovePointsPerSec: CGFloat = 480.0
@@ -104,10 +104,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //Add Ship
         ship.name = "ship"
-        shipTextures.append(atlas.textureNamed("model_S.png"));
-        shipTextures.append(atlas.textureNamed("model_E.png"));
-        shipTextures.append(atlas.textureNamed("model_N.png"));
-        shipTextures.append(atlas.textureNamed("model_W.png"))
+        //shipTextures.append(atlas.textureNamed("model_S.png"));
+        //shipTextures.append(atlas.textureNamed("model_E.png"));
+        //shipTextures.append(atlas.textureNamed("model_N.png"));
+        //shipTextures.append(atlas.textureNamed("model_W.png"))
+        shipTextures.append(atlas.textureNamed("ElinaMobile.png"));
+        shipTextures.append(atlas.textureNamed("ElinaMobile.png"));
+        shipTextures.append(atlas.textureNamed("ElinaMobile.png"));
+        shipTextures.append(atlas.textureNamed("ElinaMobile.png"))
         
         //Add Planet
         planet.name = "planet"
@@ -117,17 +121,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         planet.zPosition = -4
         addChild(planet)
         physicsWorld.contactDelegate = self
-        physicsWorld.gravity = CGVector(dx:0, dy: 0);
-        let gravField = SKFieldNode.radialGravityField(); // Create grav field
+        physicsWorld.gravity = CGVector(dx:0, dy: 0)
+        let gravField = SKFieldNode.radialGravityField() // Create grav field
         gravField.position = planet.position
         gravField.falloff = 0.7
         gravField.strength = 3
-        addChild(gravField);
+        addChild(gravField)
         
         //Background
         backgroundColor = SKColor.black
         
-        //Add Ship
+        //Add Ship Physics
         ship.physicsBody = SKPhysicsBody(circleOfRadius: max(ship.size.width / 2, ship.size.height / 2))
         ship.physicsBody?.mass = 5
         ship.position = (CGPoint(x:400, y:400))
@@ -139,7 +143,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         cameraNode.position = CGPoint(x: size.width/2, y: size.height/2)
         
         //Add Asteroids
-        run(SKAction.repeatForever(SKAction.sequence([SKAction.run() { [weak self] in self?.spawnAsteroid()}, SKAction.wait(forDuration: 1.0)])))
+        run(SKAction.repeatForever(SKAction.sequence([SKAction.run() { [weak self] in self?.spawnAsteroid()}, SKAction.wait(forDuration: 0.50)])))
         
         //Add UIElements
         creditsLabel.text = "Credits: \(GameViewController.credits)"
@@ -338,10 +342,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         asteroid.setScale(0)
         asteroid.name = "asteroid"
         addChild(asteroid)
-        asteroid.physicsBody = SKPhysicsBody(circleOfRadius: max(ship.size.width / 2, ship.size.height / 2))
-        asteroid.physicsBody?.mass = 12
-        asteroid.physicsBody?.applyAngularImpulse(0.5)
-        asteroid.physicsBody!.contactTestBitMask = asteroid.physicsBody!.collisionBitMask
+        let asteroidBody = SKPhysicsBody(circleOfRadius: max(ship.size.width / 2, ship.size.height / 2))
+        asteroidBody.mass = 12
+        asteroidBody.applyAngularImpulse(0.5)
+        asteroidBody.contactTestBitMask = asteroidBody.collisionBitMask
+        asteroid.physicsBody = asteroidBody
         
         let appear = SKAction.scale(to: 1.0, duration: 0.5)
         let wait = SKAction.wait(forDuration: 15.0)
@@ -357,8 +362,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         chip.position = contactPoint
         chip.name = "chip"
         addChild(chip)
-        chip.physicsBody = SKPhysicsBody(circleOfRadius: max(chip.size.width / 2, chip.size.height / 2))
-        chip.physicsBody?.mass = 3
+        let chipBody = SKPhysicsBody(circleOfRadius: max(chip.size.width / 2, chip.size.height / 2))
+        chipBody.mass = 3
+        chip.physicsBody = chipBody
         let appear = SKAction.scale(to: 1.0, duration: 0.5)
         let wait = SKAction.wait(forDuration: 5.0)
         let disappear = SKAction.scale(to: 0, duration: 0.5)
@@ -373,8 +379,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             scrap.position = contactPoint
             scrap.name = "scrap"
             addChild(scrap)
-            scrap.physicsBody = SKPhysicsBody(circleOfRadius: max(scrap.size.width / 2, scrap.size.height / 2))
-            scrap.physicsBody?.mass = 1.6
+            let scrapBody = SKPhysicsBody(circleOfRadius: max(scrap.size.width / 2, scrap.size.height / 2))
+            scrapBody.mass = 1.6
+            scrap.physicsBody = scrapBody
 
             
             let appear = SKAction.scale(to: 1.0, duration: 0.5)
@@ -578,6 +585,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         print("Shake")
         run(SKAction.playSoundFileNamed("sfx_sounds_interaction6.wav",
                                         waitForCompletion: false))
+        if let view = self.view {
+            
+            if let scene = GalaxyMapScene(fileNamed: "GalaxyMapScene") {
+                scene.scaleMode = .aspectFill
+                view.presentScene(scene)
+            }
+            
+            view.ignoresSiblingOrder = true
+            view.showsFPS = false
+            view.showsNodeCount = false
+        }
     }
     
     @objc func tappedView(_ sender:UITapGestureRecognizer) {
@@ -614,7 +632,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             projectile.addChild(projectileTrail)
             ship.physicsBody?.applyImpulse(CGVector(dx: -0.2 * svector.dx, dy: -0.2 * svector.dy))
             projectile.physicsBody?.applyImpulse(CGVector(dx: 0.1 * svector.dx, dy: 0.1 * svector.dy))
-            //projectile.physicsBody?.applyImpulse(svector)
             let wait = SKAction.wait(forDuration: 1.0)
             let removeFromParent = SKAction.removeFromParent()
             let actions = [wait, removeFromParent]

@@ -15,6 +15,18 @@
 		F328C28B1FB803DF00A8830F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F328C28A1FB803DF00A8830F /* Assets.xcassets */; };
 		F328C28E1FB803DF00A8830F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F328C28C1FB803DF00A8830F /* LaunchScreen.storyboard */; };
 		F328C2A91FB81A7A00A8830F /* MyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328C2A81FB81A7A00A8830F /* MyUtils.swift */; };
+		F347DCE11FC4207D00E9775D /* GalaxyMapScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F347DCE01FC4207D00E9775D /* GalaxyMapScene.swift */; };
+		F347DCE31FC4211500E9775D /* GalaxyMapScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F347DCE21FC4211500E9775D /* GalaxyMapScene.sks */; };
+		F347DCE51FC4219200E9775D /* GalaxyTileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = F347DCE41FC4219200E9775D /* GalaxyTileset.sks */; };
+		F347DCE71FC421B100E9775D /* GalaxyMapScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F347DCE61FC421B100E9775D /* GalaxyMapScene.sks */; };
+		F347DCFA1FC790DD00E9775D /* AlienHex.png in Resources */ = {isa = PBXBuildFile; fileRef = F347DCF41FC790DC00E9775D /* AlienHex.png */; };
+		F347DCFB1FC790DD00E9775D /* MerchantHex.png in Resources */ = {isa = PBXBuildFile; fileRef = F347DCF51FC790DC00E9775D /* MerchantHex.png */; };
+		F347DCFC1FC790DD00E9775D /* FederationHex.png in Resources */ = {isa = PBXBuildFile; fileRef = F347DCF61FC790DC00E9775D /* FederationHex.png */; };
+		F347DCFD1FC790DD00E9775D /* MinersHex.png in Resources */ = {isa = PBXBuildFile; fileRef = F347DCF71FC790DC00E9775D /* MinersHex.png */; };
+		F347DCFE1FC790DD00E9775D /* RebelHex.png in Resources */ = {isa = PBXBuildFile; fileRef = F347DCF81FC790DD00E9775D /* RebelHex.png */; };
+		F347DCFF1FC790DD00E9775D /* SingularityHex.png in Resources */ = {isa = PBXBuildFile; fileRef = F347DCF91FC790DD00E9775D /* SingularityHex.png */; };
+		F347DD011FC7911300E9775D /* PirateHex.png in Resources */ = {isa = PBXBuildFile; fileRef = F347DD001FC7911200E9775D /* PirateHex.png */; };
+		F347DD031FC7B35A00E9775D /* ElinaMobile.png in Resources */ = {isa = PBXBuildFile; fileRef = F347DD021FC7B35A00E9775D /* ElinaMobile.png */; };
 		F363BF4C1FBADDF10073054B /* PlanetSideScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F363BF4B1FBADDF10073054B /* PlanetSideScene.swift */; };
 		F363C0431FBAF6110073054B /* sfx_sound_mechanicalnoise6.wav in Resources */ = {isa = PBXBuildFile; fileRef = F363C0421FBAF6100073054B /* sfx_sound_mechanicalnoise6.wav */; };
 		F3755B841FC393D400C39369 /* Indra.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B0A1FC393D400C39369 /* Indra.jpg */; };
@@ -146,7 +158,6 @@
 		F383A9931FB9924100547838 /* sfx_exp_shortest_hard5.wav in Resources */ = {isa = PBXBuildFile; fileRef = F383A9921FB9924000547838 /* sfx_exp_shortest_hard5.wav */; };
 		F383A9951FB9929B00547838 /* sfx_deathscream_human3.wav in Resources */ = {isa = PBXBuildFile; fileRef = F383A9941FB9929A00547838 /* sfx_deathscream_human3.wav */; };
 		F383A9971FB9976700547838 /* YouDie.png in Resources */ = {isa = PBXBuildFile; fileRef = F383A9961FB9976700547838 /* YouDie.png */; };
-		F391BB101FC3F79C00DAF317 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F391BB0F1FC3F79C00DAF317 /* GameScene.sks */; };
 		F391BB131FC40EE500DAF317 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F391BB121FC40EE500DAF317 /* Int+Extensions.swift */; };
 		F3B17DA71FBD74DB00C968BE /* sfx_coin_cluster3.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3B17DA61FBD74DB00C968BE /* sfx_coin_cluster3.wav */; };
 		F3B17DA91FBD770F00C968BE /* sfx_sound_poweron.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3B17DA81FBD770F00C968BE /* sfx_sound_poweron.wav */; };
@@ -156,7 +167,6 @@
 		F3B17EB91FC164FC00C968BE /* sfx_menu_select1.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3B17EB81FC164FC00C968BE /* sfx_menu_select1.wav */; };
 		F3B17EBB1FC1650700C968BE /* sfx_menu_select4.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3B17EBA1FC1650700C968BE /* sfx_menu_select4.wav */; };
 		F3B17EBD1FC1653B00C968BE /* sfx_sounds_pause7_out.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3B17EBC1FC1653B00C968BE /* sfx_sounds_pause7_out.wav */; };
-		F3DCE1261FC39934003DEE20 /* GalaxyTiles.sks in Resources */ = {isa = PBXBuildFile; fileRef = F3DCE1251FC39934003DEE20 /* GalaxyTiles.sks */; };
 		F3F340381FBB80CE003B9940 /* Silom.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3F340371FBB801C003B9940 /* Silom.ttf */; };
 		F3F340501FBBF6A3003B9940 /* sfx_sounds_falling8.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3F3404F1FBBF6A2003B9940 /* sfx_sounds_falling8.wav */; };
 		F3F340521FBBF6BF003B9940 /* sfx_movement_portal4.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3F340511FBBF6BF003B9940 /* sfx_movement_portal4.wav */; };
@@ -173,6 +183,18 @@
 		F328C28D1FB803DF00A8830F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F328C28F1FB803DF00A8830F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F328C2A81FB81A7A00A8830F /* MyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUtils.swift; sourceTree = "<group>"; };
+		F347DCE01FC4207D00E9775D /* GalaxyMapScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GalaxyMapScene.swift; path = AppIcon.appiconset/GalaxyMapScene.swift; sourceTree = "<group>"; };
+		F347DCE21FC4211500E9775D /* GalaxyMapScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GalaxyMapScene.sks; sourceTree = "<group>"; };
+		F347DCE41FC4219200E9775D /* GalaxyTileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GalaxyTileset.sks; sourceTree = "<group>"; };
+		F347DCE61FC421B100E9775D /* GalaxyMapScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GalaxyMapScene.sks; sourceTree = "<group>"; };
+		F347DCF41FC790DC00E9775D /* AlienHex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AlienHex.png; sourceTree = "<group>"; };
+		F347DCF51FC790DC00E9775D /* MerchantHex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MerchantHex.png; sourceTree = "<group>"; };
+		F347DCF61FC790DC00E9775D /* FederationHex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FederationHex.png; sourceTree = "<group>"; };
+		F347DCF71FC790DC00E9775D /* MinersHex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MinersHex.png; sourceTree = "<group>"; };
+		F347DCF81FC790DD00E9775D /* RebelHex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RebelHex.png; sourceTree = "<group>"; };
+		F347DCF91FC790DD00E9775D /* SingularityHex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SingularityHex.png; sourceTree = "<group>"; };
+		F347DD001FC7911200E9775D /* PirateHex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PirateHex.png; sourceTree = "<group>"; };
+		F347DD021FC7B35A00E9775D /* ElinaMobile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ElinaMobile.png; sourceTree = "<group>"; };
 		F363BF4B1FBADDF10073054B /* PlanetSideScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetSideScene.swift; sourceTree = "<group>"; };
 		F363C0421FBAF6100073054B /* sfx_sound_mechanicalnoise6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_sound_mechanicalnoise6.wav; sourceTree = "<group>"; };
 		F3755B0A1FC393D400C39369 /* Indra.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Indra.jpg; sourceTree = "<group>"; };
@@ -304,7 +326,6 @@
 		F383A9921FB9924000547838 /* sfx_exp_shortest_hard5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_exp_shortest_hard5.wav; sourceTree = "<group>"; };
 		F383A9941FB9929A00547838 /* sfx_deathscream_human3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_deathscream_human3.wav; sourceTree = "<group>"; };
 		F383A9961FB9976700547838 /* YouDie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YouDie.png; sourceTree = "<group>"; };
-		F391BB0F1FC3F79C00DAF317 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		F391BB121FC40EE500DAF317 /* Int+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 		F3B17DA61FBD74DB00C968BE /* sfx_coin_cluster3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_coin_cluster3.wav; sourceTree = "<group>"; };
 		F3B17DA81FBD770F00C968BE /* sfx_sound_poweron.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_sound_poweron.wav; sourceTree = "<group>"; };
@@ -314,7 +335,6 @@
 		F3B17EB81FC164FC00C968BE /* sfx_menu_select1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_menu_select1.wav; sourceTree = "<group>"; };
 		F3B17EBA1FC1650700C968BE /* sfx_menu_select4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_menu_select4.wav; sourceTree = "<group>"; };
 		F3B17EBC1FC1653B00C968BE /* sfx_sounds_pause7_out.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_sounds_pause7_out.wav; sourceTree = "<group>"; };
-		F3DCE1251FC39934003DEE20 /* GalaxyTiles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GalaxyTiles.sks; sourceTree = "<group>"; };
 		F3F340371FBB801C003B9940 /* Silom.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Silom.ttf; sourceTree = "<group>"; };
 		F3F3404F1FBBF6A2003B9940 /* sfx_sounds_falling8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_sounds_falling8.wav; sourceTree = "<group>"; };
 		F3F340511FBBF6BF003B9940 /* sfx_movement_portal4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_movement_portal4.wav; sourceTree = "<group>"; };
@@ -353,10 +373,20 @@
 				F328C27D1FB803DF00A8830F /* AppDelegate.swift */,
 				F328C2831FB803DF00A8830F /* GameScene.swift */,
 				F391BB111FC3FD6C00DAF317 /* Scenes */,
-				F3DCE1251FC39934003DEE20 /* GalaxyTiles.sks */,
+				F347DCE01FC4207D00E9775D /* GalaxyMapScene.swift */,
+				F347DCE61FC421B100E9775D /* GalaxyMapScene.sks */,
+				F347DCE41FC4219200E9775D /* GalaxyTileset.sks */,
 				F304AB1D1FBD55F5004E55B5 /* Ships.swift */,
 				F383A98A1FB98F8300547838 /* GameOverScene.swift */,
 				F363BF4B1FBADDF10073054B /* PlanetSideScene.swift */,
+				F347DD021FC7B35A00E9775D /* ElinaMobile.png */,
+				F347DCF41FC790DC00E9775D /* AlienHex.png */,
+				F347DCF61FC790DC00E9775D /* FederationHex.png */,
+				F347DCF51FC790DC00E9775D /* MerchantHex.png */,
+				F347DCF71FC790DC00E9775D /* MinersHex.png */,
+				F347DD001FC7911200E9775D /* PirateHex.png */,
+				F347DCF81FC790DD00E9775D /* RebelHex.png */,
+				F347DCF91FC790DD00E9775D /* SingularityHex.png */,
 				F328C2A81FB81A7A00A8830F /* MyUtils.swift */,
 				F3F340371FBB801C003B9940 /* Silom.ttf */,
 				F391BB121FC40EE500DAF317 /* Int+Extensions.swift */,
@@ -528,7 +558,7 @@
 		F391BB111FC3FD6C00DAF317 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				F391BB0F1FC3F79C00DAF317 /* GameScene.sks */,
+				F347DCE21FC4211500E9775D /* GalaxyMapScene.sks */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -622,9 +652,9 @@
 				F3755BD41FC393D400C39369 /* Usins.jpg in Resources */,
 				F3755BCE1FC393D400C39369 /* Wepwawet.jpg in Resources */,
 				F3755BBE1FC393D400C39369 /* BelenusP.gif in Resources */,
+				F347DCFE1FC790DD00E9775D /* RebelHex.png in Resources */,
 				F3B17DA91FBD770F00C968BE /* sfx_sound_poweron.wav in Resources */,
 				F3755BD51FC393D400C39369 /* YumCimil.jpg in Resources */,
-				F3DCE1261FC39934003DEE20 /* GalaxyTiles.sks in Resources */,
 				F3755BC61FC393D400C39369 /* JokinamP.gif in Resources */,
 				F3755B851FC393D400C39369 /* NingiramaP.gif in Resources */,
 				F3755BC11FC393D400C39369 /* AbeonaP.gif in Resources */,
@@ -641,9 +671,12 @@
 				F3755B941FC393D400C39369 /* HeimdallS.gif in Resources */,
 				F3755BA61FC393D400C39369 /* Aditi.jpg in Resources */,
 				F3755BA01FC393D400C39369 /* LiluriP.gif in Resources */,
+				F347DCFC1FC790DD00E9775D /* FederationHex.png in Resources */,
 				F3755BCF1FC393D400C39369 /* Ran.jpg in Resources */,
+				F347DD031FC7B35A00E9775D /* ElinaMobile.png in Resources */,
 				F3755BDE1FC393D400C39369 /* BadbP.gif in Resources */,
 				F3755BB01FC393D400C39369 /* YinamtilanP.gif in Resources */,
+				F347DCFA1FC790DD00E9775D /* AlienHex.png in Resources */,
 				F3755BDF1FC393D400C39369 /* Buri.jpg in Resources */,
 				F3755BA31FC393D400C39369 /* Badb.jpg in Resources */,
 				F3755BDC1FC393D400C39369 /* MamlamboP.gif in Resources */,
@@ -661,6 +694,7 @@
 				F3755BB91FC393D400C39369 /* Kybele.jpg in Resources */,
 				F3755BAA1FC393D400C39369 /* FaivarongoP.gif in Resources */,
 				F3755BD11FC393D400C39369 /* IndraP.gif in Resources */,
+				F347DCFB1FC790DD00E9775D /* MerchantHex.png in Resources */,
 				F3755BC21FC393D400C39369 /* Sgana.jpg in Resources */,
 				F3755BB61FC393D400C39369 /* AditiP.gif in Resources */,
 				F3755B8F1FC393D400C39369 /* Candra.jpg in Resources */,
@@ -671,6 +705,7 @@
 				F3755B9C1FC393D400C39369 /* HastseyaltiP.gif in Resources */,
 				F383A9951FB9929B00547838 /* sfx_deathscream_human3.wav in Resources */,
 				F3755BC51FC393D400C39369 /* Ningirama.jpg in Resources */,
+				F347DCFD1FC790DD00E9775D /* MinersHex.png in Resources */,
 				F3755BBF1FC393D400C39369 /* UsinsS.gif in Resources */,
 				F3755BCC1FC393D400C39369 /* Yinamtilan.jpg in Resources */,
 				F3755B8A1FC393D400C39369 /* CamulosP.gif in Resources */,
@@ -692,12 +727,14 @@
 				F3755BFB1FC393D400C39369 /* WajetP.gif in Resources */,
 				F3755BC31FC393D400C39369 /* DaphneP.gif in Resources */,
 				F3755BBB1FC393D400C39369 /* IgalilikP.gif in Resources */,
+				F347DCE31FC4211500E9775D /* GalaxyMapScene.sks in Resources */,
 				F3755BC91FC393D400C39369 /* OsandeP.gif in Resources */,
 				F3755BF81FC393D400C39369 /* YumCimilP.gif in Resources */,
 				F3755BB11FC393D400C39369 /* Qeskinaqu.jpg in Resources */,
 				F3755BC01FC393D400C39369 /* Garuda.jpg in Resources */,
 				F3755BAF1FC393D400C39369 /* LeukotheaP.gif in Resources */,
 				F3755BF31FC393D400C39369 /* Igalilik.jpg in Resources */,
+				F347DCE51FC4219200E9775D /* GalaxyTileset.sks in Resources */,
 				F3755BA91FC393D400C39369 /* HuangTiS.gif in Resources */,
 				F3755BA71FC393D400C39369 /* TinP.gif in Resources */,
 				F3755B9E1FC393D400C39369 /* Zurvan.jpg in Resources */,
@@ -711,6 +748,7 @@
 				F3B17DAB1FBD786400C968BE /* sfx_sounds_error13.wav in Resources */,
 				F3755BF91FC393D400C39369 /* Usas.jpg in Resources */,
 				F3755B891FC393D400C39369 /* HoursP.gif in Resources */,
+				F347DCFF1FC790DD00E9775D /* SingularityHex.png in Resources */,
 				F3755B871FC393D400C39369 /* IuturnaP.gif in Resources */,
 				F3755BD31FC393D400C39369 /* SganaP.gif in Resources */,
 				F3755BDB1FC393D400C39369 /* Balder.jpg in Resources */,
@@ -724,8 +762,10 @@
 				F3755BEB1FC393D400C39369 /* XolotlNanahuatlP.gif in Resources */,
 				F3755BEE1FC393D400C39369 /* Wajet.jpg in Resources */,
 				F3755B971FC393D400C39369 /* EAlomP.gif in Resources */,
+				F347DD011FC7911300E9775D /* PirateHex.png in Resources */,
 				F3755BA81FC393D400C39369 /* Zipakna.jpg in Resources */,
 				F3755B8D1FC393D400C39369 /* WusquusS.gif in Resources */,
+				F347DCE71FC421B100E9775D /* GalaxyMapScene.sks in Resources */,
 				F3755BB71FC393D400C39369 /* SisyphosP.gif in Resources */,
 				F3755B8B1FC393D400C39369 /* SogblenP.gif in Resources */,
 				F3755B9F1FC393D400C39369 /* Demeter.jpg in Resources */,
@@ -736,7 +776,6 @@
 				F383A98D1FB9920200547838 /* sfx_wpn_laser11.wav in Resources */,
 				F3755BD61FC393D400C39369 /* QeskinaquS.gif in Resources */,
 				F3755BF11FC393D400C39369 /* DebwenP.gif in Resources */,
-				F391BB101FC3F79C00DAF317 /* GameScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -750,6 +789,7 @@
 				F383A98B1FB98F8300547838 /* GameOverScene.swift in Sources */,
 				F363BF4C1FBADDF10073054B /* PlanetSideScene.swift in Sources */,
 				F328C2841FB803DF00A8830F /* GameScene.swift in Sources */,
+				F347DCE11FC4207D00E9775D /* GalaxyMapScene.swift in Sources */,
 				F328C2861FB803DF00A8830F /* GameViewController.swift in Sources */,
 				F304AB1E1FBD55F5004E55B5 /* Ships.swift in Sources */,
 				F391BB131FC40EE500DAF317 /* Int+Extensions.swift in Sources */,
