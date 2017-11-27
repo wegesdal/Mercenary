@@ -20,14 +20,16 @@ class GalaxyMapScene:SKScene {
         let shuffled = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: planetNames) as! [String]
         for planetName in shuffled {
             let planet = SKSpriteNode(imageNamed: planetName)
-        //Add Planets
             
+        //Add Planets
+            //Best filtering mode for pixel art is .nearest
             planet.texture!.filteringMode = .nearest
             planet.setScale(1.0)
             planet.alpha = 0.80
             let planetPosition = map.centerOfTile(atColumn: mapX, row: mapY)
             planet.position = planetPosition
             planet.zPosition = 100
+            // truncate the gif filename to use for planet name and planetside portrait jpg
             var truncateAtDotArr = planetName.components(separatedBy: ".")
             let truncatedWithLetter: String = truncateAtDotArr [0]
             let truncatedWithoutLetter = String(truncatedWithLetter[..<truncatedWithLetter.index(before: truncatedWithLetter.endIndex)])
@@ -40,6 +42,7 @@ class GalaxyMapScene:SKScene {
                 mapX = 0
             }
         }
+        //store array of truncated planet names
         print(truncatedPlanetNames)
     }
 
@@ -50,8 +53,28 @@ class GalaxyMapScene:SKScene {
                 fatalError("Background node not loaded")
         }
         self.map = map
-        
+    }
+    
+    func sceneTouched(touchLocation:CGPoint) {
+        print("touched")
+        for node in children {
+            if node.name != "map" {
+                if node.contains(touchLocation) {
+                    run(SKAction.playSoundFileNamed("sfx_menu_select4.wav", waitForCompletion: false))
+                    print(node.name ?? "planet")
+                }
+            }
+        }
+    }
+    override func touchesBegan(_ touches: Set<UITouch>,
+                               with event: UIEvent?) {
+        guard let touch = touches.first else {
+            return
+        }
+        let touchLocation = touch.location(in: self)
+        sceneTouched(touchLocation: touchLocation)
     }
 }
+
 
 
