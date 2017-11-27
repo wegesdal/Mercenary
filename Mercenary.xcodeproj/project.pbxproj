@@ -19,13 +19,6 @@
 		F347DCE31FC4211500E9775D /* GalaxyMapScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F347DCE21FC4211500E9775D /* GalaxyMapScene.sks */; };
 		F347DCE51FC4219200E9775D /* GalaxyTileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = F347DCE41FC4219200E9775D /* GalaxyTileset.sks */; };
 		F347DCE71FC421B100E9775D /* GalaxyMapScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F347DCE61FC421B100E9775D /* GalaxyMapScene.sks */; };
-		F347DCFA1FC790DD00E9775D /* AlienHex.png in Resources */ = {isa = PBXBuildFile; fileRef = F347DCF41FC790DC00E9775D /* AlienHex.png */; };
-		F347DCFB1FC790DD00E9775D /* MerchantHex.png in Resources */ = {isa = PBXBuildFile; fileRef = F347DCF51FC790DC00E9775D /* MerchantHex.png */; };
-		F347DCFC1FC790DD00E9775D /* FederationHex.png in Resources */ = {isa = PBXBuildFile; fileRef = F347DCF61FC790DC00E9775D /* FederationHex.png */; };
-		F347DCFD1FC790DD00E9775D /* MinersHex.png in Resources */ = {isa = PBXBuildFile; fileRef = F347DCF71FC790DC00E9775D /* MinersHex.png */; };
-		F347DCFE1FC790DD00E9775D /* RebelHex.png in Resources */ = {isa = PBXBuildFile; fileRef = F347DCF81FC790DD00E9775D /* RebelHex.png */; };
-		F347DCFF1FC790DD00E9775D /* SingularityHex.png in Resources */ = {isa = PBXBuildFile; fileRef = F347DCF91FC790DD00E9775D /* SingularityHex.png */; };
-		F347DD011FC7911300E9775D /* PirateHex.png in Resources */ = {isa = PBXBuildFile; fileRef = F347DD001FC7911200E9775D /* PirateHex.png */; };
 		F347DD031FC7B35A00E9775D /* ElinaMobile.png in Resources */ = {isa = PBXBuildFile; fileRef = F347DD021FC7B35A00E9775D /* ElinaMobile.png */; };
 		F363BF4C1FBADDF10073054B /* PlanetSideScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F363BF4B1FBADDF10073054B /* PlanetSideScene.swift */; };
 		F363C0431FBAF6110073054B /* sfx_sound_mechanicalnoise6.wav in Resources */ = {isa = PBXBuildFile; fileRef = F363C0421FBAF6100073054B /* sfx_sound_mechanicalnoise6.wav */; };
@@ -37,7 +30,6 @@
 		F3755B891FC393D400C39369 /* HoursP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B0F1FC393D400C39369 /* HoursP.gif */; };
 		F3755B8A1FC393D400C39369 /* CamulosP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B101FC393D400C39369 /* CamulosP.gif */; };
 		F3755B8B1FC393D400C39369 /* SogblenP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B111FC393D400C39369 /* SogblenP.gif */; };
-		F3755B8C1FC393D400C39369 /* Huangti.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B121FC393D400C39369 /* Huangti.jpg */; };
 		F3755B8D1FC393D400C39369 /* WusquusS.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B131FC393D400C39369 /* WusquusS.gif */; };
 		F3755B8E1FC393D400C39369 /* JunoS.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B141FC393D400C39369 /* JunoS.gif */; };
 		F3755B8F1FC393D400C39369 /* Candra.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B151FC393D400C39369 /* Candra.jpg */; };
@@ -97,7 +89,6 @@
 		F3755BC51FC393D400C39369 /* Ningirama.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B4B1FC393D400C39369 /* Ningirama.jpg */; };
 		F3755BC61FC393D400C39369 /* JokinamP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B4C1FC393D400C39369 /* JokinamP.gif */; };
 		F3755BC71FC393D400C39369 /* GarudaS.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B4D1FC393D400C39369 /* GarudaS.gif */; };
-		F3755BC81FC393D400C39369 /* Ekchuah.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B4E1FC393D400C39369 /* Ekchuah.jpg */; };
 		F3755BC91FC393D400C39369 /* OsandeP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B4F1FC393D400C39369 /* OsandeP.gif */; };
 		F3755BCA1FC393D400C39369 /* ZababaP.gif in Resources */ = {isa = PBXBuildFile; fileRef = F3755B501FC393D400C39369 /* ZababaP.gif */; };
 		F3755BCB1FC393D400C39369 /* Leukothea.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3755B511FC393D400C39369 /* Leukothea.jpg */; };
@@ -167,6 +158,15 @@
 		F3B17EB91FC164FC00C968BE /* sfx_menu_select1.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3B17EB81FC164FC00C968BE /* sfx_menu_select1.wav */; };
 		F3B17EBB1FC1650700C968BE /* sfx_menu_select4.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3B17EBA1FC1650700C968BE /* sfx_menu_select4.wav */; };
 		F3B17EBD1FC1653B00C968BE /* sfx_sounds_pause7_out.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3B17EBC1FC1653B00C968BE /* sfx_sounds_pause7_out.wav */; };
+		F3D59C511FCBFE04002ED165 /* HuangTi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3D59C501FCBFE04002ED165 /* HuangTi.jpg */; };
+		F3D59C531FCBFEC8002ED165 /* EkChuah.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3D59C521FCBFEC8002ED165 /* EkChuah.jpg */; };
+		F3D59C551FCC0133002ED165 /* SingularityHex.png in Resources */ = {isa = PBXBuildFile; fileRef = F3D59C541FCC0132002ED165 /* SingularityHex.png */; };
+		F3D59C571FCC01F5002ED165 /* RebelHex.png in Resources */ = {isa = PBXBuildFile; fileRef = F3D59C561FCC01F4002ED165 /* RebelHex.png */; };
+		F3D59C591FCC02D8002ED165 /* PirateHex.png in Resources */ = {isa = PBXBuildFile; fileRef = F3D59C581FCC02D8002ED165 /* PirateHex.png */; };
+		F3D59C5B1FCC03CA002ED165 /* AlienHex.png in Resources */ = {isa = PBXBuildFile; fileRef = F3D59C5A1FCC03CA002ED165 /* AlienHex.png */; };
+		F3D59C5D1FCC069B002ED165 /* MerchantHex.png in Resources */ = {isa = PBXBuildFile; fileRef = F3D59C5C1FCC069A002ED165 /* MerchantHex.png */; };
+		F3D59C5F1FCC0782002ED165 /* FederationHex.png in Resources */ = {isa = PBXBuildFile; fileRef = F3D59C5E1FCC0782002ED165 /* FederationHex.png */; };
+		F3D59C631FCC0D9A002ED165 /* MinersHex.png in Resources */ = {isa = PBXBuildFile; fileRef = F3D59C621FCC0D9A002ED165 /* MinersHex.png */; };
 		F3F340381FBB80CE003B9940 /* Silom.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3F340371FBB801C003B9940 /* Silom.ttf */; };
 		F3F340501FBBF6A3003B9940 /* sfx_sounds_falling8.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3F3404F1FBBF6A2003B9940 /* sfx_sounds_falling8.wav */; };
 		F3F340521FBBF6BF003B9940 /* sfx_movement_portal4.wav in Resources */ = {isa = PBXBuildFile; fileRef = F3F340511FBBF6BF003B9940 /* sfx_movement_portal4.wav */; };
@@ -187,13 +187,6 @@
 		F347DCE21FC4211500E9775D /* GalaxyMapScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GalaxyMapScene.sks; sourceTree = "<group>"; };
 		F347DCE41FC4219200E9775D /* GalaxyTileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GalaxyTileset.sks; sourceTree = "<group>"; };
 		F347DCE61FC421B100E9775D /* GalaxyMapScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GalaxyMapScene.sks; sourceTree = "<group>"; };
-		F347DCF41FC790DC00E9775D /* AlienHex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AlienHex.png; sourceTree = "<group>"; };
-		F347DCF51FC790DC00E9775D /* MerchantHex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MerchantHex.png; sourceTree = "<group>"; };
-		F347DCF61FC790DC00E9775D /* FederationHex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FederationHex.png; sourceTree = "<group>"; };
-		F347DCF71FC790DC00E9775D /* MinersHex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MinersHex.png; sourceTree = "<group>"; };
-		F347DCF81FC790DD00E9775D /* RebelHex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RebelHex.png; sourceTree = "<group>"; };
-		F347DCF91FC790DD00E9775D /* SingularityHex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SingularityHex.png; sourceTree = "<group>"; };
-		F347DD001FC7911200E9775D /* PirateHex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PirateHex.png; sourceTree = "<group>"; };
 		F347DD021FC7B35A00E9775D /* ElinaMobile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ElinaMobile.png; sourceTree = "<group>"; };
 		F363BF4B1FBADDF10073054B /* PlanetSideScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetSideScene.swift; sourceTree = "<group>"; };
 		F363C0421FBAF6100073054B /* sfx_sound_mechanicalnoise6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_sound_mechanicalnoise6.wav; sourceTree = "<group>"; };
@@ -205,7 +198,6 @@
 		F3755B0F1FC393D400C39369 /* HoursP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = HoursP.gif; sourceTree = "<group>"; };
 		F3755B101FC393D400C39369 /* CamulosP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = CamulosP.gif; sourceTree = "<group>"; };
 		F3755B111FC393D400C39369 /* SogblenP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SogblenP.gif; sourceTree = "<group>"; };
-		F3755B121FC393D400C39369 /* Huangti.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Huangti.jpg; sourceTree = "<group>"; };
 		F3755B131FC393D400C39369 /* WusquusS.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = WusquusS.gif; sourceTree = "<group>"; };
 		F3755B141FC393D400C39369 /* JunoS.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = JunoS.gif; sourceTree = "<group>"; };
 		F3755B151FC393D400C39369 /* Candra.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Candra.jpg; sourceTree = "<group>"; };
@@ -265,7 +257,6 @@
 		F3755B4B1FC393D400C39369 /* Ningirama.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Ningirama.jpg; sourceTree = "<group>"; };
 		F3755B4C1FC393D400C39369 /* JokinamP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = JokinamP.gif; sourceTree = "<group>"; };
 		F3755B4D1FC393D400C39369 /* GarudaS.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = GarudaS.gif; sourceTree = "<group>"; };
-		F3755B4E1FC393D400C39369 /* Ekchuah.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Ekchuah.jpg; sourceTree = "<group>"; };
 		F3755B4F1FC393D400C39369 /* OsandeP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = OsandeP.gif; sourceTree = "<group>"; };
 		F3755B501FC393D400C39369 /* ZababaP.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ZababaP.gif; sourceTree = "<group>"; };
 		F3755B511FC393D400C39369 /* Leukothea.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Leukothea.jpg; sourceTree = "<group>"; };
@@ -335,6 +326,15 @@
 		F3B17EB81FC164FC00C968BE /* sfx_menu_select1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_menu_select1.wav; sourceTree = "<group>"; };
 		F3B17EBA1FC1650700C968BE /* sfx_menu_select4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_menu_select4.wav; sourceTree = "<group>"; };
 		F3B17EBC1FC1653B00C968BE /* sfx_sounds_pause7_out.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_sounds_pause7_out.wav; sourceTree = "<group>"; };
+		F3D59C501FCBFE04002ED165 /* HuangTi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = HuangTi.jpg; path = ../../../../Downloads/cosmics/Paired/HuangTi.jpg; sourceTree = "<group>"; };
+		F3D59C521FCBFEC8002ED165 /* EkChuah.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = EkChuah.jpg; path = ../../../../Downloads/cosmics/Paired/EkChuah.jpg; sourceTree = "<group>"; };
+		F3D59C541FCC0132002ED165 /* SingularityHex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SingularityHex.png; path = ../../MapHex/SingularityHex.png; sourceTree = "<group>"; };
+		F3D59C561FCC01F4002ED165 /* RebelHex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RebelHex.png; path = ../../MapHex/RebelHex.png; sourceTree = "<group>"; };
+		F3D59C581FCC02D8002ED165 /* PirateHex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PirateHex.png; path = ../../MapHex/PirateHex.png; sourceTree = "<group>"; };
+		F3D59C5A1FCC03CA002ED165 /* AlienHex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AlienHex.png; path = ../../MapHex/AlienHex.png; sourceTree = "<group>"; };
+		F3D59C5C1FCC069A002ED165 /* MerchantHex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MerchantHex.png; path = ../../MapHex/MerchantHex.png; sourceTree = "<group>"; };
+		F3D59C5E1FCC0782002ED165 /* FederationHex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = FederationHex.png; path = ../../MapHex/FederationHex.png; sourceTree = "<group>"; };
+		F3D59C621FCC0D9A002ED165 /* MinersHex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MinersHex.png; sourceTree = "<group>"; };
 		F3F340371FBB801C003B9940 /* Silom.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Silom.ttf; sourceTree = "<group>"; };
 		F3F3404F1FBBF6A2003B9940 /* sfx_sounds_falling8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_sounds_falling8.wav; sourceTree = "<group>"; };
 		F3F340511FBBF6BF003B9940 /* sfx_movement_portal4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_movement_portal4.wav; sourceTree = "<group>"; };
@@ -380,13 +380,13 @@
 				F383A98A1FB98F8300547838 /* GameOverScene.swift */,
 				F363BF4B1FBADDF10073054B /* PlanetSideScene.swift */,
 				F347DD021FC7B35A00E9775D /* ElinaMobile.png */,
-				F347DCF41FC790DC00E9775D /* AlienHex.png */,
-				F347DCF61FC790DC00E9775D /* FederationHex.png */,
-				F347DCF51FC790DC00E9775D /* MerchantHex.png */,
-				F347DCF71FC790DC00E9775D /* MinersHex.png */,
-				F347DD001FC7911200E9775D /* PirateHex.png */,
-				F347DCF81FC790DD00E9775D /* RebelHex.png */,
-				F347DCF91FC790DD00E9775D /* SingularityHex.png */,
+				F3D59C5A1FCC03CA002ED165 /* AlienHex.png */,
+				F3D59C561FCC01F4002ED165 /* RebelHex.png */,
+				F3D59C621FCC0D9A002ED165 /* MinersHex.png */,
+				F3D59C581FCC02D8002ED165 /* PirateHex.png */,
+				F3D59C5E1FCC0782002ED165 /* FederationHex.png */,
+				F3D59C5C1FCC069A002ED165 /* MerchantHex.png */,
+				F3D59C541FCC0132002ED165 /* SingularityHex.png */,
 				F328C2A81FB81A7A00A8830F /* MyUtils.swift */,
 				F3F340371FBB801C003B9940 /* Silom.ttf */,
 				F391BB121FC40EE500DAF317 /* Int+Extensions.swift */,
@@ -413,7 +413,6 @@
 				F3755B0F1FC393D400C39369 /* HoursP.gif */,
 				F3755B101FC393D400C39369 /* CamulosP.gif */,
 				F3755B111FC393D400C39369 /* SogblenP.gif */,
-				F3755B121FC393D400C39369 /* Huangti.jpg */,
 				F3755B131FC393D400C39369 /* WusquusS.gif */,
 				F3755B141FC393D400C39369 /* JunoS.gif */,
 				F3755B151FC393D400C39369 /* Candra.jpg */,
@@ -421,6 +420,7 @@
 				F3755B171FC393D400C39369 /* UsasP.gif */,
 				F3755B181FC393D400C39369 /* Juno.jpg */,
 				F3755B191FC393D400C39369 /* FujinP.gif */,
+				F3D59C521FCBFEC8002ED165 /* EkChuah.jpg */,
 				F3755B1A1FC393D400C39369 /* HeimdallS.gif */,
 				F3755B1B1FC393D400C39369 /* Faivarongo.jpg */,
 				F3755B1C1FC393D400C39369 /* Anti.jpg */,
@@ -473,7 +473,6 @@
 				F3755B4B1FC393D400C39369 /* Ningirama.jpg */,
 				F3755B4C1FC393D400C39369 /* JokinamP.gif */,
 				F3755B4D1FC393D400C39369 /* GarudaS.gif */,
-				F3755B4E1FC393D400C39369 /* Ekchuah.jpg */,
 				F3755B4F1FC393D400C39369 /* OsandeP.gif */,
 				F3755B501FC393D400C39369 /* ZababaP.gif */,
 				F3755B511FC393D400C39369 /* Leukothea.jpg */,
@@ -520,6 +519,7 @@
 				F3755B7A1FC393D400C39369 /* WepwawetP.gif */,
 				F3755B7B1FC393D400C39369 /* GukumatzS.gif */,
 				F3755B7C1FC393D400C39369 /* EAlom.jpg */,
+				F3D59C501FCBFE04002ED165 /* HuangTi.jpg */,
 				F3755B7D1FC393D400C39369 /* EkChuahP.gif */,
 				F3755B7E1FC393D400C39369 /* YumCimilP.gif */,
 				F3755B7F1FC393D400C39369 /* Usas.jpg */,
@@ -622,10 +622,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3D59C551FCC0133002ED165 /* SingularityHex.png in Resources */,
 				F3755BE41FC393D400C39369 /* CipactliP.gif in Resources */,
-				F3755B8C1FC393D400C39369 /* Huangti.jpg in Resources */,
 				F3755BD71FC393D400C39369 /* Jabru.jpg in Resources */,
 				F3755BDD1FC393D400C39369 /* Belenus.jpg in Resources */,
+				F3D59C5D1FCC069B002ED165 /* MerchantHex.png in Resources */,
 				F328C2891FB803DF00A8830F /* Main.storyboard in Resources */,
 				F3755BFC1FC393D400C39369 /* Gaunab.jpg in Resources */,
 				F3755B881FC393D400C39369 /* BuriP.gif in Resources */,
@@ -645,6 +646,7 @@
 				F3755B841FC393D400C39369 /* Indra.jpg in Resources */,
 				F3755BE01FC393D400C39369 /* LomoP.gif in Resources */,
 				F3755BAB1FC393D400C39369 /* Daphne.jpg in Resources */,
+				F3D59C571FCC01F5002ED165 /* RebelHex.png in Resources */,
 				F3755BD21FC393D400C39369 /* PoenimusP.gif in Resources */,
 				F3755BBD1FC393D400C39369 /* Yamaduti.jpg in Resources */,
 				F3755BD91FC393D400C39369 /* JabruS.gif in Resources */,
@@ -652,16 +654,18 @@
 				F3755BD41FC393D400C39369 /* Usins.jpg in Resources */,
 				F3755BCE1FC393D400C39369 /* Wepwawet.jpg in Resources */,
 				F3755BBE1FC393D400C39369 /* BelenusP.gif in Resources */,
-				F347DCFE1FC790DD00E9775D /* RebelHex.png in Resources */,
 				F3B17DA91FBD770F00C968BE /* sfx_sound_poweron.wav in Resources */,
 				F3755BD51FC393D400C39369 /* YumCimil.jpg in Resources */,
 				F3755BC61FC393D400C39369 /* JokinamP.gif in Resources */,
+				F3D59C5F1FCC0782002ED165 /* FederationHex.png in Resources */,
 				F3755B851FC393D400C39369 /* NingiramaP.gif in Resources */,
 				F3755BC11FC393D400C39369 /* AbeonaP.gif in Resources */,
 				F3755BE81FC393D400C39369 /* ZipaknaP.gif in Resources */,
+				F3D59C5B1FCC03CA002ED165 /* AlienHex.png in Resources */,
 				F3B17EBD1FC1653B00C968BE /* sfx_sounds_pause7_out.wav in Resources */,
 				F3755B921FC393D400C39369 /* Juno.jpg in Resources */,
 				F3755BB81FC393D400C39369 /* YamadutiP.gif in Resources */,
+				F3D59C631FCC0D9A002ED165 /* MinersHex.png in Resources */,
 				F3755BE11FC393D400C39369 /* XolotlNanahuatl.jpg in Resources */,
 				F3755BEC1FC393D400C39369 /* Gerra.jpg in Resources */,
 				F3755BA41FC393D400C39369 /* Osande.jpg in Resources */,
@@ -671,12 +675,11 @@
 				F3755B941FC393D400C39369 /* HeimdallS.gif in Resources */,
 				F3755BA61FC393D400C39369 /* Aditi.jpg in Resources */,
 				F3755BA01FC393D400C39369 /* LiluriP.gif in Resources */,
-				F347DCFC1FC790DD00E9775D /* FederationHex.png in Resources */,
 				F3755BCF1FC393D400C39369 /* Ran.jpg in Resources */,
+				F3D59C531FCBFEC8002ED165 /* EkChuah.jpg in Resources */,
 				F347DD031FC7B35A00E9775D /* ElinaMobile.png in Resources */,
 				F3755BDE1FC393D400C39369 /* BadbP.gif in Resources */,
 				F3755BB01FC393D400C39369 /* YinamtilanP.gif in Resources */,
-				F347DCFA1FC790DD00E9775D /* AlienHex.png in Resources */,
 				F3755BDF1FC393D400C39369 /* Buri.jpg in Resources */,
 				F3755BA31FC393D400C39369 /* Badb.jpg in Resources */,
 				F3755BDC1FC393D400C39369 /* MamlamboP.gif in Resources */,
@@ -690,11 +693,11 @@
 				F3755BE91FC393D400C39369 /* Lomo.jpg in Resources */,
 				F328C28E1FB803DF00A8830F /* LaunchScreen.storyboard in Resources */,
 				F3755BC71FC393D400C39369 /* GarudaS.gif in Resources */,
+				F3D59C591FCC02D8002ED165 /* PirateHex.png in Resources */,
 				F3755B931FC393D400C39369 /* FujinP.gif in Resources */,
 				F3755BB91FC393D400C39369 /* Kybele.jpg in Resources */,
 				F3755BAA1FC393D400C39369 /* FaivarongoP.gif in Resources */,
 				F3755BD11FC393D400C39369 /* IndraP.gif in Resources */,
-				F347DCFB1FC790DD00E9775D /* MerchantHex.png in Resources */,
 				F3755BC21FC393D400C39369 /* Sgana.jpg in Resources */,
 				F3755BB61FC393D400C39369 /* AditiP.gif in Resources */,
 				F3755B8F1FC393D400C39369 /* Candra.jpg in Resources */,
@@ -705,7 +708,6 @@
 				F3755B9C1FC393D400C39369 /* HastseyaltiP.gif in Resources */,
 				F383A9951FB9929B00547838 /* sfx_deathscream_human3.wav in Resources */,
 				F3755BC51FC393D400C39369 /* Ningirama.jpg in Resources */,
-				F347DCFD1FC790DD00E9775D /* MinersHex.png in Resources */,
 				F3755BBF1FC393D400C39369 /* UsinsS.gif in Resources */,
 				F3755BCC1FC393D400C39369 /* Yinamtilan.jpg in Resources */,
 				F3755B8A1FC393D400C39369 /* CamulosP.gif in Resources */,
@@ -727,6 +729,7 @@
 				F3755BFB1FC393D400C39369 /* WajetP.gif in Resources */,
 				F3755BC31FC393D400C39369 /* DaphneP.gif in Resources */,
 				F3755BBB1FC393D400C39369 /* IgalilikP.gif in Resources */,
+				F3D59C511FCBFE04002ED165 /* HuangTi.jpg in Resources */,
 				F347DCE31FC4211500E9775D /* GalaxyMapScene.sks in Resources */,
 				F3755BC91FC393D400C39369 /* OsandeP.gif in Resources */,
 				F3755BF81FC393D400C39369 /* YumCimilP.gif in Resources */,
@@ -740,7 +743,6 @@
 				F3755B9E1FC393D400C39369 /* Zurvan.jpg in Resources */,
 				F3755BE51FC393D400C39369 /* Liluri.jpg in Resources */,
 				F3755BD81FC393D400C39369 /* Fujin.jpg in Resources */,
-				F3755BC81FC393D400C39369 /* Ekchuah.jpg in Resources */,
 				F3755BB21FC393D400C39369 /* Hastseyalti.jpg in Resources */,
 				F3755B9B1FC393D400C39369 /* GerraP.gif in Resources */,
 				F3755BD01FC393D400C39369 /* Sogblen.jpg in Resources */,
@@ -748,7 +750,6 @@
 				F3B17DAB1FBD786400C968BE /* sfx_sounds_error13.wav in Resources */,
 				F3755BF91FC393D400C39369 /* Usas.jpg in Resources */,
 				F3755B891FC393D400C39369 /* HoursP.gif in Resources */,
-				F347DCFF1FC790DD00E9775D /* SingularityHex.png in Resources */,
 				F3755B871FC393D400C39369 /* IuturnaP.gif in Resources */,
 				F3755BD31FC393D400C39369 /* SganaP.gif in Resources */,
 				F3755BDB1FC393D400C39369 /* Balder.jpg in Resources */,
@@ -762,7 +763,6 @@
 				F3755BEB1FC393D400C39369 /* XolotlNanahuatlP.gif in Resources */,
 				F3755BEE1FC393D400C39369 /* Wajet.jpg in Resources */,
 				F3755B971FC393D400C39369 /* EAlomP.gif in Resources */,
-				F347DD011FC7911300E9775D /* PirateHex.png in Resources */,
 				F3755BA81FC393D400C39369 /* Zipakna.jpg in Resources */,
 				F3755B8D1FC393D400C39369 /* WusquusS.gif in Resources */,
 				F347DCE71FC421B100E9775D /* GalaxyMapScene.sks in Resources */,
