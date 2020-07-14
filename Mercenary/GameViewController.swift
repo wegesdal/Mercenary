@@ -26,7 +26,7 @@ class GameViewController: UIViewController {
         skView.presentScene(scene)
         skView.isMultipleTouchEnabled = true
     }
-    override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
+    override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
             if let skView = view as? SKView, let scene = skView.scene as? GameScene {
                 scene.shake()

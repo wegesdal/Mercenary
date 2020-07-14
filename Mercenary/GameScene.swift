@@ -104,14 +104,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //Add Ship
         ship.name = "ship"
-        //shipTextures.append(atlas.textureNamed("model_S.png"));
-        //shipTextures.append(atlas.textureNamed("model_E.png"));
-        //shipTextures.append(atlas.textureNamed("model_N.png"));
-        //shipTextures.append(atlas.textureNamed("model_W.png"))
-        shipTextures.append(atlas.textureNamed("ElinaMobile.png"));
-        shipTextures.append(atlas.textureNamed("ElinaMobile.png"));
-        shipTextures.append(atlas.textureNamed("ElinaMobile.png"));
-        shipTextures.append(atlas.textureNamed("ElinaMobile.png"))
+        shipTextures.append(atlas.textureNamed("model_S.png"));
+        shipTextures.append(atlas.textureNamed("model_E.png"));
+        shipTextures.append(atlas.textureNamed("model_N.png"));
+        shipTextures.append(atlas.textureNamed("model_W.png"));
+//        shipTextures.append(atlas.textureNamed("ElinaMobile.png"));
+//        shipTextures.append(atlas.textureNamed("ElinaMobile.png"));
+//        shipTextures.append(atlas.textureNamed("ElinaMobile.png"));
+//        shipTextures.append(atlas.textureNamed("ElinaMobile.png"))
         
         //Add Planet
         planet.name = "planet"

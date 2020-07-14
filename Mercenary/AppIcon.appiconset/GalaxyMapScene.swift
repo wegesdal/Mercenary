@@ -25,12 +25,12 @@ class GalaxyMapScene:SKScene {
             //Best filtering mode for pixel art is .nearest
             planet.texture!.filteringMode = .nearest
             planet.setScale(1.0)
-            planet.alpha = 0.80
+            planet.alpha = 0.90
             let planetPosition = map.centerOfTile(atColumn: mapX, row: mapY)
             planet.position = planetPosition
             planet.zPosition = 100
             // truncate the gif filename to use for planet name and planetside portrait jpg
-            var truncateAtDotArr = planetName.components(separatedBy: ".")
+            let truncateAtDotArr = planetName.components(separatedBy: ".")
             let truncatedWithLetter: String = truncateAtDotArr [0]
             let truncatedWithoutLetter = String(truncatedWithLetter[..<truncatedWithLetter.index(before: truncatedWithLetter.endIndex)])
             truncatedPlanetNames.append(truncatedWithoutLetter)
@@ -53,6 +53,12 @@ class GalaxyMapScene:SKScene {
                 fatalError("Background node not loaded")
         }
         self.map = map
+        
+        guard let camera = childNode(withName: "camera")
+            as? SKCameraNode else {
+                fatalError("Camera node not loaded")
+        }
+        self.camera = camera
     }
     
     func sceneTouched(touchLocation:CGPoint) {
@@ -61,6 +67,7 @@ class GalaxyMapScene:SKScene {
         for node in children {
             if node.name != "map" {
                 if node.contains(touchLocation) {
+                    camera?.position = touchLocation
                     run(SKAction.playSoundFileNamed("sfx_menu_select4.wav", waitForCompletion: false))
                     if let portraitFilename = node.name {
                         
@@ -69,7 +76,9 @@ class GalaxyMapScene:SKScene {
                         let thumb = SKSpriteNode(imageNamed: portrait)
                         thumb.zPosition = -100
                         thumb.name = "thumb"
+                        thumb.texture!.filteringMode = .nearest
                         addChild(thumb)
+                        
                     } else {
                         print("There are no portraits with that name.")
                     }
